@@ -1,0 +1,12 @@
+- name: crabpy
+  description: This library provides access to the CRAB and CAPAKEY webservices operated by the AGIV. Because connecting to these SOAP services from python can be somewhat complicated, this library makes it easier.
+  docs: http://crabpy.readthedocs.org/
+  travis: OnroerendErfgoed/crabpy
+  pypi: crabpy/0.3.4
+
+
+- name: skosprovider_rdf
+  description: Skosprovider implementation backed by RDF
+  docs: http://skosprovider-rdf.readthedocs.org
+  travis: OnroerendErfgoed/skosprovider_rdf
+  pypi: skosprovider_rdf/0.1.2

@@ -1,0 +1,5 @@
+- name: atramhasis
+  description: Atramhasis aims to be an online SKOS editor. This webapplication will enable users to create SKOS vocabularies, concepts and collections.
+  docs: http://atramhasis.readthedocs.org
+  travis: OnroerendErfgoed/atramhasis
+  pypi: atramhasis/0.2.0
