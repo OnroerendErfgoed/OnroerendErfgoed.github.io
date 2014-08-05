@@ -2,11 +2,28 @@
   description: This library provides access to the CRAB and CAPAKEY webservices operated by the AGIV. Because connecting to these SOAP services from python can be somewhat complicated, this library makes it easier.
   docs: http://crabpy.readthedocs.org/
   travis: OnroerendErfgoed/crabpy
-  pypi: crabpy/0.3.4
-
+  pypi: crabpy
 
 - name: skosprovider_rdf
   description: Skosprovider implementation backed by RDF
   docs: http://skosprovider-rdf.readthedocs.org
   travis: OnroerendErfgoed/skosprovider_rdf
-  pypi: skosprovider_rdf/0.1.2
+  pypi: skosprovider_rdf
+
+- name: oe/housenum-be-r-parser
+  description: A small PHP library for merging and splitting sequences of Belgian housenumbers.
+  docs: https://github.com/OnroerendErfgoed/php-housenum-be-r-parser
+  travis: OnroerendErfgoed/php-housenum-be-r-parser
+  packagist: oe/housenum-be-r-parser
+
+- name: housenum-be-r-parser
+  description: A small Python library for merging and splitting sequences of Belgian housenumbers.
+  docs: https://github.com/OnroerendErfgoed/housenum-be-r-parser
+  travis: OnroerendErfgoed/housenum-be-r-parser
+  pypi: housenum-be-r-parser
+
+- name: dcextensions
+  description: Extensions for dogpile cache.
+  docs: https://github.com/OnroerendErfgoed/dcextensions
+  travis: OnroerendErfgoed/dcextensions
+  pypi: dcextensions

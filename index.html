@@ -16,8 +16,10 @@ layout: index
                 <h4 class="capitalize">  {{ application.name }}</h4>
                 <p> {{ application.description }} </p>
                 <a href="{{ application.docs }}"> {{ application.docs }} </a>
-                <a class="right" href="https://travis-ci.org/{{ application.travis }}"><img style= "margin: 0px 0px 0px 5px;" src="https://travis-ci.org/{{ application.travis }}.png?branch=master" alt="Build Status"></img></a>
-                <a class="right" href="https://pypi.python.org/pypi/{{ application.pypi }}"><img style= "margin: 0px 0px 0px 5px;" src="https://badge.fury.io/py/{{ application.name }}.png"></img></a>
+				<a class="right" href="https://travis-ci.org/{{ application.travis }}"><img style= "margin: 0px 0px 0px 5px;" src="https://travis-ci.org/{{ application.travis }}.png?branch=master" alt="Build Status"></img></a>
+				{% if application.pypi %}
+				<a class="right" href="https://pypi.python.org/pypi/{{ application.pypi }}"><img style= "margin: 0px 0px 0px 5px;" src="https://badge.fury.io/py/{{ application.name }}.png"></img></a>
+				{% endif %}
               </div>
               </div>
             {% endfor %}
@@ -32,8 +34,12 @@ layout: index
                 <h4 class="capitalize">  {{ library.name }}</h4>
                 <p> {{ library.description }} </p>
                 <a href="{{ library.docs }}"> {{ library.docs }} </a>
-                <a class="right" href="https://travis-ci.org/{{ library.travis }}"><img style= "margin: 0px 0px 0px 5px;" src="https://travis-ci.org/{{ library.travis }}.png?branch=master" alt="Build Status"></img></a>
-                <a class="right" href="https://pypi.python.org/pypi/{{ library.pypi }}"><img style= "margin: 0px 0px 0px 5px;" src="https://badge.fury.io/py/{{ library.name }}.png"></img></a>
+				<a class="right" href="https://travis-ci.org/{{ library.travis }}"><img style= "margin: 0px 0px 0px 5px;" src="https://travis-ci.org/{{ library.travis }}.png?branch=master" alt="Build Status"></img></a>
+				{% if library.pypi %}
+				<a class="right" href="https://pypi.python.org/pypi/{{ library.pypi }}"><img style= "margin: 0px 0px 0px 5px;" src="https://badge.fury.io/py/{{ library.name }}.png"></img></a>
+				{% else if library.packagist %}
+				<a class="right" href="https://packagist.org/packages/{{ library.packagist }}"><img style= "margin: 0px 0px 0px 5px;" src="https://poser.pugx.org/{{ library.packagist }}/v/stable.svg"></img></a>
+				{% endif %}
               </div>
               </div>
             {% endfor %}
