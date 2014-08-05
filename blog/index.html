@@ -1,0 +1,21 @@
+---
+layout: index
+---
+
+  <div class="container">
+      <div class="row">
+        <h1>Blog Posts</h1>
+            <section class="row content">
+                {% for post in site.posts %}
+                    <div class="zoekresultaat">
+                    <div class="beschrijving">
+                    <h4>{{ post.title }}</h4>
+                    <p class="meta">{{ post.date | date_to_string }}</p>
+                    <p >{{ post.short}}</p>
+                    <a class="read-more" href="{{ post.url }}">Read more >></a>
+                    </div>
+                    </div>
+                {% endfor %}
+            </section>
+      </div>
+  </div>
