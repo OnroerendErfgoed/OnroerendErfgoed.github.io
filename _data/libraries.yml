@@ -27,3 +27,8 @@
   docs: https://github.com/OnroerendErfgoed/dcextensions
   travis: OnroerendErfgoed/dcextensions
   pypi: dcextensions
+
+- name: sphinx-vlaamsecodex
+  description: Sphinx extension to integrate http://codex.vlaanderen.be in a document.
+  docs: http://sphinx-vlaamsecodex.readthedocs.org/en/latest/
+  pypi: sphinx-vlaamsecodex
