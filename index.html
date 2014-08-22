@@ -34,7 +34,9 @@ layout: index
                 <h4 class="capitalize">  {{ library.name }}</h4>
                 <p> {{ library.description }} </p>
                 <a href="{{ library.docs }}"> {{ library.docs }} </a>
+                {% if library.travis %}
 				<a class="right" href="https://travis-ci.org/{{ library.travis }}"><img style= "margin: 0px 0px 0px 5px;" src="https://travis-ci.org/{{ library.travis }}.png?branch=master" alt="Build Status"></img></a>
+				{% endif %}
 				{% if library.pypi %}
 				<a class="right" href="https://pypi.python.org/pypi/{{ library.pypi }}"><img style= "margin: 0px 0px 0px 5px;" src="https://badge.fury.io/py/{{ library.name }}.png"></img></a>
 				{% else if library.packagist %}
