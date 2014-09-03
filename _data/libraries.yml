@@ -4,6 +4,12 @@
   travis: OnroerendErfgoed/crabpy
   pypi: crabpy
 
+- name: crabpy_pyramid
+  description: Bindings for the CRABpy library to the Pyramid framework.
+  docs: http://crabpy_pyramid.readthedocs.org/
+  travis: OnroerendErfgoed/crabpy_pyramid
+  pypi: crabpy_pyramid
+
 - name: skosprovider_rdf
   description: Skosprovider implementation backed by RDF
   docs: http://skosprovider-rdf.readthedocs.org
@@ -21,6 +27,10 @@
   docs: https://github.com/OnroerendErfgoed/housenum-be-r-parser
   travis: OnroerendErfgoed/housenum-be-r-parser
   pypi: housenum-be-r-parser
+
+- name: language-tags
+  description: Handling IANA language tags in Python.
+  travis: OnroerendErfgoed/language-tags
 
 - name: dcextensions
   description: Extensions for dogpile cache.
