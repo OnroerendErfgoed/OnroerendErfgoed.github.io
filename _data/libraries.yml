@@ -30,6 +30,7 @@
 
 - name: language-tags
   description: Handling IANA language tags in Python.
+  docs: http://language-tags.readthedocs.org/
   travis: OnroerendErfgoed/language-tags
   pypi: language_tags
 
