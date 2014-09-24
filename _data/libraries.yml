@@ -16,6 +16,18 @@
   travis: OnroerendErfgoed/skosprovider_rdf
   pypi: skosprovider_rdf
 
+- name: skosprovider_getty
+  description: Skosprovider implementation based on the Getty Vocab services
+  docs: http://skosprovider-getty.readthedocs.org
+  travis: OnroerendErfgoed/skosprovider_getty
+  pypi: skosprovider_getty
+
+- name: skosprovider_heritagedata
+  description: Skosprovider implementation based on heritagedata.org
+  docs: http://skosprovider-heritagedata.readthedocs.org
+  travis: OnroerendErfgoed/skosprovider_heritagedata
+  pypi: skosprovider_heritagedata
+
 - name: oe/housenum-be-r-parser
   description: A small PHP library for merging and splitting sequences of Belgian housenumbers.
   docs: https://github.com/OnroerendErfgoed/php-housenum-be-r-parser
