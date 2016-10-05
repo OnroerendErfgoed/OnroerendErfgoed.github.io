@@ -42,5 +42,4 @@ agentschap <https://www.onroerenderfgoed.be>`_.
    :maxdepth: 2
 
    about.rst
-   api/index.rst
    projects.rst
