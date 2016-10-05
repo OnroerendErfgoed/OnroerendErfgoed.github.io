@@ -1,0 +1,575 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Service Documentatie &#8212; Flanders Heritage - Team Information  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../../../_static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="../../../about/" />
+    <link rel="top" title="Flanders Heritage - Team Information  documentation" href="../../../" />
+    <link rel="up" title="Public APIs" href="../../" />
+    <link rel="next" title="Service API" href="../../actoren/api/" />
+    <link rel="prev" title="Service Documentatie" href="../../besluiten/api/" />
+  
+ 
+<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  
+  <link rel="alternate" type="application/atom+xml"  href="../../../blog/atom.xml" title="Flanders Heritage - Team Information Blog">
+  
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+    ul.postlist a {font-style: italic;}
+    ul.postlist-style-disc {list-style-type: disc;}
+    ul.postlist-style-none {list-style-type: none;}
+    ul.postlist-style-circle {list-style-type: circle;}
+  </style>
+
+  </head>
+  <body role="document">
+<!-- container -->
+<div class="container">
+  <script type="text/javascript" src="//widgets.vlaanderen.be/widget/live/5499d8dc0848446e91022c6dba9db343?mtime=1421237274"></script>
+  <!-- header -->
+
+  <!-- embed -->
+  <div class="temp-embed"></div>
+
+  <!-- large header bg image -->
+  <div class="bgimage"></div>
+
+  <!-- wrapper & responsive navigation -->
+  <div class="wrapper clearfix">
+    <div class="main-navigation-inner clearfix inner">
+
+
+
+      <!-- logo -->
+      <div class="logo-block">
+        <div class="logo-block-inner">
+          <a href="../../../">
+            <img src="../../../_static/img/pyoes/OE-vlaanderen-logo.png" width="65">
+            <h2>Vlaanderen</h2>
+            <h4>is Erfgoed</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-border"></div>
+  <div class="row">
+    <div class="large-9 columns">
+      <h3>Flanders Heritage - Team Information</h3>
+    </div>
+  </div>
+
+  <!-- end header -->
+  <div class="row">
+    
+    <div class="large-9 columns">
+      <div class="body panel" role="main">
+        
+  <div class="section" id="service-documentatie">
+<h1>Service Documentatie<a class="headerlink" href="#service-documentatie" title="Permalink to this headline">¶</a></h1>
+<dl class="get">
+<dt id="get--afbakeningen">
+<code class="descname">GET </code><code class="descname">/afbakeningen</code><a class="headerlink" href="#get--afbakeningen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simpele zoekactie naar afbakeningen van objecten, dossiers of plannen.</p>
+<p>Dit endpoint stelt ons in staat om te vragen naar resources die op een
+bepaalde plaats aanwezig zijn. De resources worden onderverdeeld in 3 grote
+categorieën:</p>
+<ul class="simple">
+<li><strong>erfgoedobjecten:</strong> Erfgoedobjecten uit de wetenschappelijke inventaris.</li>
+<li><strong>aanduidingsobjecten:</strong> Dit zijn de afbakeningen met rechtsgevolgen, het
+gaat om beschermingen en vastgestelde inventarissen.</li>
+<li><strong>plannen:</strong> Beheersplannen uit authentieke bron beheersplannen. Kan op
+termijn worden uitgebreid met erfgoedrichtplannen.</li>
+<li><strong>dossiers:</strong> Advies-, premie- en andere dossiers uit de authentieke
+bron dossiers.</li>
+</ul>
+<div class="deprecated">
+<p><span class="versionmodified">Deprecated since version 0.2.0: </span>In versie <cite>0.1.0</cite> was er een categorie <cite>objecten</cite>. Deze is deprecated en
+zal verwijderd worden in versie <cite>0.4.0</cite>. Voorlopig werkt deze nog.
+Eenzelfde gedrag als vroeger kan bekomen worden met
+<cite>?categorie=erfgoedobjecten&amp;categorie=aanduidingsobjecten</cite>.</p>
+</div>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/afbakeningen</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">localhost</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Range</span><span class="o">:</span> <span class="l">items=0-19</span>
+</pre></div>
+</div>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/afbakeningen?categorie=aanduidingsobjecten</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">localhost</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Range</span><span class="o">:</span> <span class="l">items=0-19</span>
+</pre></div>
+</div>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span>GET /afbakeningen?categorie=aanduidingsobjecten&amp;geometrie={&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[4.430750, 51.149166]}&amp;buffer=1000 HTTP/1.1
+Host: localhost
+Accept: application/json
+Range: items=0-19
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>categorie</strong> &#8211; Enkel de afbakeningen van resources uit een bepaalde categorie doorzoeken.
+Toegestane waarden op dit moment zijn: <cite>erfgoedobjecten</cite>, <cite>aanduidingsobjecten</cite>, <cite>dossiers</cite> en <cite>plannen</cite>.
+De oude categorie <cite>objecten</cite> is deprecated.</li>
+<li><strong>geometrie</strong> &#8211; (verplicht) Een GeoJSON geometry waarmee gezocht wordt. Deze parameter is verplicht.
+Een GeometryCollection kan niet gebruikt worden om mee te zoeken.
+De geometry mag niet groter zijn dan 80 km² en moet binnen Vlaanderen
+liggen (De grens van Vlaanderen is hiervoor gebufferd met 1km en versimpeld met tolerantie 500m)
+De geometry kan een eigen crs opgeven zoals normaal bij GeoJSON. Indien afwezig,
+vallen we terug op de GeoJSON specs: WGS84 (EPSG:4326).</li>
+<li><strong>buffer</strong> &#8211; Een getal dat een buffer (uitgedrukt in m) voorstelt rond een
+geometrie waarmee gezocht wordt. Enkel relevant indien er ook een
+geometrie wordt opgegeven. Dit getal moet tussen 0 en 5000 liggen. De
+geometrie gecombineerd met een buffer mogen niet groter zijn dan 80 km²</li>
+<li><strong>geef_geometrie</strong> &#8211; Boolean <cite>0</cite> of <cite>1</cite>. Standaard <cite>1</cite>.
+Geeft aan of de service ook de geometry van de gevonden afbakeningen
+moet terugsturen.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-3.1">Range</a> &#8211; Kan gebruikt worden om een zekere set van resultaten weer te geven,
+bv. <code class="docutils literal"><span class="pre">items=0-24</span></code> zal de eerste 25 resultaten opvragen.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Content-Range</span><span class="o">:</span> <span class="l">items 0-1/286</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+      <span class="nt">&quot;categorie&quot;</span><span class="p">:</span> <span class="s2">&quot;erfgoedobjecten&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Naam ergoedobject&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/erfgoedobjecten/1&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/thesauri/inventaristypes/6&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;geometrie&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MultiPolygon&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">[</span>
+                  <span class="p">[[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">]]</span>
+              <span class="p">],</span> <span class="p">[</span>
+                  <span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+              <span class="p">]</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;crs&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG:31370&quot;</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">},</span> <span class="p">{</span>
+      <span class="nt">&quot;categorie&quot;</span><span class="p">:</span> <span class="s2">&quot;aanduidingsobjecten&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Naam ergoedobject2&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/aanduidingsobjecten/2&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/thesauri/aanduidingstypes/2&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;geometrie&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MultiPolygon&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">[</span>
+                  <span class="p">[[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">]]</span>
+              <span class="p">],</span> <span class="p">[</span>
+                  <span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+              <span class="p">]</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;crs&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG:31370&quot;</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-4.2">Content-Range</a> &#8211; Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+bv. <code class="docutils literal"><span class="pre">items=0-24/306</span></code> voor de eerste 25 resultaten uit een totaal van 306.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Afbakeningen werden gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; De zoekacties kan niet worden uitgevoerd wegens problemen
+met de zoekparameters.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--afbakeningen">
+<code class="descname">POST </code><code class="descname">/afbakeningen</code><a class="headerlink" href="#post--afbakeningen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Een alternatieve manier om afbakeningen te zoeken. Met een
+<a class="reference external" href="http://tools.ietf.org/html/rfc7231#section-4.3.3">POST</a> kan de query gesteld worden door ze als JSON file op te
+nemen in de body van de request.</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span>POST /afbakeningen
+Host: localhost
+Accept: application/json
+Range: items=0-19
+
+{
+    &quot;categorie&quot;: &quot;erfgoedobjecten&quot;,
+    &quot;uri&quot;: &quot;https://id.erfgoed.net/erfgoedobjecten/156&quot;,
+    &quot;id&quot;: &quot;156&quot;,
+    &quot;type&quot;: &quot;https://id.erfgoed.net/thesauri/inventaristypes/8&quot;,
+    &quot;geometrie&quot;: {
+        &quot;type&quot;: &quot;MultiPolygon&quot;,
+        &quot;coordinates&quot;: [
+            [[[131078.11588438248,191894.5202434389],
+            [132292.5722846411,191409.89857776184],
+            [132111.37356717332,191242.3774296688],
+            [130787.15852207821,191355.16772503313],
+            [131078.11588438248,191894.5202434389]]]
+        ],
+        &quot;crs&quot;: {
+            &quot;type&quot;: &quot;name&quot;,
+            &quot;properties&quot;: {
+                &quot;name&quot;:&quot;urn:ogc:def:crs:EPSG::31370&quot;
+            }
+        }
+    }
+}
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--administratievegrenzen">
+<code class="descname">GET </code><code class="descname">/administratievegrenzen</code><a class="headerlink" href="#get--administratievegrenzen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zoek naar de administratieve grenzen van iets. Deze service gaat in
+verschillende databestanden kijken en zoekt binnen welke grenzen een query
+valt.</p>
+<p>De volgende lagen worden doorzocht:</p>
+<blockquote>
+<div><ul class="simple">
+<li>gewesten</li>
+<li>provincies</li>
+<li>arrondissementen</li>
+<li>gemeenten</li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first last simple">
+<li><strong>geometrie</strong> &#8211; (optioneel) Een GeoJSON geometry waarmee gezocht wordt. Deze parameter is verplicht.
+Een GeometryCollection kan niet gebruikt worden om mee te zoeken.
+De geometry mag niet groter zijn dan 80 km² en moet binnen Vlaanderen liggen (De grens van Vlaanderen is hiervoor gebufferd met 1km en versimpeld met tolerantie 500m)
+De geometry kan een eigen crs opgeven zoals normaal bij GeoJSON. Indien afwezig,
+vallen we terug op de GeoJSON specs: WGS84 (EPSG:4326).</li>
+<li><strong>buffer</strong> &#8211; Een getal dat een buffer (uitgedrukt in m) voorstelt rond een
+geometrie waarmee gezocht wordt. Enkel relevant indien er ook een
+geometrie wordt opgegeven.
+Dit getal moet tussen 0 en 5000 liggen. De geometrie gecombineerd
+met een buffer mogen niet groter zijn dan 80 km²</li>
+<li><strong>type</strong> &#8211; (optioneel) Eén of meerdere van de volgende opties:
+* gewest
+* arrondissement
+* provincie
+* gemeente
+Indien deze parameter niet aanwezig is, worden alle grenzen doorzocht.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span>Vraag alle gekende administratieve grenzen op.
+
+GET /administratievegrenzen HTTP/1.1
+Host: localhost
+Accept: application/json
+Range: items=0-1
+</pre></div>
+</div>
+<p><strong>Example Request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span>Vraag de gekende administratieve grenzen van het type gemeente of
+provincie op.
+
+GET /administratievegrenzen?type=gemeente&amp;type=provincie HTTP/1.1
+Host: localhost
+Accept: application/json
+Range: items=0-1
+</pre></div>
+</div>
+<p><strong>Example Response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Content-Range</span><span class="o">:</span> <span class="l">items 0-1/231</span>
+
+<span class="p">[</span>
+  <span class="p">{</span>
+      <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Gent&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;44021&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;gemeente&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;geometrie&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MultiPolygon&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">[</span>
+                  <span class="p">[[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">]]</span>
+              <span class="p">],</span> <span class="p">[</span>
+                  <span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+              <span class="p">]</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;crs&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG:31370&quot;</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">},</span> <span class="p">{</span>
+      <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Oost-Vlaanderen&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;40000&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;provincie&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;geometrie&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MultiPolygon&quot;</span><span class="p">,</span>
+          <span class="nt">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">[</span>
+                  <span class="p">[[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">45</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">]]</span>
+              <span class="p">],</span> <span class="p">[</span>
+                  <span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+              <span class="p">]</span>
+          <span class="p">],</span>
+          <span class="nt">&quot;crs&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+              <span class="nt">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;EPSG:31370&quot;</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--administratievegrenzen">
+<code class="descname">POST </code><code class="descname">/administratievegrenzen</code><a class="headerlink" href="#post--administratievegrenzen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Een alternatieve manier om administratieve grenzen te zoeken. Met een
+<a class="reference external" href="http://tools.ietf.org/html/rfc7231#section-4.3.3">POST</a> kan de query gesteld worden door ze als JSON file op te
+nemen in de body van de request.</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span>POST /administratievegrenzen
+Host: localhost
+Accept: application/json
+Range: items=0-1
+
+{
+    &quot;naam&quot;: &quot;Oost-Vlaanderen&quot;,
+    &quot;id&quot;: &quot;40000&quot;,
+    &quot;type&quot;: &quot;provincie&quot;,
+    &quot;geometrie&quot;: {
+        &quot;coordinates&quot;: [
+            [[[131078.11588438248,191894.5202434389],
+            [132292.5722846411,191409.89857776184],
+            [132111.37356717332,191242.3774296688],
+            [130787.15852207821,191355.16772503313],
+            [131078.11588438248,191894.5202434389]]]
+        ],
+        &quot;crs&quot;: {
+            &quot;type&quot;: &quot;name&quot;,
+            &quot;properties&quot;: {
+                &quot;name&quot;:&quot;urn:ogc:def:crs:EPSG::31370&quot;
+            }
+        }
+    }
+}
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+      </div>
+    </div>
+    <div class="large-3 columns">
+      
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+
+<div class="panel">
+  <h3><a href="../../../blog/">Recent Posts</a></h3>
+  <ul>
+    
+    
+      <li><a href="../../../posts/2016/atramhasis-0.5.0/">Sep 14 - Atramhasis v0.5.0 releases</a></li>
+    
+      <li><a href="../../../posts/reading-material/">Sep 07 - Reading Material</a></li>
+    
+      <li><a href="../../../posts/first-post/">Sep 07 - First Post</a></li>
+    
+  </ul>
+</div>
+<div class="panel">
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../about/">Flanders Heritage Agency - Team Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../">Public APIs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../besluiten/api/">Service Documentatie</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Service Documentatie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../actoren/api/">Service API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/">Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../projects/#applications">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../projects/#libraries">Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+<div class="panel">
+  <h3><a href="../../../blog/tag/">Tags</a></h3>
+  <style type="text/css">
+    ul.ablog-cloud {list-style: none; overflow: auto;}
+    ul.ablog-cloud li {float: left; height: 20pt; line-height: 18pt; margin-right: 5px;}
+    ul.ablog-cloud a {text-decoration: none; vertical-align: middle;}
+    li.ablog-cloud-1{font-size: 80%;}
+    li.ablog-cloud-2{font-size: 95%;}
+    li.ablog-cloud-3{font-size: 110%;}
+    li.ablog-cloud-4{font-size: 125%;}
+    li.ablog-cloud-5{font-size: 140%;}
+  </style>
+  <ul class="ablog-cloud">
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/atag/">atag</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/atramhasis/">atramhasis</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/furtherinfo/">furtherinfo</a></li>
+      
+    
+  </ul>
+</div>
+
+<div class="panel">
+  <h3><a href="../../../blog/category/">Categories</a></h3>
+  <ul>
+  
+    
+    <li><a href="../../../blog/category/releases/">releases (1)</a></li>
+    
+  
+  </ul>
+</div>
+
+<div class="panel">
+  <h3><a href="../../../blog/archive/">Archives</a></h3>
+  <ul>
+  
+    
+    <li><a href="../../../blog/2016/">2016 (3)</a></li>
+    
+  
+  </ul>
+</div>
+
+<form action="../../../search/" method="get">
+ <div class="panel fl-block-search">
+  <div class="form-group">
+   <input type="text" name="q" class="form-control" placeholder="Trefwoord ..." />
+  </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+
+  <div class="btn-group-justified">
+   <div class="btn-group">
+    <button type="submit" class="button expand" style="font-size:11px">Zoeken</button>
+   </div>
+  </div>
+ </div>
+</form>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="push"></div>
+</div> <!-- end container -->
+<!-- footer -->
+<div id="footerContainer">
+  <footer id="footer-bottom" role="contentinfo">
+    <div class="footer-bottom-inner inner">
+      <p class="copyright">
+        &#169; Copyright 2016, Flanders Heritage Agency.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+      </p>
+      <p class="pull-right">
+        <a href="#">Terug naar boven</a>
+      </p>
+    </div>
+  </footer>
+  <script type="text/javascript" src="//widgets.vlaanderen.be/widget/live/79a9f632dc8e45aa884f7924ee16f7bf?mtime=1421237274"></script>
+</div>
+<!-- end footer -->
+<script src="../../../_static/bower_components/foundation/js/foundation.min.js"></script>
+<script src="../../../_static/js/app.js"></script>
+  </body>
+</html>

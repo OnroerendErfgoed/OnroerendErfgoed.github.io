@@ -1,0 +1,822 @@
+====================
+Service Documentatie
+====================
+
+De kern van de besluitendatabank is een JSON REST service. Deze kan makkelijk
+gebruikt worden vanuit een webbrowser in AJAX calls, maar kan ook volledig
+extern gehanteerd worden.
+
+De volgende endpoints zijn gekend:
+
+Besluiten
+---------
+
+.. http:get:: /besluiten
+
+.. http:get:: /besluiten.csv
+
+    Het ophalen van een verzameling besluiten in csv formaat.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /besluiten HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: text/csv
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: text/csv
+
+        "ID","onderwerp","datum_ondertekening","datum_publicatie","datum_betekening","staatsblad (jaargang, nummer)","opmerkingen","provincies","beschermingstypes","rechtsgevolgen","uitvaardigers","personen","relaties","created_at","created_by","updated_at","updated_by","actief"
+
+        "1","Mijn besluit","2012-12-03","2012-12-04","2012-12-05","jaargang 200, nummer 74","Er valt niets op aan te merken.","West-Vlaanderen","monument","definitieve beschermingsbesluiten","ministeriële besluiten","","wordt gevolgd door Mijn tweede besluit","2014-02-26T11:47:03","anoniem","2014-03-10T10:18:30.197653","nepgebruiker","Nee"
+
+        "11","MijnTestBesluit","","","","jaargang None, nummer None","","","","","","","","2014-03-10T10:39:43.621897","nepgebruiker","2014-03-10T10:39:43.629783","nepgebruiker","Nee"
+
+        "14","MijnTestBesluit","","","","jaargang None, nummer None","","","","","","","","2014-03-10T10:55:11.122077","nepgebruiker","2014-03-10T10:55:11.130420","nepgebruiker","Nee"
+
+        "15","MijnTestBesluit","","","","jaargang None, nummer None","","","","","","","","2014-03-10T10:55:30.409993","nepgebruiker","2014-03-10T10:55:30.415831","nepgebruiker","Nee"
+
+        "12","MijnTestBesluit","","","","jaargang None, nummer None","Put opmerking","","","","","","","2014-03-10T10:40:54.360335","nepgebruiker","2014-03-10T10:43:15.804390","nepgebruiker","Nee"
+
+        "13","MijnTestBesluit","","","","jaargang None, nummer None","","","","","","","","2014-03-10T10:40:54.451180","nepgebruiker","2014-03-10T10:40:55.196727","nepgebruiker","Nee"
+
+    :query: Stel een vraag. Zal full-text gezocht worden.
+    :query onderwerp: Geef aan voor welke onderwerp er beluiten moeten gezocht worden.
+        Er zal tussen de woorden van het onderwerp gezocht worden, rekening houdend met de woordvolgorde.
+    :query provincies: Geef aan voor welke provincies er besluiten moeten gezocht worden.
+    :query beschermingstypes: Geef aan voor welke beschermingstypes er besluiten moeten gezocht worden.
+    :query uitvaardigers: Geef aan van welke uitvaardigers er besluiten moeten gezocht worden.
+    :query rechtsgevolgen: Geef aan voor welke rechtsgevolgen er besluiten moeten gezocht worden.
+    :query personen: Geef aan voor welke personen besluiten moeten gezocht worden.
+    :query jaar_ondertekening: Geef aan voor welk ondertekeningsjaar er besluiten moeten gezocht worden.
+    :query sort: Geef aan op welk veld gesorteerd moet worden. Sorteerrichting kan
+        aangegeven worden met -. bv. `id`, `-onderwerp`.
+    :query start: Vanaf het hoeveelste besluit, de besluiten worden teruggegeven. Standaard is dit 0.
+    :query aantal: Hoeveel besluiten er teruggegeven worden. Standaard is dit 1000.
+    :statuscode 200: Besluiten werden gevonden.
+
+.. http:get:: /besluiten
+
+    Het ophalen van een verzameling besluiten.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /besluiten HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+        Range: items=20-21
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+        Content-Range: items 20-21/6693
+
+        [
+            {
+               "uitvaardigers":
+               [
+               ],
+               "provincies":
+               [
+                   "40000"
+               ],
+               "actief": true,
+               "primair_bestand": 1,
+               "datum_ondertekening": "2012-12-03",
+               "id": 1,
+               "datum_publicatie": "2012-12-04",
+               "onderwerp": "Mijn besluit",
+               "personen":
+               [
+               ],
+               "beschermingstypes":
+               [
+               ],
+               "datum_betekening": "2012-12-05",
+               "rechtsgevolgen":
+               [
+               ]
+           },{
+               "uitvaardigers":
+               [
+               ],
+               "provincies":
+               [
+               ],
+               "actief": false,
+               "primair_bestand": null,
+               "datum_ondertekening": "",
+               "id": "13943",
+               "datum_publicatie": "",
+               "onderwerp": "nog nader te bepalen",
+               "personen":
+               [
+               ],
+               "beschermingstypes":
+               [
+               ],
+               "datum_betekening": "",
+               "rechtsgevolgen":
+               [
+               ]
+           }
+        ]
+
+    :query: Stel een vraag. Zal full-text gezocht worden.
+    :query onderwerp: Geef aan voor welke onderwerp er beluiten moeten gezocht worden.
+        Er zal tussen de woorden van het onderwerp gezocht worden, rekening houdend met de woordvolgorde.
+    :query provincies: Geef aan voor welke provincies er besluiten moeten gezocht worden.
+    :query beschermingstypes: Geef aan voor welke beschermingstypes er besluiten moeten gezocht worden.
+    :query uitvaardigers: Geef aan van welke uitvaardigers er besluiten moeten gezocht worden.
+    :query rechtsgevolgen: Geef aan voor welke rechtsgevolgen er besluiten moeten gezocht worden.
+    :query personen: Geef aan voor welke personen besluiten moeten gezocht worden.
+    :query jaar_ondertekening: Geef aan voor welk ondertekeningsjaar er besluiten moeten gezocht worden.
+    :query sort: Geef aan op welk veld gesorteerd moet worden. Sorteerrichting kan
+        aangegeven worden met -. bv. `id`, `-onderwerp`.
+    :query pagina: Geef aan welke pagina van de zoekresultaten moeten weergegeven
+        worden. Standaard gelijk aan *1*.
+    :reqheader Range: Kan gebruikt worden om een zekere set van resultaten weer te geven,
+        bv. ``items=0-24`` zal de eerste 25 resultaten opvragen.
+    :resheader Content-Range: Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+        bv. ``items=0-24/306`` voor de eerste 25 resultaten uit een totaal van 306.
+    :statuscode 200: Besluiten werden gevonden.
+
+.. http:post:: /besluiten
+
+    Voeg een nieuw besluit toe.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /besluiten HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+
+        {
+        "status":
+            {
+            "status":
+                {
+                "status": "Klad",
+                "id": 10
+                },
+                "opmerkingen": null,
+                "datum": "2014-03-10T10:55:11.125339",
+                "id": 28,
+                "gebruiker": "nepgebruiker"
+            },
+            "bestanden": [],
+            "nummer": null,
+            "onderwerp": "MijnTestBesluit",
+            "personen": [],
+            "beschermingstypes": [],
+            "uitvaardigers": [],
+            "rechtsgevolgen": [],
+            "provincies": [],
+            "actief": false,
+            "jaargang": null,
+            "datum_ondertekening": null,
+            "opmerkingen": "",
+            "systemfields":
+                {
+                "created_at": "2014-03-10T10:55:11.122077",
+                "updated_at": "2014-03-10T10:55:11.130420",
+                "created_by": "nepgebruiker",
+                "updated_by": "nepgebruiker"
+                },
+            "datum_betekening": null,
+            "id": ,
+            "datum_publicatie": null,
+            "relaties": []
+            }
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 201 Created
+        Location: https://besluiten.onroerenderfgoed.be/besluiten/15
+        Content-Type: application/json
+
+        {
+           "status":
+           {
+               "status":
+               {
+                   "status": "Klad",
+                   "id": 10
+               },
+               "opmerkingen": null,
+               "datum": "2014-03-10T10:55:30.412117",
+               "id": 29,
+               "gebruiker": "nepgebruiker"
+           },
+           "bestanden":
+           [
+           ],
+           "nummer": null,
+           "onderwerp": "MijnTestBesluit",
+           "personen":
+           [
+           ],
+           "beschermingstypes":
+           [
+           ],
+           "uitvaardigers":
+           [
+           ],
+           "rechtsgevolgen":
+           [
+           ],
+           "provincies":
+           [
+           ],
+           "actief": false,
+           "jaargang": null,
+           "datum_ondertekening": null,
+           "opmerkingen": "",
+           "systemfields":
+           {
+               "created_at": "2014-03-10T10:55:30.409993",
+               "updated_at": "2014-03-10T10:55:30.415831",
+               "created_by": "nepgebruiker",
+               "updated_by": "nepgebruiker"
+           },
+           "datum_betekening": null,
+           "id": 15,
+           "datum_publicatie": null,
+           "relaties":
+           [
+           ]
+        }
+
+    :statuscode 200: Besluit werd succesvol opgeslagen.
+    :statuscode 400: Het besluit kan niet worden opgeslagen.
+
+.. http:get:: /besluiten/(int:id)
+
+    Het ophalen van een besluiten met behulp van een id.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /besluiten/1 HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {
+               "status":
+               {
+                   "status":
+                   {
+                       "status": "Klad",
+                       "id": 10
+                   },
+                   "opmerkingen": null,
+                   "datum": "2013-09-27T17:46:51.364822",
+                   "id": 21460,
+                   "gebruiker": "claeyswo"
+               },
+               "bestanden":
+               [
+                   {
+                       "bestandssoort":
+                       {
+                           "id": 1,
+                           "soort": "Besluit"
+                       },
+                       "naam": "0020.pdf",
+                       "grootte": 1007823,
+                       "mime": "application/pdf",
+                       "sha256": "be359c0f21fdca28d267246804e29973daed5078026cd69a224069542f4f9e03",
+                       "id": 42169,
+                       "md5": "47e8d8ee4ca1f07edac38a8d23b7a3c6"
+                   }
+               ],
+               "nummer": null,
+               "onderwerp": "Religieuze en openbare gebouwen",
+               "personen":
+               [
+                   {
+                       "id": "51",
+                       "label":
+                       {
+                           "type": "prefLabel",
+                           "language": null,
+                           "label": "Koning Leopold III"
+                       }
+                   },
+                   {
+                       "id": "22",
+                       "label":
+                       {
+                           "type": "prefLabel",
+                           "language": null,
+                           "label": "Hoste, Julius"
+                       }
+                   }
+               ],
+               "beschermingstypes":
+               [
+                   {
+                       "id": "MON",
+                       "label":
+                       {
+                           "type": "prefLabel",
+                           "language": "nl",
+                           "label": "monument"
+                       }
+                   }
+               ],
+               "uitvaardigers":
+               [
+                   {
+                       "id": "3",
+                       "label":
+                       {
+                           "type": "prefLabel",
+                           "language": "nl-BE",
+                           "label": "koninklijke besluiten"
+                       }
+                   }
+               ],
+               "rechtsgevolgen":
+               [
+                   {
+                       "id": "13",
+                       "label":
+                       {
+                           "type": "prefLabel",
+                           "language": "nl-BE",
+                           "label": "definitieve beschermingsbesluiten"
+                       }
+                   }
+               ],
+               "provincies":
+               [
+                   {
+                       "id": "30000",
+                       "label":
+                       {
+                           "type": "prefLabel",
+                           "language": "nl",
+                           "label": "West-Vlaanderen"
+                       }
+                   }
+               ],
+               "actief": false,
+               "jaargang": null,
+               "datum_ondertekening": "1937-04-19",
+               "opmerkingen": "geen plan bij besluit; toegekend op basis van handtekening; te Wevelgem/Gistel/Brugge/Kortrijk/De Haan/Ichtegem/Zuienkerke/Oudenburg/Oostende/Jabbeke/Blankenberge/Wielsbeke/Dentergem/Harelbeke/Waregem/Veurne/Torhout/Pittem/Damme",
+               "systemfields":
+               {
+                   "created_at": "2013-09-27T17:46:51.361585",
+                   "updated_at": "2013-09-27T17:46:53.428382",
+                   "created_by": "claeyswo",
+                   "updated_by": "claeyswo"
+               },
+               "datum_betekening": null,
+               "id": 20,
+               "datum_publicatie": "1937-05-22",
+               "relaties":
+               [
+                   {
+                       "type":
+                       {
+                           "inverse": "VOORAF",
+                           "type": "wordt gevolgd door",
+                           "id": "GEVOLGD"
+                       },
+                       "id": 908
+                   },
+                   {
+                       "type":
+                       {
+                           "inverse": "VOORAF",
+                           "type": "wordt gevolgd door",
+                           "id": "GEVOLGD"
+                       },
+                       "id": 2468
+                   },
+                   {
+                       "type":
+                       {
+                           "inverse": "VOORAF",
+                           "type": "wordt gevolgd door",
+                           "id": "GEVOLGD"
+                       },
+                       "id": 736
+                   }
+               ]
+            }
+        ]
+
+    :statuscode 200: Besluit werd gevonden.
+    :statuscode 404: Besluit werd niet gevonden.
+
+.. http:delete:: /besluiten/(int:id)
+
+    Het verwijderen van een besluit met een zeker id.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        DELETE /besluiten/12 HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        {
+           "status": null,
+           "bestanden":
+           [
+           ],
+           "nummer": null,
+           "onderwerp": "MijnTestBesluit",
+           "personen":
+           [
+           ],
+           "beschermingstypes":
+           [
+           ],
+           "uitvaardigers":
+           [
+           ],
+           "rechtsgevolgen":
+           [
+           ],
+           "provincies":
+           [
+           ],
+           "actief": false,
+           "jaargang": null,
+           "datum_ondertekening": null,
+           "opmerkingen": "",
+           "systemfields":
+           {
+               "created_at": "2014-03-10T10:39:43.713533",
+               "updated_at": "2014-03-10T10:39:44.267964",
+               "created_by": "nepgebruiker",
+               "updated_by": "nepgebruiker"
+           },
+           "datum_betekening": null,
+           "id": 12,
+           "datum_publicatie": null,
+           "relaties":
+           [
+           ]
+        }
+
+    :statuscode 200: Besluit werd succesvol verwijderd.
+    :statuscode 404: Besluit werd niet gevonden.
+
+.. http:put:: /besluiten/(int:id)
+
+    Het wijzigen van een besluit met een zeker id.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        PUT /besluiten/12    HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+
+        {
+            "onderwerp": "MijnTestBesluit",
+            "opmerkingen": "Put opmerking"
+        }
+
+    **Example response**:
+
+    .. sourcecode::http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        {
+           "status":
+           {
+               "status":
+               {
+                   "status": "Klad",
+                   "id": 10
+               },
+               "opmerkingen": null,
+               "datum": "2014-03-10T10:40:54.368352",
+               "id": 26,
+               "gebruiker": "nepgebruiker"
+           },
+           "bestanden":
+           [
+           ],
+           "nummer": null,
+           "onderwerp": "MijnTestBesluit",
+           "personen":
+           [
+           ],
+           "beschermingstypes":
+           [
+           ],
+           "uitvaardigers":
+           [
+           ],
+           "rechtsgevolgen":
+           [
+           ],
+           "provincies":
+           [
+           ],
+           "actief": false,
+           "jaargang": null,
+           "datum_ondertekening": null,
+           "opmerkingen": "Put opmerking",
+           "systemfields":
+           {
+               "created_at": "2014-03-10T10:40:54.360335",
+               "updated_at": "2014-03-10T10:43:15.804390",
+               "created_by": "nepgebruiker",
+               "updated_by": "nepgebruiker"
+           },
+           "datum_betekening": null,
+           "id": 12,
+           "datum_publicatie": null,
+           "relaties":
+           [
+           ]
+        }
+
+    :statuscode 200: Het besluit werd succesvol gewijzigd.
+    :statuscode 404: Het besluit werd niet gevonden.
+    :statuscode 400: Het besluit kon niet worden opgeslagen.
+
+.. http:get:: /besluiten/(int:id)/statussen
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /besluiten/20/statussen HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+           {
+               "status":
+               {
+                   "status": "Klad",
+                   "id": 10
+               },
+               "opmerkingen": null,
+               "datum": "2013-09-27T17:46:51.364822",
+               "id": 21460,
+               "gebruiker": "claeyswo"
+           }
+        ]
+
+    :statuscode 200: Statussen werden gevonden.
+    :statuscode 404: Het besluit voor welke de statussen werden opgevraagd is niet gevonden.
+
+.. http:post:: /besluiten/(int:id)/statussen
+
+    Het aanmaken van een verzameling statussen voor een besluit met een zeker id.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /besluiten/1/statussen HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+
+        {
+            "status":
+                {
+                "status": "Klaar voor activatie",
+                "id": 25
+                },
+            "opmerkingen": "Opmerking"
+        }
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 201 Created
+        Location: https://besluiten.onroerenderfgoed.be/besluiten/1/statussen/24
+        Content-Type: application/json
+
+        {
+           "status":
+           {
+               "status": "Klaar voor activatie",
+               "id": 25
+           },
+           "opmerkingen": "Opmerking",
+           "datum": "2014-03-10T10:18:30.197858",
+           "id": 24,
+           "gebruiker": "nepgebruiker"
+        }
+
+    :statuscode 200: De status werd succesvol opgeslagen.
+    :statuscode 404: Het besluit bestaat niet en zodoende kan er dus geen status aan worden toegevoegd.
+    :statuscode 400: De status kon niet worden opgeslagen.
+
+.. http:get:: /besluiten/(int:id)/statussen/(int:status_id)
+
+    Het ophalen van een status voor een besluit met een zeker id.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /besluiten/1/statussen/21 HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        {
+           "status":
+           {
+               "status": "Klaar voor activatie",
+               "id": 25
+           },
+           "opmerkingen": "",
+           "datum": "2014-03-10T10:17:27.210203",
+           "id": 21,
+           "gebruiker": "nepgebruiker"
+        }
+
+    :statuscode 200: Status werd gevonden.
+    :statuscode 404: Status werd niet gevonden.
+
+Bestanden
+---------
+.. http:get:: /besluiten/(int:id)/bestanden
+
+    Het ophalen van een verzameling bestanden gekoppeld aan een bepaald besluit.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /besluiten/1/bestanden HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+        Range: items=0-1
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+        Content-Range: items=0-1
+
+        [
+         {
+            "bestandssoort":
+             {
+                 "id": 1,
+                 "soort": "Besluit"
+             },
+            "naam": "0020.pdf",
+            "grootte": 1007823,
+            "mime": "application/pdf",
+            "sha256": "be359c0f21fdca28d267246804e29973daed5078026cd69a224069542f4f9e03",
+            "id": 42169,
+            "md5": "47e8d8ee4ca1f07edac38a8d23b7a3c6",
+            "besluit_id": 1
+         },{
+            "bestandssoort":
+             {
+                 "id": 1,
+                 "soort": "Besluit"
+             },
+            "naam": "0030.pdf",
+            "grootte": 1007823,
+            "mime": "application/pdf",
+            "sha256": "be359c0f21fdca28d267246804e29973daed5078026cd69a224069542f4f9e03",
+            "id": 42165,
+            "md5": "47e8d8ee4ca1f07edac38a8d23b7a3c6",
+            "besluit_id": 1
+         }
+        ]
+
+    :reqheader Range: Kan gebruikt worden om een zekere set van resultaten weer te geven,
+        bv. ``items=0-24`` zal de eerste 25 resultaten opvragen.
+    :resheader Content-Range: Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+        bv. ``items=0-24`` voor de eerste 25 resultaten.
+    :statuscode 200: Bestanden werden gevonden.
+    :statuscode 404: Het besluit bestaat niet.
+
+.. http:post:: /besluiten/(int:id)/bestanden
+
+    Het aanmaken van een nieuw bestand.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /besluiten/1/bestanden HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+
+.. http:delete:: /besluiten/(int:id)bestanden/(int:id)
+
+    Het verwijderen van een bestand met een opgegeven id.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        DELETE /bestanden/1 HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        {
+           "bestandssoort":
+           {
+               "id": 1,
+               "soort": "Besluit"
+           },
+           "naam": "DOC4087.pdf",
+           "grootte": 520093,
+           "mime": "application/pdf",
+           "sha256": "502b45cb6d2baf38fc00a93066f9157d08ca4be1729794eee9e4e5acebff130c",
+           "id": 1,
+           "md5": "8e2236f17441dd39f26d302b36cbbac4"
+        }
+
+    :statuscode 200: Bestand werd succesvol verwijderd.
+    :statuscode 404: Bestand werd niet gevonden.
+
+.. http:get:: /besluiten/(int:id)/bestanden/(int:id)
+
+    Een bestand met een zeker id ophalen in pdf formaat.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /bestanden/1/bestand HTTP/1.1
+        Host: besluiten.onroerenderfgoed.be
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/pdf
+
+    :statuscode 200: Bestand werd gevonden.
+    :statuscode 404: Bestand werd niet gevonden.

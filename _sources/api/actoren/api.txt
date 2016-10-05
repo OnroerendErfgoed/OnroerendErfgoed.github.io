@@ -1,0 +1,1227 @@
+===========
+Service API
+===========
+
+Hoofdservices
+=============
+
+De belangrijkste services van de actoren databank draaien rond de actoren
+resource en dienen om deze te vinden, te lezen en te bewerken.
+
+.. http:get:: /actoren
+
+    Vraag een lijst met actoren op.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /actoren HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+        Range: items=0-1
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+        Content-Range: items 0-1/42
+
+        [
+            {
+                "naam": "Van Daele",
+                "type": {
+                    "naam": "persoon",
+                    "id": 1
+                },
+                "voornaam": "Koen",
+                "id": 1,
+                "self": "https://actoren.onroerenderfgoed.be/actoren/1",
+                "uri": "https://id.erfgoed.net/actoren/1",
+                "omschrijving": "Van Daele, Koen",
+                "status": {
+                    "status": "Klad",
+                    "id": 10
+                }
+            }, {
+                "naam": "Agentschap Onroerend Erfgoed",
+                "type": {
+                    "naam": "organisatie",
+                    "id": 2
+                },
+                "voornaam": null,
+                "id": 2,
+                "self": "https://actoren.onroerenderfgoed.be/actoren/2",
+                "uri": "https://id.erfgoed.net/actoren/2",
+                "omschrijving": "Agentschap Onroerend Erfgoed",
+                "status": {
+                    "status": "Klad",
+                    "id": 10
+                }
+            }
+        ]
+
+
+
+    :reqheader Range: Kan gebruikt worden om een zekere set van resultaten weer te geven,
+        bv. ``items=0-24`` zal de eerste 25 resultaten opvragen.
+    :resheader Content-Range: Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+        bv. ``items=0-24/306`` voor de eerste 25 resultaten uit een totaal van 306.
+
+    :query naam: Zoek naar deze naam in de velden naam en voornaam.
+    :query voornaam: Zoek een voornaam. Bv. `Koen`
+    :query type: Id van een actortype. Zoek enkel de actoren van dit type. Bv.
+        `1` (persoon) of `2` (organisatie).
+    :query organisatie: Id van een actor. Zoek enkel de actoren die deel uitmaken
+        van deze actor.
+    :query email: Email van een actor. Hier wordt exact op gefilterd.
+        Bv. `koen.vandaele@rwo.vlaanderen.be`.
+    :query telefoon: Telefoonnummer van een actor.
+    :query land: Landcode van een actor. Bv. `BE`.
+    :query postcode: Postcode van een actor. Bv. `9000`.
+    :query gemeente: Te documenteren.
+    :query gemeente_naam: Naam van een gemeente. Bv. `Gent`.
+    :query straat: Te documenteren.
+    :query straat_naam: Naam van een straat. Bv. `Paul Fredericqstraat`.
+    :query huisnummer: Te documenteren.
+    :query huisnummer_label: Label van een huisnummer. Bv. `68`
+    :query subadres: Te documenteren.
+    :query subadres_label: Label van een subadres (bv. een busnummer). Bv. `5`.
+    :query status: Status van de actor. Bv. `10`.
+    :query sort: Veld om op te sorteren. Gebruik `-` en `+` om sorteervolgorde
+        aan te duiden.
+        Bv. `id` of `+id` sorteer oplopend op `id`, `-naam` sorteer aflopend op
+        `naam`.
+
+    :statuscode 200: Actoren werden gevonden.
+    :statuscode 400: De zoekactie kan niet uitgevoerd worden wegens problemen
+        met de vraag. Bv. omdat de zoekparameters niet correct zijn.
+
+.. http:get:: /actoren/wij
+
+    Vraag een lijst met actoren die "het Agentschap" vormen op.
+
+    Deze lijst komt overeen met alle actoren die deel uitmaken van de actor
+    `Het Agentschap Onroerend Erfgoed`.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /actoren/wij?omschrijving=Koen HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {
+                "status": {"status": "Klad", "id": 10},
+                "voornaam": "Koen",
+                "naam": "Smets",
+                "self": "https://actoren.onroerenderfgoed.be/actoren/259",
+                "omschrijving": "Smets, Koen",
+                "type": {"naam": "persoon", "id": 1},
+                "id": 259,
+                "uri": "https://id.erfgoed.net/actoren/259"
+            }, {
+                "status": {"status": "Klad", "id": 10},
+                "voornaam": "Koen",
+                "naam": "Deforce",
+                "self": "https://actoren.onroerenderfgoed.be/actoren/303",
+                "omschrijving": "Deforce, Koen",
+                "type": {"naam": "persoon", "id": 1},
+                "id": 303,
+                "uri": "https://id.erfgoed.net/actoren/303"
+            }
+        ]
+
+    :query omschrijving: Filter de actoren op basis van naam en voornaam. 
+        Bv. `Koen`, `Van Daele`, `Vermey`
+
+    :statuscode 200: De zoekactie werd uitgevoerd.
+
+
+.. http:get:: /actoren/gelijkaardig
+
+    Zoek gelijkaardige actoren.
+
+    Stuur een aantal parameters naar deze endpoint en deze worden gebruikt om zo
+    gelijkaardig mogelijke actoren te vinden.
+
+    .. sourcecode:: http
+
+        GET /actoren/gelijkaardig?naam=Van Daele&voornaam=Koen&land=BE HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {
+                "status": {"status": "Klaar voor activatie", "id": 25},
+                "voornaam": "Koen",
+                "naam": "Van Daele",
+                "self": "http://actoren.onroerenderfgoed.be/actoren/1",
+                "omschrijving": "Van Daele, Koen",
+                "type": {"naam": "persoon", "id": 1},
+                "id": 1,
+                "uri": "https://id.erfgoed.net/actoren/1"
+            }
+        ]
+
+    :query naam: Naam van de actor. Bv. `Van Daele`
+    :query voornaam: Voornaam van de actor. Bv. `Maarten`
+    :query telefoon: Telefoonnummer van de actor.
+    :query email: Emailadres van de actor.
+        Bv. `wouter.claeys@rwo.vlaanderen.be`
+    :query land: Land van de actor. Bv. `BE`
+    :query gemeente: Naam (geen ID) van een gemeente. Bv. `Gent`
+
+    :statuscode 200: De zoekactie werd uitgevoerd.
+
+.. http:post:: /actoren
+
+    Voeg een nieuwe actor toe.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /actoren HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+        {
+            "naam": "Van Daele",
+            "voornaam": "voornaam",
+            "type": {
+                "naam": "persoon",
+                "id": 1
+            },
+            "afkorting": "",
+            "urls": [
+                {
+                    "url": "http://www.knokke-heist.be",
+                    "type": {
+                        "naam": "website",
+                        "id": 1
+                    }
+                }
+            ],
+            "telefoons": [
+                {
+                    "type": {
+                        "naam": "thuis",
+                        "id": 1
+                    },
+                    "nummer": "050/60.90.60"
+                }
+            ],
+            "emails": [
+                {
+                    "type": {
+                        "naam": "thuis",
+                        "id": 1
+                    },
+                    "email": "koen_van_daele@telenet.be"
+                }
+            ],
+            "opmerkingen": "opmerkingen",
+            "relaties": [
+                {
+                    "id": 2,
+                    "startdatum": "1978-09-14",
+                    "einddatum": "2005-01-20",
+                    "relatietype": {
+                        "naam": "is deel van",
+                        "id": 1,
+                        "inverse_id": 2
+                    }
+                }, {
+                    "id": 3,
+                    "einddatum": "None",
+                    "startdatum": "1978-09-14",
+                    "relatietype": {
+                        "naam": "is deel van",
+                        "id": 1,
+                        "inverse_id": 2
+                    }
+                }
+            ]
+        }
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 201 Created
+        Location: https://actoren.onroerenderfgoed.be/actoren/3
+        Content-Type: application/json
+
+        {
+            "id": 1,
+            "omschrijving": "Van Daele, Koen"
+            "naam": "Van Daele",
+            "voornaam": "Koen",
+            "type": {"naam": "persoon", "id": 1},
+            "afkorting": null,
+            "urls": [
+                {
+                    "url": "http://www.knokke-heist.be",
+                    "type": {
+                        "naam": "website",
+                        "id": 1
+                    }
+                }
+            ],
+            "telefoons": [
+                {
+                    "type": {
+                        "naam": "thuis",
+                        "id": 1
+                    },
+                    "nummer": "050/60.90.60"
+                }
+            ],
+            "emails": [
+                {
+                    "type": {
+                        "naam": "thuis",
+                        "id": 1
+                    },
+                    "email": "koen_van_daele@telenet.be"
+                }
+            ],
+            "relaties": [
+                {
+                    "id": 2,
+                    "startdatum": "1978-09-14",
+                    "einddatum": "2005-01-20",
+                    "relatietype": {
+                        "naam": "is deel van",
+                        "id": 1,
+                        "inverse_id": 2
+                    }
+                }, {
+                    "id": 3,
+                    "einddatum": "None",
+                    "startdatum": "1978-09-14",
+                    "relatietype": {
+                        "naam": "is deel van",
+                        "id": 1,
+                        "inverse_id": 2
+                    }
+                }
+            ]
+            "status": {
+                "status": {
+                    "status": "Klad",
+                    "id": 10
+                },
+                "opmerkingen": null,
+                "datum": "2015-01-27T19:32:53",
+                "gebruiker": "vandaeko"
+            },
+            "erkenningen": [],
+            "systemfields": {
+                "created_at": "2015-01-27T19:32:53",
+                "updated_at": "2015-01-27T19:32:53",
+                "created_by": "vandaeko",
+                "updated_by": "vandaeko"
+            },
+        }
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /actoren HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+        {}
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 400 Bad Request
+        Content-Type: application/json
+
+        {
+            "message": "De Actor kon niet worden opgeslagen.",
+            "errors": {
+                "naam": "Required"
+            }
+        }
+
+    :statuscode 201: De actor werd succesvol aangemaakt.
+    :statuscode 400: De actor kon niet worden opgeslagen omdat er een probleem
+        is met de doorgestuurde gegevens.
+
+.. http:get:: /actoren/(int:id)
+
+    Vraag informatie over een bestaande actor op.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /actoren/1 HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 201 Created
+        Content-Type: application/json
+
+        {
+            "created_at": "2011-05-10",
+            "updated_by": null,
+            "url": [
+                {
+                    "url": "url",
+                    "urltype": {
+                        "naam": "url",
+                        "id": 1
+                    }
+                }
+            ],
+            "naam": "naam",
+            "actortype": {
+                "naam": "actortype",
+                "id": 1
+            },
+            "telefoon": [
+                {
+                    "telefoontype": {
+                        "naam": "naam",
+                        "id": 1
+                    },
+                    "nummer": "nummer"
+                }
+            ],
+            "updated_at": "None",
+            "created_by": "created_by",
+            "email": [
+                {
+                    "emailtype": {
+                        "naam": "naam",
+                        "id": 1
+                    },
+                    "email": "nummer"
+                }
+            ],
+            "voornaam": "voornaam",
+            "afkorting": "act",
+            "opmerkingen": "opmerkingen",
+            "actorstatus": {
+                "status": {
+                    "naam": "naam",
+                    "id": 1
+                },
+                "opmerkingen": "opmerkingen",
+                "datum": "2014-07-22",
+                "gebruiker": "gebruiker"
+            },
+            "relaties": [
+                {
+                    "actor_id_to": 2,
+                    "einddatum": "2014-07-31",
+                    "startdatum": "2014-07-20",
+                    "relatietype": {
+                        "naam": "relatietype",
+                        "id": 1,
+                        "inverse_id": 2
+                    }
+                }
+            ],
+            "id": 1,
+            "erkenningen": [
+                {
+                    "erkenningsnummer": "OE/ERK/Archeoloog/1999/99999",
+                    "type": "natuurlijk persoon",
+                    "uri": "https://id.erfgoed.net/actoren/1",
+                    "omschrijving": "Van Daele, Koen"
+                }, {
+                    "erkenningsnummer": "OE/ERK/Archeoloog/2015/00001",
+                    "type": "rechtspersoon",
+                    "uri": "https://id.erfgoed.net/actoren/501",
+                    "omschrijving": "Agentschap Onroerend Erfgoed"
+                }
+            ]
+        }
+
+    :statuscode 200: De actor werd gevonden.
+    :statuscode 404: De actor kon niet worden gevonden.
+
+.. http:delete:: /actoren/(int:id)
+
+    Verwijder een bestaande actor.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        DELETE /actoren/1 HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+    :statuscode 200: De actor werd succesvol verwijderd.
+    :statuscode 404: De actor kon niet worden gevonden.
+
+.. http:put:: /actoren/(int:id)
+
+    Bewerk een bestaande actor.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        PUT /actoren/1 HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+        {
+            "created_at": "2011-05-10",
+            "updated_by": null,
+            "url": [
+                {
+                    "url": "url",
+                    "urltype": {
+                        "naam": "url",
+                        "id": 1
+                    }
+                }
+            ],
+            "naam": "naam",
+            "actortype": {
+                "naam": "actortype",
+                "id": 1
+            },
+            "telefoon": [
+                {
+                    "telefoontype": {
+                        "naam": "naam",
+                        "id": 1
+                    },
+                    "nummer": "nummer"
+                }
+            ],
+            "updated_at": "None",
+            "created_by": "created_by",
+            "email": [
+                {
+                    "emailtype": {
+                        "naam": "naam",
+                        "id": 1
+                    },
+                    "email": "num"
+                }
+            ],
+            "voornaam": "voornaam",
+            "afkorting": "act",
+            "opmerkingen": "opmerkingen",
+            "statussen": [
+                {
+                    "status": {
+                        "naam": "naam",
+                        "id": 1
+                    },
+                "opmerkingen": "opmerkingen",
+                "datum": "2014-07-22",
+                "gebruiker": "gebruiker"
+                }
+            ],
+            "relaties": [
+                {
+                    "actor_id_to": 2,
+                    "einddatum": "2014-07-31",
+                    "startdatum": "2014-07-20",
+                    "relatietype": {
+                        "naam": "relatietype",
+                        "id": 1,
+                        "inverse_id": 2
+                    }
+                }, {
+                    "actor_id_to": 3,
+                    "einddatum": "None",
+                    "startdatum": "2014-07-20",
+                    "relatietype": {
+                        "naam": "relatietype",
+                        "id": 1,
+                        "inverse_id": 2
+                    }
+                }
+            ],
+            "id": 3,
+        }
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 201 Created
+        Content-Type: application/json
+
+        {
+            "created_at": "None",
+            "updated_by": null,
+            "url": [
+                {
+                    "url": "url",
+                    "urltype": {
+                        "naam": "url",
+                        "id": 1
+                    }
+                }
+            ],
+            "naam": "naam",
+            "actortype": {
+                "naam": "actortype",
+                "id": 1
+            },
+            "telefoon": [
+                {
+                    "telefoontype": {
+                        "naam": "naam",
+                        "id": 1
+                    },
+                    "nummer": "nummer"
+                }
+            ],
+            "updated_at": "None",
+            "created_by": null,
+            "email": [
+                {
+                    "emailtype": {
+                        "naam": "naam",
+                        "id": 1
+                    },
+                    "email": "num"
+                }
+            ],
+            "voornaam": "voornaam",
+            "afkorting": "act",
+            "opmerkingen": "opmerkingen",
+            "relaties": [
+                {
+                    "actor_id_to": 2,
+                    "einddatum": "2014-07-31",
+                    "startdatum": "2014-07-20",
+                    "relatietype": {
+                        "naam": "relatietype",
+                        "id": 1,
+                        "inverse_id": 2
+                    }
+                }, {
+                    "actor_id_to": 3,
+                    "einddatum": "None",
+                    "startdatum": "2014-07-20",
+                    "relatietype": {
+                        "naam": "relatietype",
+                        "id": 1,
+                        "inverse_id": 2
+                    }
+                }
+            ],
+            "id": 2,
+            "erkenningen": []
+        }
+
+    :statuscode 200: De actor werd succesvol aangepast.
+    :statuscode 400: De actor kon niet worden aangepast omdat er een probleem
+        is met de doorgestuurde gegevens.
+    :statuscode 404: De actor werd niet gevonden.
+
+.. http:get:: /actoren/(int:id)/statussen
+
+    Vraag de statussen van een actor op.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /actoren/1/statussen HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+        Range: items=0-1
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {
+                "status": {
+                    "naam": "naam",
+                    "id": 1
+                },
+                "opmerkingen": "opmerkingen",
+                "datum": "2014-07-22",
+                "gebruiker": "gebruiker"
+            }, {
+                "status": {
+                    "naam": "naam",
+                    "id": 1
+                },
+                "opmerkingen": "opmerkingen",
+                "datum": "2014-07-22",
+                "gebruiker": "gebruiker"
+            }
+        ]
+
+    :reqheader Range: Kan gebruikt worden om een zekere set van resultaten weer te geven,
+        bv. ``items=0-24`` zal de eerste 25 resultaten opvragen.
+    :resheader Content-Range: Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+        bv. ``items=0-24/306`` voor de eerste 25 resultaten uit een totaal van 306.
+
+    :statuscode 200: Statussen werden gevonden.
+    :statuscode 404: De actor voor wie de statussen werden opgevraagd
+        kon niet gevonden worden.
+
+.. http:post:: /actoren/(int:id)/statussen
+
+    Het aanmaken van een verzameling statussen voor een bepaalde actor.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /actoren/1/statussen HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+        {
+            "status": {
+                "naam": "naam",
+                "id": 1
+            },
+            "opmerkingen": "opmerkingen",
+            "datum": "2014-07-22",
+            "gebruiker": "gebruiker"
+        }
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 201 Created
+        Location: https://actoren.onroerenderfgoed.be/actoren/1/statussen/24
+        Content-Type: application/json
+
+        {
+            "status": {
+                "naam": "naam",
+                "id": 1
+            },
+            "opmerkingen": "opmerkingen",
+            "datum": "2014-07-22",
+            "gebruiker": "gebruiker"
+        }
+
+    :statuscode 201: De status werd succesvol aangemaakt.
+    :statuscode 200: Deze status was al aangemaakt.
+    :statuscode 404: De actor bestaat niet en zodoende kan er dus geen
+        status aan worden toegevoegd.
+    :statuscode 400: De status kon niet worden opgeslagen omdat er een probleem
+        is met de doorgestuurde gegevens.
+
+.. http:get:: /actoren/(int:id)/statussen/(int:status_id)
+
+    Het ophalen van een bepaalde status voor een actor.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /actoren/1/statussen/21 HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        {
+            "status": {
+                "naam": "naam",
+                "id": 1
+            },
+            "opmerkingen": "opmerkingen",
+            "datum": "2014-07-22",
+            "gebruiker": "gebruiker"
+        }
+
+    :statuscode 200: Status werd gevonden.
+    :statuscode 404: Status werd niet gevonden (mogelijk omdat de actor niet
+        bestaat).
+
+.. http:get:: /actoren/(int:id)/adressen
+
+    Vraag de adressen van een actor op.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /actoren/1/adressen HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+        Range: items=0-1
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {
+                "omschrijving": "Nieuwstraat 68, 8300 Knokke-Heist",
+                "startdatum": "1978-09-14",
+                "einddatum": "2001-09-01"
+            }, {
+                "omschrijving": "Begijnhoflaan, 9000 Gent",
+                "startdatum": "2001-09-01",
+                "einddatum": "2004-01-01"
+            }
+        ]
+
+    :reqheader Range: Kan gebruikt worden om een zekere set van resultaten weer te geven,
+        bv. ``items=0-24`` zal de eerste 25 resultaten opvragen.
+    :resheader Content-Range: Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+        bv. ``items=0-24/306`` voor de eerste 25 resultaten uit een totaal van 306.
+
+    :statuscode 200: Adressen werden gevonden. Zelfs indien er geen adressen zijn,
+        zal er een 200 teruggegeven worden (met een lege lijst).
+    :statuscode 404: De actor voor wie de adressen werden opgevraagd
+        kon niet gevonden worden.
+
+.. http:post:: /actoren/(int:id)/adressen
+
+    Voeg een nieuw adres toe aan een actor.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /actoren/1/adressen HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+        {
+            "land": "be",
+            "gemeente_id": 191,
+            "straat_id": 48086,
+            "huisnummer_id": 887821,
+            "postcode": "8300",
+            "startdatum": "1978-09-14"
+        }
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 201 Created
+        Location: https://actoren.onroerenderfgoed.be/actoren/1/adressen/987
+        Content-Type: application/json
+
+        {
+            "land": "be",
+            "gemeente_id": 191,
+            "gemeente": "Knokke-Heist",
+            "straat_id": 48086,
+            "straat": "Nieuwstraat",
+            "huisnummer_id": 887821,
+            "huisnummer": "68",
+            "postbus": null,
+            "postcode": "8300",
+            "startdatum": "1978-09-14",
+            "einddatum": null,
+            "omschrijving": "Nieuwstraat 68, 8300 Knokke-Heist"
+        }
+
+    :statuscode 201: Het adres werd succesvol aangemaakt.
+    :statuscode 400: Het adres kon niet worden opgeslagen omdat er een probleem
+        is met de doorgestuurde gegevens.
+    :statuscode 404: De actor bestaat niet en zodoende kan er dus geen
+        adres aan worden toegevoegd.
+
+.. http:get:: /actoren/(int:id)/adressen/(int:adres_id)
+
+    Het ophalen van een bepaald adres voor een actor.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /actoren/1/adressen/987 HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        {
+            "land": "be",
+            "gemeente_id": 191,
+            "gemeente": "Knokke-Heist",
+            "straat_id": 48086,
+            "straat": "Nieuwstraat",
+            "huisnummer_id": 887821,
+            "huisnummer": "68",
+            "postbus": null,
+            "postcode": "8300",
+            "startdatum": "1978-09-14",
+            "einddatum": null,
+            "omschrijving": "Nieuwstraat 68, 8300 Knokke-Heist"
+        }
+
+    :statuscode 200: Adres werd gevonden.
+    :statuscode 404: Adres werd niet gevonden (mogelijk omdat de actor niet
+        bestaat).
+
+.. http:delete:: /actoren/(int:id)/adressen/(int:adres_id)
+
+   Het verwijderen van een bepaald adres van een actor. Dit is een redelijk
+   vergaande ingreep die enkel door bevoegde gebruikers kan gebeuren. Indien
+   een actor een nieuw adres heeft, dan moet dit worden toegevoegd en moet
+   er op het vorige adres een einddatum komen.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        DELETE /actoren/1/adressen/987 HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+    :statuscode 200: Het adres werd succesvol verwijderd.
+    :statuscode 404: Het adres bestaat niet en kan dus ook niet verwijderd worden.
+
+.. http:put:: /actoren/(int:id)/adressen/(adres_id:int)
+
+    Bewerk een adres van een actor.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        PUT /actoren/1/adressen/987 HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+        {
+            "land": "be",
+            "gemeente_id": 191,
+            "straat_id": 48086,
+            "huisnummer_id": 887821,
+            "postcode": "8300",
+            "startdatum": "1978-09-14",
+            "einddatum": "2001-09-01"
+        }
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        {
+            "land": "be",
+            "gemeente_id": 191,
+            "gemeente": "Knokke-Heist",
+            "straat_id": 48086,
+            "straat": "Nieuwstraat",
+            "huisnummer_id": 887821,
+            "huisnummer": "68",
+            "postbus": null,
+            "postcode": "8300",
+            "startdatum": "1978-09-14",
+            "einddatum": "2001-09-01",
+            "omschrijving": "Nieuwstraat 68, 8300 Knokke-Heist"
+        }
+
+    :statuscode 200: Het adres werd succesvol bewerkt.
+    :statuscode 400: Het adres kon niet worden opgeslagen omdat er een probleem
+        is met de doorgestuurde gegevens.
+    :statuscode 404: De actor bestaat niet en zodoende kan er dus geen
+        adres aan worden toegevoegd.
+
+Nevenservices
+=============
+
+
+.. http:get:: /email_types
+
+    Vraag de lijst met emailtypes op.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /email_types HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {"naam": "thuis", "id": 1},
+            {"naam": "werk", "id": 2}
+        ]
+
+    :statuscode 200: De lijst werd getoond.
+
+.. http:get:: /telephone_types
+
+    Vraag de lijst met telefoontypes op.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /telephone_types HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {"naam": "thuis", "id": 1},
+            {"naam": "werk", "id": 2},
+            {"naam": "mobiel", "id": 3},
+            {"naam": "fax thuis", "id": 4},
+            {"naam": "fax werk", "id": 5}
+        ]
+
+    :statuscode 200: De lijst werd getoond.
+
+.. http:get:: /url_types
+
+    Vraag de lijst met urltypes op.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /url_types HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {"naam": "website", "id": 1},
+            {"naam": "blog", "id": 2},
+            {"naam": "webapplicatie", "id": 3},
+        ]
+
+
+    :statuscode 200: De lijst werd getoond.
+
+.. http:get:: /actor_types
+
+    Vraag de lijst met actortypes op.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /actor_types HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {"naam": "persoon", "id": 1},
+            {"naam": "organisatie", "id": 2}
+        ]
+
+    :statuscode 200: De lijst werd getoond.
+
+.. http:get:: /relation_types
+
+    Vraag de lijst met relatietypes op.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /relation_types HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {"naam": "is deel van", "id": 1, "inverse_id": 2},
+            {"naam": "omvat", "id": 2, "inverse_id": 1}
+        ]
+
+    :statuscode 200: De lijst werd getoond.
+
+.. http:get:: /adres_types
+
+    Vraag de lijst met adrestypes op.
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /adres_types HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {"naam": "Primair", "id": 1},
+            {"naam": "Post", "id": 2}
+        ]
+
+    :statuscode 200: De lijst werd getoond.
+
+.. http:get:: /statustypes
+    :synopsis: Alle beschikbare statustypes
+
+    Toon alle beschikbare statustypes
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /statustypes HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {
+                "id": 10,
+                "naam": "Klad"
+            }, {
+                "id": 25,
+                "naam": "Klaar voor activatie"
+            }, {
+                "id": 75,
+                "naam": "Actief"
+            }, {
+                "id": 85,
+                "naam": "Te reviseren"
+            }
+        ]
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /statustypes?actief=0 HTTP/1.1
+        Host: actoren.onroerenderfgoed.be
+        Accept: application/json
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Content-Type: application/json
+
+        [
+            {
+                "id": 10,
+                "naam": "Klad"
+            }, {
+                "id": 25,
+                "naam": "Klaar voor activatie"
+            }
+        ]
+
+    :query actief: 1 of 0. Met 1 worden alle actieve statustypes (id > 50)
+        weergegeven. Met 0 alle niet-actieve statustypes (id <= 50). Zonder deze
+        parameter worden alle statustypes weergegeven.
+
+    :statuscode 200: Statustypes werden gevonden.
+

@@ -1,0 +1,1639 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Service API &#8212; Flanders Heritage - Team Information  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../../../_static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="../../../about/" />
+    <link rel="top" title="Flanders Heritage - Team Information  documentation" href="../../../" />
+    <link rel="up" title="Public APIs" href="../../" />
+    <link rel="next" title="Projects" href="../../../projects/" />
+    <link rel="prev" title="Service Documentatie" href="../../geozoekdiensten/api/" />
+  
+ 
+<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  
+  <link rel="alternate" type="application/atom+xml"  href="../../../blog/atom.xml" title="Flanders Heritage - Team Information Blog">
+  
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+    ul.postlist a {font-style: italic;}
+    ul.postlist-style-disc {list-style-type: disc;}
+    ul.postlist-style-none {list-style-type: none;}
+    ul.postlist-style-circle {list-style-type: circle;}
+  </style>
+
+  </head>
+  <body role="document">
+<!-- container -->
+<div class="container">
+  <script type="text/javascript" src="//widgets.vlaanderen.be/widget/live/5499d8dc0848446e91022c6dba9db343?mtime=1421237274"></script>
+  <!-- header -->
+
+  <!-- embed -->
+  <div class="temp-embed"></div>
+
+  <!-- large header bg image -->
+  <div class="bgimage"></div>
+
+  <!-- wrapper & responsive navigation -->
+  <div class="wrapper clearfix">
+    <div class="main-navigation-inner clearfix inner">
+
+
+
+      <!-- logo -->
+      <div class="logo-block">
+        <div class="logo-block-inner">
+          <a href="../../../">
+            <img src="../../../_static/img/pyoes/OE-vlaanderen-logo.png" width="65">
+            <h2>Vlaanderen</h2>
+            <h4>is Erfgoed</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-border"></div>
+  <div class="row">
+    <div class="large-9 columns">
+      <h3>Flanders Heritage - Team Information</h3>
+    </div>
+  </div>
+
+  <!-- end header -->
+  <div class="row">
+    
+    <div class="large-9 columns">
+      <div class="body panel" role="main">
+        
+  <div class="section" id="service-api">
+<h1>Service API<a class="headerlink" href="#service-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hoofdservices">
+<h2>Hoofdservices<a class="headerlink" href="#hoofdservices" title="Permalink to this headline">¶</a></h2>
+<p>De belangrijkste services van de actoren databank draaien rond de actoren
+resource en dienen om deze te vinden, te lezen en te bewerken.</p>
+<dl class="get">
+<dt id="get--actoren">
+<code class="descname">GET </code><code class="descname">/actoren</code><a class="headerlink" href="#get--actoren" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag een lijst met actoren op.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/actoren</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Range</span><span class="o">:</span> <span class="l">items=0-1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Content-Range</span><span class="o">:</span> <span class="l">items 0-1/42</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Van Daele&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;persoon&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;voornaam&quot;</span><span class="p">:</span> <span class="s2">&quot;Koen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;self&quot;</span><span class="p">:</span> <span class="s2">&quot;https://actoren.onroerenderfgoed.be/actoren/1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/actoren/1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Van Daele, Koen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klad&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span>
+        <span class="p">}</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Agentschap Onroerend Erfgoed&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;organisatie&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;voornaam&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nt">&quot;self&quot;</span><span class="p">:</span> <span class="s2">&quot;https://actoren.onroerenderfgoed.be/actoren/2&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/actoren/2&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Agentschap Onroerend Erfgoed&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klad&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-3.1">Range</a> &#8211; Kan gebruikt worden om een zekere set van resultaten weer te geven,
+bv. <code class="docutils literal"><span class="pre">items=0-24</span></code> zal de eerste 25 resultaten opvragen.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-4.2">Content-Range</a> &#8211; Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+bv. <code class="docutils literal"><span class="pre">items=0-24/306</span></code> voor de eerste 25 resultaten uit een totaal van 306.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>naam</strong> &#8211; Zoek naar deze naam in de velden naam en voornaam.</li>
+<li><strong>voornaam</strong> &#8211; Zoek een voornaam. Bv. <cite>Koen</cite></li>
+<li><strong>type</strong> &#8211; Id van een actortype. Zoek enkel de actoren van dit type. Bv.
+<cite>1</cite> (persoon) of <cite>2</cite> (organisatie).</li>
+<li><strong>organisatie</strong> &#8211; Id van een actor. Zoek enkel de actoren die deel uitmaken
+van deze actor.</li>
+<li><strong>email</strong> &#8211; Email van een actor. Hier wordt exact op gefilterd.
+Bv. <cite>koen.vandaele&#64;rwo.vlaanderen.be</cite>.</li>
+<li><strong>telefoon</strong> &#8211; Telefoonnummer van een actor.</li>
+<li><strong>land</strong> &#8211; Landcode van een actor. Bv. <cite>BE</cite>.</li>
+<li><strong>postcode</strong> &#8211; Postcode van een actor. Bv. <cite>9000</cite>.</li>
+<li><strong>gemeente</strong> &#8211; Te documenteren.</li>
+<li><strong>gemeente_naam</strong> &#8211; Naam van een gemeente. Bv. <cite>Gent</cite>.</li>
+<li><strong>straat</strong> &#8211; Te documenteren.</li>
+<li><strong>straat_naam</strong> &#8211; Naam van een straat. Bv. <cite>Paul Fredericqstraat</cite>.</li>
+<li><strong>huisnummer</strong> &#8211; Te documenteren.</li>
+<li><strong>huisnummer_label</strong> &#8211; Label van een huisnummer. Bv. <cite>68</cite></li>
+<li><strong>subadres</strong> &#8211; Te documenteren.</li>
+<li><strong>subadres_label</strong> &#8211; Label van een subadres (bv. een busnummer). Bv. <cite>5</cite>.</li>
+<li><strong>status</strong> &#8211; Status van de actor. Bv. <cite>10</cite>.</li>
+<li><strong>sort</strong> &#8211; Veld om op te sorteren. Gebruik <cite>-</cite> en <cite>+</cite> om sorteervolgorde
+aan te duiden.
+Bv. <cite>id</cite> of <cite>+id</cite> sorteer oplopend op <cite>id</cite>, <cite>-naam</cite> sorteer aflopend op
+<cite>naam</cite>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Actoren werden gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; De zoekactie kan niet uitgevoerd worden wegens problemen
+met de vraag. Bv. omdat de zoekparameters niet correct zijn.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--actoren-wij">
+<code class="descname">GET </code><code class="descname">/actoren/wij</code><a class="headerlink" href="#get--actoren-wij" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag een lijst met actoren die &#8220;het Agentschap&#8221; vormen op.</p>
+<p>Deze lijst komt overeen met alle actoren die deel uitmaken van de actor
+<cite>Het Agentschap Onroerend Erfgoed</cite>.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/actoren/wij?omschrijving=Koen</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klad&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+        <span class="nt">&quot;voornaam&quot;</span><span class="p">:</span> <span class="s2">&quot;Koen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Smets&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;self&quot;</span><span class="p">:</span> <span class="s2">&quot;https://actoren.onroerenderfgoed.be/actoren/259&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Smets, Koen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;persoon&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">259</span><span class="p">,</span>
+        <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/actoren/259&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klad&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
+        <span class="nt">&quot;voornaam&quot;</span><span class="p">:</span> <span class="s2">&quot;Koen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Deforce&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;self&quot;</span><span class="p">:</span> <span class="s2">&quot;https://actoren.onroerenderfgoed.be/actoren/303&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Deforce, Koen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;persoon&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">303</span><span class="p">,</span>
+        <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/actoren/303&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>omschrijving</strong> &#8211; Filter de actoren op basis van naam en voornaam.
+Bv. <cite>Koen</cite>, <cite>Van Daele</cite>, <cite>Vermey</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De zoekactie werd uitgevoerd.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--actoren-gelijkaardig">
+<code class="descname">GET </code><code class="descname">/actoren/gelijkaardig</code><a class="headerlink" href="#get--actoren-gelijkaardig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zoek gelijkaardige actoren.</p>
+<p>Stuur een aantal parameters naar deze endpoint en deze worden gebruikt om zo
+gelijkaardig mogelijke actoren te vinden.</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span>GET /actoren/gelijkaardig?naam=Van Daele&amp;voornaam=Koen&amp;land=BE HTTP/1.1
+Host: actoren.onroerenderfgoed.be
+Accept: application/json
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klaar voor activatie&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">},</span>
+        <span class="nt">&quot;voornaam&quot;</span><span class="p">:</span> <span class="s2">&quot;Koen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Van Daele&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;self&quot;</span><span class="p">:</span> <span class="s2">&quot;http://actoren.onroerenderfgoed.be/actoren/1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Van Daele, Koen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;persoon&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/actoren/1&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>naam</strong> &#8211; Naam van de actor. Bv. <cite>Van Daele</cite></li>
+<li><strong>voornaam</strong> &#8211; Voornaam van de actor. Bv. <cite>Maarten</cite></li>
+<li><strong>telefoon</strong> &#8211; Telefoonnummer van de actor.</li>
+<li><strong>email</strong> &#8211; Emailadres van de actor.
+Bv. <cite>wouter.claeys&#64;rwo.vlaanderen.be</cite></li>
+<li><strong>land</strong> &#8211; Land van de actor. Bv. <cite>BE</cite></li>
+<li><strong>gemeente</strong> &#8211; Naam (geen ID) van een gemeente. Bv. <cite>Gent</cite></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De zoekactie werd uitgevoerd.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--actoren">
+<code class="descname">POST </code><code class="descname">/actoren</code><a class="headerlink" href="#post--actoren" title="Permalink to this definition">¶</a></dt>
+<dd><p>Voeg een nieuwe actor toe.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/actoren</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+
+{
+    &quot;naam&quot;: &quot;Van Daele&quot;,
+    &quot;voornaam&quot;: &quot;voornaam&quot;,
+    &quot;type&quot;: {
+        &quot;naam&quot;: &quot;persoon&quot;,
+        &quot;id&quot;: 1
+    },
+    &quot;afkorting&quot;: &quot;&quot;,
+    &quot;urls&quot;: [
+        {
+            &quot;url&quot;: &quot;http://www.knokke-heist.be&quot;,
+            &quot;type&quot;: {
+                &quot;naam&quot;: &quot;website&quot;,
+                &quot;id&quot;: 1
+            }
+        }
+    ],
+    &quot;telefoons&quot;: [
+        {
+            &quot;type&quot;: {
+                &quot;naam&quot;: &quot;thuis&quot;,
+                &quot;id&quot;: 1
+            },
+            &quot;nummer&quot;: &quot;050/60.90.60&quot;
+        }
+    ],
+    &quot;emails&quot;: [
+        {
+            &quot;type&quot;: {
+                &quot;naam&quot;: &quot;thuis&quot;,
+                &quot;id&quot;: 1
+            },
+            &quot;email&quot;: &quot;koen_van_daele@telenet.be&quot;
+        }
+    ],
+    &quot;opmerkingen&quot;: &quot;opmerkingen&quot;,
+    &quot;relaties&quot;: [
+        {
+            &quot;id&quot;: 2,
+            &quot;startdatum&quot;: &quot;1978-09-14&quot;,
+            &quot;einddatum&quot;: &quot;2005-01-20&quot;,
+            &quot;relatietype&quot;: {
+                &quot;naam&quot;: &quot;is deel van&quot;,
+                &quot;id&quot;: 1,
+                &quot;inverse_id&quot;: 2
+            }
+        }, {
+            &quot;id&quot;: 3,
+            &quot;einddatum&quot;: &quot;None&quot;,
+            &quot;startdatum&quot;: &quot;1978-09-14&quot;,
+            &quot;relatietype&quot;: {
+                &quot;naam&quot;: &quot;is deel van&quot;,
+                &quot;id&quot;: 1,
+                &quot;inverse_id&quot;: 2
+            }
+        }
+    ]
+}
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Location</span><span class="o">:</span> <span class="l">https://actoren.onroerenderfgoed.be/actoren/3</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Van Daele, Koen&quot;</span>
+    <span class="s2">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Van Daele&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;voornaam&quot;</span><span class="p">:</span> <span class="s2">&quot;Koen&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;persoon&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="nt">&quot;afkorting&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;urls&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;http://www.knokke-heist.be&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;website&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;telefoons&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;thuis&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;nummer&quot;</span><span class="p">:</span> <span class="s2">&quot;050/60.90.60&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;emails&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;thuis&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;koen_van_daele@telenet.be&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;relaties&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;startdatum&quot;</span><span class="p">:</span> <span class="s2">&quot;1978-09-14&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;einddatum&quot;</span><span class="p">:</span> <span class="s2">&quot;2005-01-20&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;relatietype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;is deel van&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;inverse_id&quot;</span><span class="p">:</span> <span class="mi">2</span>
+            <span class="p">}</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;einddatum&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;startdatum&quot;</span><span class="p">:</span> <span class="s2">&quot;1978-09-14&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;relatietype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;is deel van&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;inverse_id&quot;</span><span class="p">:</span> <span class="mi">2</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klad&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-01-27T19:32:53&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;vandaeko&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;erkenningen&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">&quot;systemfields&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-01-27T19:32:53&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-01-27T19:32:53&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;created_by&quot;</span><span class="p">:</span> <span class="s2">&quot;vandaeko&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;updated_by&quot;</span><span class="p">:</span> <span class="s2">&quot;vandaeko&quot;</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/actoren</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+
+{}
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">400</span> <span class="ne">Bad Request</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;De Actor kon niet worden opgeslagen.&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Required&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.2">201 Created</a> &#8211; De actor werd succesvol aangemaakt.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; De actor kon niet worden opgeslagen omdat er een probleem
+is met de doorgestuurde gegevens.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--actoren-(int-id)">
+<code class="descname">GET </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#get--actoren-(int-id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag informatie over een bestaande actor op.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/actoren/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+    <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2011-05-10&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;updated_by&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;urltype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;actortype&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;actortype&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;telefoon&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;telefoontype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;nummer&quot;</span><span class="p">:</span> <span class="s2">&quot;nummer&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created_by&quot;</span><span class="p">:</span> <span class="s2">&quot;created_by&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;emailtype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;nummer&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;voornaam&quot;</span><span class="p">:</span> <span class="s2">&quot;voornaam&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;afkorting&quot;</span><span class="p">:</span> <span class="s2">&quot;act&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;opmerkingen&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;actorstatus&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;opmerkingen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-22&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;gebruiker&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;relaties&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;actor_id_to&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;einddatum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-31&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;startdatum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-20&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;relatietype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;relatietype&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;inverse_id&quot;</span><span class="p">:</span> <span class="mi">2</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;erkenningen&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;erkenningsnummer&quot;</span><span class="p">:</span> <span class="s2">&quot;OE/ERK/Archeoloog/1999/99999&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;natuurlijk persoon&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/actoren/1&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Van Daele, Koen&quot;</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;erkenningsnummer&quot;</span><span class="p">:</span> <span class="s2">&quot;OE/ERK/Archeoloog/2015/00001&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;rechtspersoon&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/actoren/501&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Agentschap Onroerend Erfgoed&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De actor werd gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; De actor kon niet worden gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="delete">
+<dt id="delete--actoren-(int-id)">
+<code class="descname">DELETE </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#delete--actoren-(int-id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verwijder een bestaande actor.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/actoren/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De actor werd succesvol verwijderd.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; De actor kon niet worden gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="put">
+<dt id="put--actoren-(int-id)">
+<code class="descname">PUT </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#put--actoren-(int-id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bewerk een bestaande actor.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/actoren/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+
+{
+    &quot;created_at&quot;: &quot;2011-05-10&quot;,
+    &quot;updated_by&quot;: null,
+    &quot;url&quot;: [
+        {
+            &quot;url&quot;: &quot;url&quot;,
+            &quot;urltype&quot;: {
+                &quot;naam&quot;: &quot;url&quot;,
+                &quot;id&quot;: 1
+            }
+        }
+    ],
+    &quot;naam&quot;: &quot;naam&quot;,
+    &quot;actortype&quot;: {
+        &quot;naam&quot;: &quot;actortype&quot;,
+        &quot;id&quot;: 1
+    },
+    &quot;telefoon&quot;: [
+        {
+            &quot;telefoontype&quot;: {
+                &quot;naam&quot;: &quot;naam&quot;,
+                &quot;id&quot;: 1
+            },
+            &quot;nummer&quot;: &quot;nummer&quot;
+        }
+    ],
+    &quot;updated_at&quot;: &quot;None&quot;,
+    &quot;created_by&quot;: &quot;created_by&quot;,
+    &quot;email&quot;: [
+        {
+            &quot;emailtype&quot;: {
+                &quot;naam&quot;: &quot;naam&quot;,
+                &quot;id&quot;: 1
+            },
+            &quot;email&quot;: &quot;num&quot;
+        }
+    ],
+    &quot;voornaam&quot;: &quot;voornaam&quot;,
+    &quot;afkorting&quot;: &quot;act&quot;,
+    &quot;opmerkingen&quot;: &quot;opmerkingen&quot;,
+    &quot;statussen&quot;: [
+        {
+            &quot;status&quot;: {
+                &quot;naam&quot;: &quot;naam&quot;,
+                &quot;id&quot;: 1
+            },
+        &quot;opmerkingen&quot;: &quot;opmerkingen&quot;,
+        &quot;datum&quot;: &quot;2014-07-22&quot;,
+        &quot;gebruiker&quot;: &quot;gebruiker&quot;
+        }
+    ],
+    &quot;relaties&quot;: [
+        {
+            &quot;actor_id_to&quot;: 2,
+            &quot;einddatum&quot;: &quot;2014-07-31&quot;,
+            &quot;startdatum&quot;: &quot;2014-07-20&quot;,
+            &quot;relatietype&quot;: {
+                &quot;naam&quot;: &quot;relatietype&quot;,
+                &quot;id&quot;: 1,
+                &quot;inverse_id&quot;: 2
+            }
+        }, {
+            &quot;actor_id_to&quot;: 3,
+            &quot;einddatum&quot;: &quot;None&quot;,
+            &quot;startdatum&quot;: &quot;2014-07-20&quot;,
+            &quot;relatietype&quot;: {
+                &quot;naam&quot;: &quot;relatietype&quot;,
+                &quot;id&quot;: 1,
+                &quot;inverse_id&quot;: 2
+            }
+        }
+    ],
+    &quot;id&quot;: 3,
+}
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+    <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;updated_by&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;urltype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;actortype&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;actortype&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;telefoon&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;telefoontype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;nummer&quot;</span><span class="p">:</span> <span class="s2">&quot;nummer&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created_by&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;emailtype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;num&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;voornaam&quot;</span><span class="p">:</span> <span class="s2">&quot;voornaam&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;afkorting&quot;</span><span class="p">:</span> <span class="s2">&quot;act&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;opmerkingen&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;relaties&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;actor_id_to&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;einddatum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-31&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;startdatum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-20&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;relatietype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;relatietype&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;inverse_id&quot;</span><span class="p">:</span> <span class="mi">2</span>
+            <span class="p">}</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;actor_id_to&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;einddatum&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;startdatum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-20&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;relatietype&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;relatietype&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;inverse_id&quot;</span><span class="p">:</span> <span class="mi">2</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;erkenningen&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De actor werd succesvol aangepast.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; De actor kon niet worden aangepast omdat er een probleem
+is met de doorgestuurde gegevens.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; De actor werd niet gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--actoren-(int-id)-statussen">
+<code class="descname">GET </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/statussen</code><a class="headerlink" href="#get--actoren-(int-id)-statussen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag de statussen van een actor op.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/actoren/1/statussen</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Range</span><span class="o">:</span> <span class="l">items=0-1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;opmerkingen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-22&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;gebruiker&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;opmerkingen&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-22&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;gebruiker&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-3.1">Range</a> &#8211; Kan gebruikt worden om een zekere set van resultaten weer te geven,
+bv. <code class="docutils literal"><span class="pre">items=0-24</span></code> zal de eerste 25 resultaten opvragen.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-4.2">Content-Range</a> &#8211; Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+bv. <code class="docutils literal"><span class="pre">items=0-24/306</span></code> voor de eerste 25 resultaten uit een totaal van 306.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Statussen werden gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; De actor voor wie de statussen werden opgevraagd
+kon niet gevonden worden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--actoren-(int-id)-statussen">
+<code class="descname">POST </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/statussen</code><a class="headerlink" href="#post--actoren-(int-id)-statussen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het aanmaken van een verzameling statussen voor een bepaalde actor.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/actoren/1/statussen</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+
+{
+    &quot;status&quot;: {
+        &quot;naam&quot;: &quot;naam&quot;,
+        &quot;id&quot;: 1
+    },
+    &quot;opmerkingen&quot;: &quot;opmerkingen&quot;,
+    &quot;datum&quot;: &quot;2014-07-22&quot;,
+    &quot;gebruiker&quot;: &quot;gebruiker&quot;
+}
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Location</span><span class="o">:</span> <span class="l">https://actoren.onroerenderfgoed.be/actoren/1/statussen/24</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;opmerkingen&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-22&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;gebruiker&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.2">201 Created</a> &#8211; De status werd succesvol aangemaakt.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Deze status was al aangemaakt.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; De actor bestaat niet en zodoende kan er dus geen
+status aan worden toegevoegd.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; De status kon niet worden opgeslagen omdat er een probleem
+is met de doorgestuurde gegevens.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--actoren-(int-id)-statussen-(int-status_id)">
+<code class="descname">GET </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/statussen/</code><span class="sig-paren">(</span><em class="property">int: </em><em>status_id</em><span class="sig-paren">)</span><a class="headerlink" href="#get--actoren-(int-id)-statussen-(int-status_id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het ophalen van een bepaalde status voor een actor.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/actoren/1/statussen/21</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+    <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;naam&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;opmerkingen&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-22&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;gebruiker&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Status werd gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Status werd niet gevonden (mogelijk omdat de actor niet
+bestaat).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--actoren-(int-id)-adressen">
+<code class="descname">GET </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/adressen</code><a class="headerlink" href="#get--actoren-(int-id)-adressen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag de adressen van een actor op.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/actoren/1/adressen</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Range</span><span class="o">:</span> <span class="l">items=0-1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Nieuwstraat 68, 8300 Knokke-Heist&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;startdatum&quot;</span><span class="p">:</span> <span class="s2">&quot;1978-09-14&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;einddatum&quot;</span><span class="p">:</span> <span class="s2">&quot;2001-09-01&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Begijnhoflaan, 9000 Gent&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;startdatum&quot;</span><span class="p">:</span> <span class="s2">&quot;2001-09-01&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;einddatum&quot;</span><span class="p">:</span> <span class="s2">&quot;2004-01-01&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-3.1">Range</a> &#8211; Kan gebruikt worden om een zekere set van resultaten weer te geven,
+bv. <code class="docutils literal"><span class="pre">items=0-24</span></code> zal de eerste 25 resultaten opvragen.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-4.2">Content-Range</a> &#8211; Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+bv. <code class="docutils literal"><span class="pre">items=0-24/306</span></code> voor de eerste 25 resultaten uit een totaal van 306.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Adressen werden gevonden. Zelfs indien er geen adressen zijn,
+zal er een 200 teruggegeven worden (met een lege lijst).</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; De actor voor wie de adressen werden opgevraagd
+kon niet gevonden worden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--actoren-(int-id)-adressen">
+<code class="descname">POST </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/adressen</code><a class="headerlink" href="#post--actoren-(int-id)-adressen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Voeg een nieuw adres toe aan een actor.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/actoren/1/adressen</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+
+{
+    &quot;land&quot;: &quot;be&quot;,
+    &quot;gemeente_id&quot;: 191,
+    &quot;straat_id&quot;: 48086,
+    &quot;huisnummer_id&quot;: 887821,
+    &quot;postcode&quot;: &quot;8300&quot;,
+    &quot;startdatum&quot;: &quot;1978-09-14&quot;
+}
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Location</span><span class="o">:</span> <span class="l">https://actoren.onroerenderfgoed.be/actoren/1/adressen/987</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+    <span class="nt">&quot;land&quot;</span><span class="p">:</span> <span class="s2">&quot;be&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;gemeente_id&quot;</span><span class="p">:</span> <span class="mi">191</span><span class="p">,</span>
+    <span class="nt">&quot;gemeente&quot;</span><span class="p">:</span> <span class="s2">&quot;Knokke-Heist&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;straat_id&quot;</span><span class="p">:</span> <span class="mi">48086</span><span class="p">,</span>
+    <span class="nt">&quot;straat&quot;</span><span class="p">:</span> <span class="s2">&quot;Nieuwstraat&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;huisnummer_id&quot;</span><span class="p">:</span> <span class="mi">887821</span><span class="p">,</span>
+    <span class="nt">&quot;huisnummer&quot;</span><span class="p">:</span> <span class="s2">&quot;68&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;postbus&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;8300&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;startdatum&quot;</span><span class="p">:</span> <span class="s2">&quot;1978-09-14&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;einddatum&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Nieuwstraat 68, 8300 Knokke-Heist&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.2">201 Created</a> &#8211; Het adres werd succesvol aangemaakt.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; Het adres kon niet worden opgeslagen omdat er een probleem
+is met de doorgestuurde gegevens.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; De actor bestaat niet en zodoende kan er dus geen
+adres aan worden toegevoegd.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--actoren-(int-id)-adressen-(int-adres_id)">
+<code class="descname">GET </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/adressen/</code><span class="sig-paren">(</span><em class="property">int: </em><em>adres_id</em><span class="sig-paren">)</span><a class="headerlink" href="#get--actoren-(int-id)-adressen-(int-adres_id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het ophalen van een bepaald adres voor een actor.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/actoren/1/adressen/987</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+    <span class="nt">&quot;land&quot;</span><span class="p">:</span> <span class="s2">&quot;be&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;gemeente_id&quot;</span><span class="p">:</span> <span class="mi">191</span><span class="p">,</span>
+    <span class="nt">&quot;gemeente&quot;</span><span class="p">:</span> <span class="s2">&quot;Knokke-Heist&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;straat_id&quot;</span><span class="p">:</span> <span class="mi">48086</span><span class="p">,</span>
+    <span class="nt">&quot;straat&quot;</span><span class="p">:</span> <span class="s2">&quot;Nieuwstraat&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;huisnummer_id&quot;</span><span class="p">:</span> <span class="mi">887821</span><span class="p">,</span>
+    <span class="nt">&quot;huisnummer&quot;</span><span class="p">:</span> <span class="s2">&quot;68&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;postbus&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;8300&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;startdatum&quot;</span><span class="p">:</span> <span class="s2">&quot;1978-09-14&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;einddatum&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Nieuwstraat 68, 8300 Knokke-Heist&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Adres werd gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Adres werd niet gevonden (mogelijk omdat de actor niet
+bestaat).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="delete">
+<dt id="delete--actoren-(int-id)-adressen-(int-adres_id)">
+<code class="descname">DELETE </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/adressen/</code><span class="sig-paren">(</span><em class="property">int: </em><em>adres_id</em><span class="sig-paren">)</span><a class="headerlink" href="#delete--actoren-(int-id)-adressen-(int-adres_id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het verwijderen van een bepaald adres van een actor. Dit is een redelijk
+vergaande ingreep die enkel door bevoegde gebruikers kan gebeuren. Indien
+een actor een nieuw adres heeft, dan moet dit worden toegevoegd en moet
+er op het vorige adres een einddatum komen.</p>
+<blockquote>
+<div><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/actoren/1/adressen/987</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">statuscode 200:</th><td class="field-body">Het adres werd succesvol verwijderd.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">statuscode 404:</th><td class="field-body">Het adres bestaat niet en kan dus ook niet verwijderd worden.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</dd></dl>
+
+<dl class="put">
+<dt id="put--actoren-(int-id)-adressen-(adres_id-int)">
+<code class="descname">PUT </code><code class="descname">/actoren/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/adressen/</code><span class="sig-paren">(</span><em class="property">adres_id: </em><em>int</em><span class="sig-paren">)</span><a class="headerlink" href="#put--actoren-(int-id)-adressen-(adres_id-int)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bewerk een adres van een actor.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/actoren/1/adressen/987</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+
+{
+    &quot;land&quot;: &quot;be&quot;,
+    &quot;gemeente_id&quot;: 191,
+    &quot;straat_id&quot;: 48086,
+    &quot;huisnummer_id&quot;: 887821,
+    &quot;postcode&quot;: &quot;8300&quot;,
+    &quot;startdatum&quot;: &quot;1978-09-14&quot;,
+    &quot;einddatum&quot;: &quot;2001-09-01&quot;
+}
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+    <span class="nt">&quot;land&quot;</span><span class="p">:</span> <span class="s2">&quot;be&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;gemeente_id&quot;</span><span class="p">:</span> <span class="mi">191</span><span class="p">,</span>
+    <span class="nt">&quot;gemeente&quot;</span><span class="p">:</span> <span class="s2">&quot;Knokke-Heist&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;straat_id&quot;</span><span class="p">:</span> <span class="mi">48086</span><span class="p">,</span>
+    <span class="nt">&quot;straat&quot;</span><span class="p">:</span> <span class="s2">&quot;Nieuwstraat&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;huisnummer_id&quot;</span><span class="p">:</span> <span class="mi">887821</span><span class="p">,</span>
+    <span class="nt">&quot;huisnummer&quot;</span><span class="p">:</span> <span class="s2">&quot;68&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;postbus&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;8300&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;startdatum&quot;</span><span class="p">:</span> <span class="s2">&quot;1978-09-14&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;einddatum&quot;</span><span class="p">:</span> <span class="s2">&quot;2001-09-01&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;omschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;Nieuwstraat 68, 8300 Knokke-Heist&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Het adres werd succesvol bewerkt.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; Het adres kon niet worden opgeslagen omdat er een probleem
+is met de doorgestuurde gegevens.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; De actor bestaat niet en zodoende kan er dus geen
+adres aan worden toegevoegd.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="nevenservices">
+<h2>Nevenservices<a class="headerlink" href="#nevenservices" title="Permalink to this headline">¶</a></h2>
+<dl class="get">
+<dt id="get--email_types">
+<code class="descname">GET </code><code class="descname">/email_types</code><a class="headerlink" href="#get--email_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag de lijst met emailtypes op.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/email_types</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;thuis&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;werk&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De lijst werd getoond.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--telephone_types">
+<code class="descname">GET </code><code class="descname">/telephone_types</code><a class="headerlink" href="#get--telephone_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag de lijst met telefoontypes op.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/telephone_types</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;thuis&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;werk&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;mobiel&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;fax thuis&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;fax werk&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De lijst werd getoond.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--url_types">
+<code class="descname">GET </code><code class="descname">/url_types</code><a class="headerlink" href="#get--url_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag de lijst met urltypes op.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/url_types</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;website&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;blog&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;webapplicatie&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De lijst werd getoond.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--actor_types">
+<code class="descname">GET </code><code class="descname">/actor_types</code><a class="headerlink" href="#get--actor_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag de lijst met actortypes op.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/actor_types</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;persoon&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;organisatie&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De lijst werd getoond.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--relation_types">
+<code class="descname">GET </code><code class="descname">/relation_types</code><a class="headerlink" href="#get--relation_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag de lijst met relatietypes op.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/relation_types</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;is deel van&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nt">&quot;inverse_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;omvat&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="nt">&quot;inverse_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De lijst werd getoond.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--adres_types">
+<code class="descname">GET </code><code class="descname">/adres_types</code><a class="headerlink" href="#get--adres_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vraag de lijst met adrestypes op.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/adres_types</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Primair&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+    <span class="p">{</span><span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Post&quot;</span><span class="p">,</span> <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De lijst werd getoond.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--statustypes">
+<code class="descname">GET </code><code class="descname">/statustypes</code><a class="headerlink" href="#get--statustypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toon alle beschikbare statustypes</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/statustypes</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Klad&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Klaar voor activatie&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Actief&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">85</span><span class="p">,</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Te reviseren&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/statustypes?actief=0</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">actoren.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Klad&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+        <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;Klaar voor activatie&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>actief</strong> &#8211; 1 of 0. Met 1 worden alle actieve statustypes (id &gt; 50)
+weergegeven. Met 0 alle niet-actieve statustypes (id &lt;= 50). Zonder deze
+parameter worden alle statustypes weergegeven.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Statustypes werden gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+      </div>
+    </div>
+    <div class="large-3 columns">
+      
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+
+<div class="panel">
+  <h3><a href="../../../blog/">Recent Posts</a></h3>
+  <ul>
+    
+    
+      <li><a href="../../../posts/2016/atramhasis-0.5.0/">Sep 14 - Atramhasis v0.5.0 releases</a></li>
+    
+      <li><a href="../../../posts/reading-material/">Sep 07 - Reading Material</a></li>
+    
+      <li><a href="../../../posts/first-post/">Sep 07 - First Post</a></li>
+    
+  </ul>
+</div>
+<div class="panel">
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../about/">Flanders Heritage Agency - Team Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../">Public APIs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../besluiten/api/">Service Documentatie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../geozoekdiensten/api/">Service Documentatie</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Service API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/">Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../projects/#applications">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../projects/#libraries">Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+<div class="panel">
+  <h3><a href="../../../blog/tag/">Tags</a></h3>
+  <style type="text/css">
+    ul.ablog-cloud {list-style: none; overflow: auto;}
+    ul.ablog-cloud li {float: left; height: 20pt; line-height: 18pt; margin-right: 5px;}
+    ul.ablog-cloud a {text-decoration: none; vertical-align: middle;}
+    li.ablog-cloud-1{font-size: 80%;}
+    li.ablog-cloud-2{font-size: 95%;}
+    li.ablog-cloud-3{font-size: 110%;}
+    li.ablog-cloud-4{font-size: 125%;}
+    li.ablog-cloud-5{font-size: 140%;}
+  </style>
+  <ul class="ablog-cloud">
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/atag/">atag</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/atramhasis/">atramhasis</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/furtherinfo/">furtherinfo</a></li>
+      
+    
+  </ul>
+</div>
+
+<div class="panel">
+  <h3><a href="../../../blog/category/">Categories</a></h3>
+  <ul>
+  
+    
+    <li><a href="../../../blog/category/releases/">releases (1)</a></li>
+    
+  
+  </ul>
+</div>
+
+<div class="panel">
+  <h3><a href="../../../blog/archive/">Archives</a></h3>
+  <ul>
+  
+    
+    <li><a href="../../../blog/2016/">2016 (3)</a></li>
+    
+  
+  </ul>
+</div>
+
+<form action="../../../search/" method="get">
+ <div class="panel fl-block-search">
+  <div class="form-group">
+   <input type="text" name="q" class="form-control" placeholder="Trefwoord ..." />
+  </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+
+  <div class="btn-group-justified">
+   <div class="btn-group">
+    <button type="submit" class="button expand" style="font-size:11px">Zoeken</button>
+   </div>
+  </div>
+ </div>
+</form>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="push"></div>
+</div> <!-- end container -->
+<!-- footer -->
+<div id="footerContainer">
+  <footer id="footer-bottom" role="contentinfo">
+    <div class="footer-bottom-inner inner">
+      <p class="copyright">
+        &#169; Copyright 2016, Flanders Heritage Agency.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+      </p>
+      <p class="pull-right">
+        <a href="#">Terug naar boven</a>
+      </p>
+    </div>
+  </footer>
+  <script type="text/javascript" src="//widgets.vlaanderen.be/widget/live/79a9f632dc8e45aa884f7924ee16f7bf?mtime=1421237274"></script>
+</div>
+<!-- end footer -->
+<script src="../../../_static/bower_components/foundation/js/foundation.min.js"></script>
+<script src="../../../_static/js/app.js"></script>
+  </body>
+</html>

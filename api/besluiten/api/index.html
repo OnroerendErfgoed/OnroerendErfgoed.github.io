@@ -1,0 +1,1120 @@
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Service Documentatie &#8212; Flanders Heritage - Team Information  documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../../../../_static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="../../../about/" />
+    <link rel="top" title="Flanders Heritage - Team Information  documentation" href="../../../" />
+    <link rel="up" title="Public APIs" href="../../" />
+    <link rel="next" title="Service Documentatie" href="../../geozoekdiensten/api/" />
+    <link rel="prev" title="Public APIs" href="../../" />
+  
+ 
+<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  
+  <link rel="alternate" type="application/atom+xml"  href="../../../blog/atom.xml" title="Flanders Heritage - Team Information Blog">
+  
+  
+  <style type="text/css">
+    ul.ablog-archive {list-style: none; overflow: auto; margin-left: 0px}
+    ul.ablog-archive li {float: left; margin-right: 5px; font-size: 80%}
+    ul.postlist a {font-style: italic;}
+    ul.postlist-style-disc {list-style-type: disc;}
+    ul.postlist-style-none {list-style-type: none;}
+    ul.postlist-style-circle {list-style-type: circle;}
+  </style>
+
+  </head>
+  <body role="document">
+<!-- container -->
+<div class="container">
+  <script type="text/javascript" src="//widgets.vlaanderen.be/widget/live/5499d8dc0848446e91022c6dba9db343?mtime=1421237274"></script>
+  <!-- header -->
+
+  <!-- embed -->
+  <div class="temp-embed"></div>
+
+  <!-- large header bg image -->
+  <div class="bgimage"></div>
+
+  <!-- wrapper & responsive navigation -->
+  <div class="wrapper clearfix">
+    <div class="main-navigation-inner clearfix inner">
+
+
+
+      <!-- logo -->
+      <div class="logo-block">
+        <div class="logo-block-inner">
+          <a href="../../../">
+            <img src="../../../_static/img/pyoes/OE-vlaanderen-logo.png" width="65">
+            <h2>Vlaanderen</h2>
+            <h4>is Erfgoed</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-border"></div>
+  <div class="row">
+    <div class="large-9 columns">
+      <h3>Flanders Heritage - Team Information</h3>
+    </div>
+  </div>
+
+  <!-- end header -->
+  <div class="row">
+    
+    <div class="large-9 columns">
+      <div class="body panel" role="main">
+        
+  <div class="section" id="service-documentatie">
+<h1>Service Documentatie<a class="headerlink" href="#service-documentatie" title="Permalink to this headline">¶</a></h1>
+<p>De kern van de besluitendatabank is een JSON REST service. Deze kan makkelijk
+gebruikt worden vanuit een webbrowser in AJAX calls, maar kan ook volledig
+extern gehanteerd worden.</p>
+<p>De volgende endpoints zijn gekend:</p>
+<div class="section" id="besluiten">
+<h2>Besluiten<a class="headerlink" href="#besluiten" title="Permalink to this headline">¶</a></h2>
+<dl class="get">
+<dt id="get--besluiten">
+<code class="descname">GET </code><code class="descname">/besluiten</code><a class="headerlink" href="#get--besluiten" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--besluiten.csv">
+<code class="descname">GET </code><code class="descname">/besluiten.csv</code><a class="headerlink" href="#get--besluiten.csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het ophalen van een verzameling besluiten in csv formaat.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/besluiten</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">text/csv</span>
+</pre></div>
+</div>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/csv</span>
+
+&quot;ID&quot;,&quot;onderwerp&quot;,&quot;datum_ondertekening&quot;,&quot;datum_publicatie&quot;,&quot;datum_betekening&quot;,&quot;staatsblad (jaargang, nummer)&quot;,&quot;opmerkingen&quot;,&quot;provincies&quot;,&quot;beschermingstypes&quot;,&quot;rechtsgevolgen&quot;,&quot;uitvaardigers&quot;,&quot;personen&quot;,&quot;relaties&quot;,&quot;created_at&quot;,&quot;created_by&quot;,&quot;updated_at&quot;,&quot;updated_by&quot;,&quot;actief&quot;
+
+&quot;1&quot;,&quot;Mijn besluit&quot;,&quot;2012-12-03&quot;,&quot;2012-12-04&quot;,&quot;2012-12-05&quot;,&quot;jaargang 200, nummer 74&quot;,&quot;Er valt niets op aan te merken.&quot;,&quot;West-Vlaanderen&quot;,&quot;monument&quot;,&quot;definitieve beschermingsbesluiten&quot;,&quot;ministeriële besluiten&quot;,&quot;&quot;,&quot;wordt gevolgd door Mijn tweede besluit&quot;,&quot;2014-02-26T11:47:03&quot;,&quot;anoniem&quot;,&quot;2014-03-10T10:18:30.197653&quot;,&quot;nepgebruiker&quot;,&quot;Nee&quot;
+
+&quot;11&quot;,&quot;MijnTestBesluit&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;jaargang None, nummer None&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;2014-03-10T10:39:43.621897&quot;,&quot;nepgebruiker&quot;,&quot;2014-03-10T10:39:43.629783&quot;,&quot;nepgebruiker&quot;,&quot;Nee&quot;
+
+&quot;14&quot;,&quot;MijnTestBesluit&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;jaargang None, nummer None&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;2014-03-10T10:55:11.122077&quot;,&quot;nepgebruiker&quot;,&quot;2014-03-10T10:55:11.130420&quot;,&quot;nepgebruiker&quot;,&quot;Nee&quot;
+
+&quot;15&quot;,&quot;MijnTestBesluit&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;jaargang None, nummer None&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;2014-03-10T10:55:30.409993&quot;,&quot;nepgebruiker&quot;,&quot;2014-03-10T10:55:30.415831&quot;,&quot;nepgebruiker&quot;,&quot;Nee&quot;
+
+&quot;12&quot;,&quot;MijnTestBesluit&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;jaargang None, nummer None&quot;,&quot;Put opmerking&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;2014-03-10T10:40:54.360335&quot;,&quot;nepgebruiker&quot;,&quot;2014-03-10T10:43:15.804390&quot;,&quot;nepgebruiker&quot;,&quot;Nee&quot;
+
+&quot;13&quot;,&quot;MijnTestBesluit&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;jaargang None, nummer None&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;&quot;,&quot;2014-03-10T10:40:54.451180&quot;,&quot;nepgebruiker&quot;,&quot;2014-03-10T10:40:55.196727&quot;,&quot;nepgebruiker&quot;,&quot;Nee&quot;
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Query:</th><td class="field-body"><p class="first">Stel een vraag. Zal full-text gezocht worden.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>onderwerp</strong> &#8211; Geef aan voor welke onderwerp er beluiten moeten gezocht worden.
+Er zal tussen de woorden van het onderwerp gezocht worden, rekening houdend met de woordvolgorde.</li>
+<li><strong>provincies</strong> &#8211; Geef aan voor welke provincies er besluiten moeten gezocht worden.</li>
+<li><strong>beschermingstypes</strong> &#8211; Geef aan voor welke beschermingstypes er besluiten moeten gezocht worden.</li>
+<li><strong>uitvaardigers</strong> &#8211; Geef aan van welke uitvaardigers er besluiten moeten gezocht worden.</li>
+<li><strong>rechtsgevolgen</strong> &#8211; Geef aan voor welke rechtsgevolgen er besluiten moeten gezocht worden.</li>
+<li><strong>personen</strong> &#8211; Geef aan voor welke personen besluiten moeten gezocht worden.</li>
+<li><strong>jaar_ondertekening</strong> &#8211; Geef aan voor welk ondertekeningsjaar er besluiten moeten gezocht worden.</li>
+<li><strong>sort</strong> &#8211; Geef aan op welk veld gesorteerd moet worden. Sorteerrichting kan
+aangegeven worden met -. bv. <cite>id</cite>, <cite>-onderwerp</cite>.</li>
+<li><strong>start</strong> &#8211; Vanaf het hoeveelste besluit, de besluiten worden teruggegeven. Standaard is dit 0.</li>
+<li><strong>aantal</strong> &#8211; Hoeveel besluiten er teruggegeven worden. Standaard is dit 1000.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Besluiten werden gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--besluiten">
+<code class="descname">GET </code><code class="descname">/besluiten</code><a class="headerlink" href="#get--besluiten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het ophalen van een verzameling besluiten.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/besluiten</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Range</span><span class="o">:</span> <span class="l">items=20-21</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Content-Range</span><span class="o">:</span> <span class="l">items 20-21/6693</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+       <span class="nt">&quot;uitvaardigers&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;provincies&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+           <span class="s2">&quot;40000&quot;</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;actief&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+       <span class="nt">&quot;primair_bestand&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+       <span class="nt">&quot;datum_ondertekening&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-12-03&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+       <span class="nt">&quot;datum_publicatie&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-12-04&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;onderwerp&quot;</span><span class="p">:</span> <span class="s2">&quot;Mijn besluit&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;personen&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;beschermingstypes&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;datum_betekening&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-12-05&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;rechtsgevolgen&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+       <span class="p">]</span>
+   <span class="p">},{</span>
+       <span class="nt">&quot;uitvaardigers&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;provincies&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;actief&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+       <span class="nt">&quot;primair_bestand&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+       <span class="nt">&quot;datum_ondertekening&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;13943&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;datum_publicatie&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;onderwerp&quot;</span><span class="p">:</span> <span class="s2">&quot;nog nader te bepalen&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;personen&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;beschermingstypes&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;datum_betekening&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;rechtsgevolgen&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+       <span class="p">]</span>
+   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Query:</th><td class="field-body"><p class="first">Stel een vraag. Zal full-text gezocht worden.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><strong>onderwerp</strong> &#8211; Geef aan voor welke onderwerp er beluiten moeten gezocht worden.
+Er zal tussen de woorden van het onderwerp gezocht worden, rekening houdend met de woordvolgorde.</li>
+<li><strong>provincies</strong> &#8211; Geef aan voor welke provincies er besluiten moeten gezocht worden.</li>
+<li><strong>beschermingstypes</strong> &#8211; Geef aan voor welke beschermingstypes er besluiten moeten gezocht worden.</li>
+<li><strong>uitvaardigers</strong> &#8211; Geef aan van welke uitvaardigers er besluiten moeten gezocht worden.</li>
+<li><strong>rechtsgevolgen</strong> &#8211; Geef aan voor welke rechtsgevolgen er besluiten moeten gezocht worden.</li>
+<li><strong>personen</strong> &#8211; Geef aan voor welke personen besluiten moeten gezocht worden.</li>
+<li><strong>jaar_ondertekening</strong> &#8211; Geef aan voor welk ondertekeningsjaar er besluiten moeten gezocht worden.</li>
+<li><strong>sort</strong> &#8211; Geef aan op welk veld gesorteerd moet worden. Sorteerrichting kan
+aangegeven worden met -. bv. <cite>id</cite>, <cite>-onderwerp</cite>.</li>
+<li><strong>pagina</strong> &#8211; Geef aan welke pagina van de zoekresultaten moeten weergegeven
+worden. Standaard gelijk aan <em>1</em>.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-3.1">Range</a> &#8211; Kan gebruikt worden om een zekere set van resultaten weer te geven,
+bv. <code class="docutils literal"><span class="pre">items=0-24</span></code> zal de eerste 25 resultaten opvragen.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-4.2">Content-Range</a> &#8211; Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+bv. <code class="docutils literal"><span class="pre">items=0-24/306</span></code> voor de eerste 25 resultaten uit een totaal van 306.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Besluiten werden gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--besluiten">
+<code class="descname">POST </code><code class="descname">/besluiten</code><a class="headerlink" href="#post--besluiten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Voeg een nieuw besluit toe.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/besluiten</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+
+{
+&quot;status&quot;:
+    {
+    &quot;status&quot;:
+        {
+        &quot;status&quot;: &quot;Klad&quot;,
+        &quot;id&quot;: 10
+        },
+        &quot;opmerkingen&quot;: null,
+        &quot;datum&quot;: &quot;2014-03-10T10:55:11.125339&quot;,
+        &quot;id&quot;: 28,
+        &quot;gebruiker&quot;: &quot;nepgebruiker&quot;
+    },
+    &quot;bestanden&quot;: [],
+    &quot;nummer&quot;: null,
+    &quot;onderwerp&quot;: &quot;MijnTestBesluit&quot;,
+    &quot;personen&quot;: [],
+    &quot;beschermingstypes&quot;: [],
+    &quot;uitvaardigers&quot;: [],
+    &quot;rechtsgevolgen&quot;: [],
+    &quot;provincies&quot;: [],
+    &quot;actief&quot;: false,
+    &quot;jaargang&quot;: null,
+    &quot;datum_ondertekening&quot;: null,
+    &quot;opmerkingen&quot;: &quot;&quot;,
+    &quot;systemfields&quot;:
+        {
+        &quot;created_at&quot;: &quot;2014-03-10T10:55:11.122077&quot;,
+        &quot;updated_at&quot;: &quot;2014-03-10T10:55:11.130420&quot;,
+        &quot;created_by&quot;: &quot;nepgebruiker&quot;,
+        &quot;updated_by&quot;: &quot;nepgebruiker&quot;
+        },
+    &quot;datum_betekening&quot;: null,
+    &quot;id&quot;: ,
+    &quot;datum_publicatie&quot;: null,
+    &quot;relaties&quot;: []
+    }
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Location</span><span class="o">:</span> <span class="l">https://besluiten.onroerenderfgoed.be/besluiten/15</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+   <span class="nt">&quot;status&quot;</span><span class="p">:</span>
+   <span class="p">{</span>
+       <span class="nt">&quot;status&quot;</span><span class="p">:</span>
+       <span class="p">{</span>
+           <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klad&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+       <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-03-10T10:55:30.412117&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span>
+       <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;nepgebruiker&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;bestanden&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;nummer&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;onderwerp&quot;</span><span class="p">:</span> <span class="s2">&quot;MijnTestBesluit&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;personen&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;beschermingstypes&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;uitvaardigers&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;rechtsgevolgen&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;provincies&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;actief&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;jaargang&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;datum_ondertekening&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;systemfields&quot;</span><span class="p">:</span>
+   <span class="p">{</span>
+       <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-03-10T10:55:30.409993&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-03-10T10:55:30.415831&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;created_by&quot;</span><span class="p">:</span> <span class="s2">&quot;nepgebruiker&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;updated_by&quot;</span><span class="p">:</span> <span class="s2">&quot;nepgebruiker&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;datum_betekening&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+   <span class="nt">&quot;datum_publicatie&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;relaties&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Besluit werd succesvol opgeslagen.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; Het besluit kan niet worden opgeslagen.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--besluiten-(int-id)">
+<code class="descname">GET </code><code class="descname">/besluiten/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#get--besluiten-(int-id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het ophalen van een besluiten met behulp van een id.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/besluiten/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+       <span class="nt">&quot;status&quot;</span><span class="p">:</span>
+       <span class="p">{</span>
+           <span class="nt">&quot;status&quot;</span><span class="p">:</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klad&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span>
+           <span class="p">},</span>
+           <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+           <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-09-27T17:46:51.364822&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">21460</span><span class="p">,</span>
+           <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;claeyswo&quot;</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;bestanden&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;bestandssoort&quot;</span><span class="p">:</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                   <span class="nt">&quot;soort&quot;</span><span class="p">:</span> <span class="s2">&quot;Besluit&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;0020.pdf&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;grootte&quot;</span><span class="p">:</span> <span class="mi">1007823</span><span class="p">,</span>
+               <span class="nt">&quot;mime&quot;</span><span class="p">:</span> <span class="s2">&quot;application/pdf&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;sha256&quot;</span><span class="p">:</span> <span class="s2">&quot;be359c0f21fdca28d267246804e29973daed5078026cd69a224069542f4f9e03&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">42169</span><span class="p">,</span>
+               <span class="nt">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;47e8d8ee4ca1f07edac38a8d23b7a3c6&quot;</span>
+           <span class="p">}</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;nummer&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+       <span class="nt">&quot;onderwerp&quot;</span><span class="p">:</span> <span class="s2">&quot;Religieuze en openbare gebouwen&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;personen&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;51&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;label&quot;</span><span class="p">:</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;prefLabel&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Koning Leopold III&quot;</span>
+               <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;22&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;label&quot;</span><span class="p">:</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;prefLabel&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+                   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Hoste, Julius&quot;</span>
+               <span class="p">}</span>
+           <span class="p">}</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;beschermingstypes&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;MON&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;label&quot;</span><span class="p">:</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;prefLabel&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;nl&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;monument&quot;</span>
+               <span class="p">}</span>
+           <span class="p">}</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;uitvaardigers&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;label&quot;</span><span class="p">:</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;prefLabel&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;nl-BE&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;koninklijke besluiten&quot;</span>
+               <span class="p">}</span>
+           <span class="p">}</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;rechtsgevolgen&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;13&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;label&quot;</span><span class="p">:</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;prefLabel&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;nl-BE&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;definitieve beschermingsbesluiten&quot;</span>
+               <span class="p">}</span>
+           <span class="p">}</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;provincies&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;30000&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;label&quot;</span><span class="p">:</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;prefLabel&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;nl&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;West-Vlaanderen&quot;</span>
+               <span class="p">}</span>
+           <span class="p">}</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;actief&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+       <span class="nt">&quot;jaargang&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+       <span class="nt">&quot;datum_ondertekening&quot;</span><span class="p">:</span> <span class="s2">&quot;1937-04-19&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;geen plan bij besluit; toegekend op basis van handtekening; te Wevelgem/Gistel/Brugge/Kortrijk/De Haan/Ichtegem/Zuienkerke/Oudenburg/Oostende/Jabbeke/Blankenberge/Wielsbeke/Dentergem/Harelbeke/Waregem/Veurne/Torhout/Pittem/Damme&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;systemfields&quot;</span><span class="p">:</span>
+       <span class="p">{</span>
+           <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-09-27T17:46:51.361585&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-09-27T17:46:53.428382&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;created_by&quot;</span><span class="p">:</span> <span class="s2">&quot;claeyswo&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;updated_by&quot;</span><span class="p">:</span> <span class="s2">&quot;claeyswo&quot;</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;datum_betekening&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+       <span class="nt">&quot;datum_publicatie&quot;</span><span class="p">:</span> <span class="s2">&quot;1937-05-22&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;relaties&quot;</span><span class="p">:</span>
+       <span class="p">[</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;inverse&quot;</span><span class="p">:</span> <span class="s2">&quot;VOORAF&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;wordt gevolgd door&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;GEVOLGD&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">908</span>
+           <span class="p">},</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;inverse&quot;</span><span class="p">:</span> <span class="s2">&quot;VOORAF&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;wordt gevolgd door&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;GEVOLGD&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2468</span>
+           <span class="p">},</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;inverse&quot;</span><span class="p">:</span> <span class="s2">&quot;VOORAF&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;wordt gevolgd door&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;GEVOLGD&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">736</span>
+           <span class="p">}</span>
+       <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Besluit werd gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Besluit werd niet gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="delete">
+<dt id="delete--besluiten-(int-id)">
+<code class="descname">DELETE </code><code class="descname">/besluiten/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#delete--besluiten-(int-id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het verwijderen van een besluit met een zeker id.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/besluiten/12</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+   <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;bestanden&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;nummer&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;onderwerp&quot;</span><span class="p">:</span> <span class="s2">&quot;MijnTestBesluit&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;personen&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;beschermingstypes&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;uitvaardigers&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;rechtsgevolgen&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;provincies&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;actief&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+   <span class="nt">&quot;jaargang&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;datum_ondertekening&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;systemfields&quot;</span><span class="p">:</span>
+   <span class="p">{</span>
+       <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-03-10T10:39:43.713533&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;updated_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-03-10T10:39:44.267964&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;created_by&quot;</span><span class="p">:</span> <span class="s2">&quot;nepgebruiker&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;updated_by&quot;</span><span class="p">:</span> <span class="s2">&quot;nepgebruiker&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;datum_betekening&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+   <span class="nt">&quot;datum_publicatie&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+   <span class="nt">&quot;relaties&quot;</span><span class="p">:</span>
+   <span class="p">[</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Besluit werd succesvol verwijderd.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Besluit werd niet gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="put">
+<dt id="put--besluiten-(int-id)">
+<code class="descname">PUT </code><code class="descname">/besluiten/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#put--besluiten-(int-id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het wijzigen van een besluit met een zeker id.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">PUT</span> <span class="nn">/besluiten/12</span>    <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+
+{
+    &quot;onderwerp&quot;: &quot;MijnTestBesluit&quot;,
+    &quot;opmerkingen&quot;: &quot;Put opmerking&quot;
+}
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Het besluit werd succesvol gewijzigd.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Het besluit werd niet gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; Het besluit kon niet worden opgeslagen.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--besluiten-(int-id)-statussen">
+<code class="descname">GET </code><code class="descname">/besluiten/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/statussen</code><a class="headerlink" href="#get--besluiten-(int-id)-statussen" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/besluiten/20/statussen</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">[</span>
+   <span class="p">{</span>
+       <span class="nt">&quot;status&quot;</span><span class="p">:</span>
+       <span class="p">{</span>
+           <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klad&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">10</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+       <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-09-27T17:46:51.364822&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">21460</span><span class="p">,</span>
+       <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;claeyswo&quot;</span>
+   <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Statussen werden gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Het besluit voor welke de statussen werden opgevraagd is niet gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--besluiten-(int-id)-statussen">
+<code class="descname">POST </code><code class="descname">/besluiten/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/statussen</code><a class="headerlink" href="#post--besluiten-(int-id)-statussen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het aanmaken van een verzameling statussen voor een besluit met een zeker id.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/besluiten/1/statussen</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+
+{
+    &quot;status&quot;:
+        {
+        &quot;status&quot;: &quot;Klaar voor activatie&quot;,
+        &quot;id&quot;: 25
+        },
+    &quot;opmerkingen&quot;: &quot;Opmerking&quot;
+}
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">201</span> <span class="ne">Created</span>
+<span class="na">Location</span><span class="o">:</span> <span class="l">https://besluiten.onroerenderfgoed.be/besluiten/1/statussen/24</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+   <span class="nt">&quot;status&quot;</span><span class="p">:</span>
+   <span class="p">{</span>
+       <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klaar voor activatie&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">25</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;Opmerking&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-03-10T10:18:30.197858&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+   <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;nepgebruiker&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; De status werd succesvol opgeslagen.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Het besluit bestaat niet en zodoende kan er dus geen status aan worden toegevoegd.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> &#8211; De status kon niet worden opgeslagen.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--besluiten-(int-id)-statussen-(int-status_id)">
+<code class="descname">GET </code><code class="descname">/besluiten/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/statussen/</code><span class="sig-paren">(</span><em class="property">int: </em><em>status_id</em><span class="sig-paren">)</span><a class="headerlink" href="#get--besluiten-(int-id)-statussen-(int-status_id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het ophalen van een status voor een besluit met een zeker id.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/besluiten/1/statussen/21</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+   <span class="nt">&quot;status&quot;</span><span class="p">:</span>
+   <span class="p">{</span>
+       <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Klaar voor activatie&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">25</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;opmerkingen&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;datum&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-03-10T10:17:27.210203&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
+   <span class="nt">&quot;gebruiker&quot;</span><span class="p">:</span> <span class="s2">&quot;nepgebruiker&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Status werd gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Status werd niet gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="bestanden">
+<h2>Bestanden<a class="headerlink" href="#bestanden" title="Permalink to this headline">¶</a></h2>
+<dl class="get">
+<dt id="get--besluiten-(int-id)-bestanden">
+<code class="descname">GET </code><code class="descname">/besluiten/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/bestanden</code><a class="headerlink" href="#get--besluiten-(int-id)-bestanden" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het ophalen van een verzameling bestanden gekoppeld aan een bepaald besluit.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/besluiten/1/bestanden</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Range</span><span class="o">:</span> <span class="l">items=0-1</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<span class="na">Content-Range</span><span class="o">:</span> <span class="l">items=0-1</span>
+
+<span class="p">[</span>
+ <span class="p">{</span>
+    <span class="nt">&quot;bestandssoort&quot;</span><span class="p">:</span>
+     <span class="p">{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&quot;soort&quot;</span><span class="p">:</span> <span class="s2">&quot;Besluit&quot;</span>
+     <span class="p">},</span>
+    <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;0020.pdf&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;grootte&quot;</span><span class="p">:</span> <span class="mi">1007823</span><span class="p">,</span>
+    <span class="nt">&quot;mime&quot;</span><span class="p">:</span> <span class="s2">&quot;application/pdf&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sha256&quot;</span><span class="p">:</span> <span class="s2">&quot;be359c0f21fdca28d267246804e29973daed5078026cd69a224069542f4f9e03&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">42169</span><span class="p">,</span>
+    <span class="nt">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;47e8d8ee4ca1f07edac38a8d23b7a3c6&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;besluit_id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+ <span class="p">},{</span>
+    <span class="nt">&quot;bestandssoort&quot;</span><span class="p">:</span>
+     <span class="p">{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">&quot;soort&quot;</span><span class="p">:</span> <span class="s2">&quot;Besluit&quot;</span>
+     <span class="p">},</span>
+    <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;0030.pdf&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;grootte&quot;</span><span class="p">:</span> <span class="mi">1007823</span><span class="p">,</span>
+    <span class="nt">&quot;mime&quot;</span><span class="p">:</span> <span class="s2">&quot;application/pdf&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sha256&quot;</span><span class="p">:</span> <span class="s2">&quot;be359c0f21fdca28d267246804e29973daed5078026cd69a224069542f4f9e03&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">42165</span><span class="p">,</span>
+    <span class="nt">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;47e8d8ee4ca1f07edac38a8d23b7a3c6&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;besluit_id&quot;</span><span class="p">:</span> <span class="mi">1</span>
+ <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Request Headers:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-3.1">Range</a> &#8211; Kan gebruikt worden om een zekere set van resultaten weer te geven,
+bv. <code class="docutils literal"><span class="pre">items=0-24</span></code> zal de eerste 25 resultaten opvragen.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Response Headers:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><ul class="first simple">
+<li><a class="reference external" href="http://tools.ietf.org/html/rfc7233#section-4.2">Content-Range</a> &#8211; Laat de gebruiker weten wat de reikwijdte is van de resultaten die worden teruggegeven,
+bv. <code class="docutils literal"><span class="pre">items=0-24</span></code> voor de eerste 25 resultaten.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Bestanden werden gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Het besluit bestaat niet.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--besluiten-(int-id)-bestanden">
+<code class="descname">POST </code><code class="descname">/besluiten/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/bestanden</code><a class="headerlink" href="#post--besluiten-(int-id)-bestanden" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het aanmaken van een nieuw bestand.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/besluiten/1/bestanden</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="delete">
+<dt id="delete--besluiten-(int-id)bestanden-(int-id)">
+<code class="descname">DELETE </code><code class="descname">/besluiten/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">bestanden/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#delete--besluiten-(int-id)bestanden-(int-id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Het verwijderen van een bestand met een opgegeven id.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">DELETE</span> <span class="nn">/bestanden/1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+<span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+   <span class="nt">&quot;bestandssoort&quot;</span><span class="p">:</span>
+   <span class="p">{</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+       <span class="nt">&quot;soort&quot;</span><span class="p">:</span> <span class="s2">&quot;Besluit&quot;</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;DOC4087.pdf&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;grootte&quot;</span><span class="p">:</span> <span class="mi">520093</span><span class="p">,</span>
+   <span class="nt">&quot;mime&quot;</span><span class="p">:</span> <span class="s2">&quot;application/pdf&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;sha256&quot;</span><span class="p">:</span> <span class="s2">&quot;502b45cb6d2baf38fc00a93066f9157d08ca4be1729794eee9e4e5acebff130c&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="nt">&quot;md5&quot;</span><span class="p">:</span> <span class="s2">&quot;8e2236f17441dd39f26d302b36cbbac4&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Bestand werd succesvol verwijderd.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Bestand werd niet gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--besluiten-(int-id)-bestanden-(int-id)">
+<code class="descname">GET </code><code class="descname">/besluiten/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><code class="descname">/bestanden/</code><span class="sig-paren">(</span><em class="property">int: </em><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#get--besluiten-(int-id)-bestanden-(int-id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Een bestand met een zeker id ophalen in pdf formaat.</p>
+<p><strong>Example request</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="nf">GET</span> <span class="nn">/bestanden/1/bestand</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">besluiten.onroerenderfgoed.be</span>
+</pre></div>
+</div>
+<p><strong>Example response</strong>:</p>
+<div class="highlight-http"><div class="highlight"><pre><span></span><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/pdf</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1">200 OK</a> &#8211; Bestand werd gevonden.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> &#8211; Bestand werd niet gevonden.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+  <div class="section">
+  
+  
+  </div>
+
+      </div>
+    </div>
+    <div class="large-3 columns">
+      
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+
+<div class="panel">
+  <h3><a href="../../../blog/">Recent Posts</a></h3>
+  <ul>
+    
+    
+      <li><a href="../../../posts/2016/atramhasis-0.5.0/">Sep 14 - Atramhasis v0.5.0 releases</a></li>
+    
+      <li><a href="../../../posts/reading-material/">Sep 07 - Reading Material</a></li>
+    
+      <li><a href="../../../posts/first-post/">Sep 07 - First Post</a></li>
+    
+  </ul>
+</div>
+<div class="panel">
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../about/">Flanders Heritage Agency - Team Information</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../">Public APIs</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Service Documentatie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../geozoekdiensten/api/">Service Documentatie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../actoren/api/">Service API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../projects/">Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../projects/#applications">Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../projects/#libraries">Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+<div class="panel">
+  <h3><a href="../../../blog/tag/">Tags</a></h3>
+  <style type="text/css">
+    ul.ablog-cloud {list-style: none; overflow: auto;}
+    ul.ablog-cloud li {float: left; height: 20pt; line-height: 18pt; margin-right: 5px;}
+    ul.ablog-cloud a {text-decoration: none; vertical-align: middle;}
+    li.ablog-cloud-1{font-size: 80%;}
+    li.ablog-cloud-2{font-size: 95%;}
+    li.ablog-cloud-3{font-size: 110%;}
+    li.ablog-cloud-4{font-size: 125%;}
+    li.ablog-cloud-5{font-size: 140%;}
+  </style>
+  <ul class="ablog-cloud">
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/atag/">atag</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/atramhasis/">atramhasis</a></li>
+      
+    
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/furtherinfo/">furtherinfo</a></li>
+      
+    
+  </ul>
+</div>
+
+<div class="panel">
+  <h3><a href="../../../blog/category/">Categories</a></h3>
+  <ul>
+  
+    
+    <li><a href="../../../blog/category/releases/">releases (1)</a></li>
+    
+  
+  </ul>
+</div>
+
+<div class="panel">
+  <h3><a href="../../../blog/archive/">Archives</a></h3>
+  <ul>
+  
+    
+    <li><a href="../../../blog/2016/">2016 (3)</a></li>
+    
+  
+  </ul>
+</div>
+
+<form action="../../../search/" method="get">
+ <div class="panel fl-block-search">
+  <div class="form-group">
+   <input type="text" name="q" class="form-control" placeholder="Trefwoord ..." />
+  </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+
+  <div class="btn-group-justified">
+   <div class="btn-group">
+    <button type="submit" class="button expand" style="font-size:11px">Zoeken</button>
+   </div>
+  </div>
+ </div>
+</form>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="push"></div>
+</div> <!-- end container -->
+<!-- footer -->
+<div id="footerContainer">
+  <footer id="footer-bottom" role="contentinfo">
+    <div class="footer-bottom-inner inner">
+      <p class="copyright">
+        &#169; Copyright 2016, Flanders Heritage Agency.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+      </p>
+      <p class="pull-right">
+        <a href="#">Terug naar boven</a>
+      </p>
+    </div>
+  </footer>
+  <script type="text/javascript" src="//widgets.vlaanderen.be/widget/live/79a9f632dc8e45aa884f7924ee16f7bf?mtime=1421237274"></script>
+</div>
+<!-- end footer -->
+<script src="../../../_static/bower_components/foundation/js/foundation.min.js"></script>
+<script src="../../../_static/js/app.js"></script>
+  </body>
+</html>

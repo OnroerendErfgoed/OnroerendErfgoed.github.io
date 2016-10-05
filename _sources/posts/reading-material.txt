@@ -1,0 +1,16 @@
+
+.. post:: Sep 07, 2016
+   :tags: furtherinfo
+   :category: 
+   :author: Koen Van Daele
+
+Reading Material
+================
+
+Hi all. Some stuff to read:
+
+* Lorem
+* Ipsum
+* Dolorem
+* Blablabla
+
