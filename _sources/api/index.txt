@@ -6,6 +6,4 @@ Public APIs
 
 .. toctree::
 
-   besluiten/api.rst
    geozoekdiensten/api.rst
-   actoren/api.rst
