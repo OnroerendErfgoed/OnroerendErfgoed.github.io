@@ -1,7 +1,8 @@
 .. post:: 2017-03-14
-   :tags: GIS
+   :tags: geoportaal, geoserver
    :author: Koen Van Daele
    :language: nl
+   :category: GIS
 
 Waar ligt ons Erfgoed?
 ======================
