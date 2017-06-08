@@ -89,8 +89,7 @@
         
   <div class="section" id="geozoekdiensten-wat-ligt-er-hier">
 <h1>Geozoekdiensten. Wat ligt er hier?<a class="headerlink" href="#geozoekdiensten-wat-ligt-er-hier" title="Permalink to this headline">¶</a></h1>
-<p><em>WIP Bevat nog fouten</em></p>
-<p>Zoals beloofd (<a class="reference internal" href="../waar-ligt-ons-erfgoed/#waar-ligt-ons-erfgoed"><span class="std std-ref">Waar ligt ons Erfgoed?</span></a>) geven we je graag wat meer informatie over onze
+<p>Zoals beloogfd (<a class="reference internal" href="../waar-ligt-ons-erfgoed/#waar-ligt-ons-erfgoed"><span class="std std-ref">Waar ligt ons Erfgoed?</span></a>) geven we je graag wat meer informatie over onze
 Geozoekdiensten. Deze zoekdiensten bestaan momenteel uit één enkele webservice
 die uitermate geschikt is om één enkele vraag te beantwoorden: <cite>Wat ligt er in
 een bepaald gebied?</cite>. De gebruiker of client stuurt een geometrie naar de
@@ -9726,16 +9725,16 @@ service ook laten weten dat je deze niet wenst te ontvangen:</p>
 in filteren met de parameter <cite>categorie</cite>. Hierin heb je verschillende
 mogelijkheden:</p>
 <ul class="simple">
-<li>Erfgoedobjecten: Deze categorie bevat alle inhoudelijke objecten die met
+<li><strong>Erfgoedobjecten</strong>: Deze categorie bevat alle inhoudelijke objecten die met
 erfgoed te maken hebben. Dit zijn de <cite>wetenschappelijke inventarissen</cite>.</li>
-<li>Aanduidingsobjecten: De aanduidingsobjecten of aanduidingen zijn de juridische
-verankeringen van erfgoedobjecten. Deze kunnen zowel beschermd als vastgesteld
-zijn (wat je dan weer kunt afleiden uit de URI&#8217;s van de types.</li>
-<li>Plannen: Deze categorie bevat nu enkel de beheerplannen en zal op termijn
-uitgebreid worden met de erfgoedrichtplannen</li>
+<li><strong>Aanduidingsobjecten</strong>: De aanduidingsobjecten of aanduidingen zijn de juridische
+verankeringen van erfgoedobjecten. Deze kunnen zowel <cite>beschermd</cite> als <cite>vastgesteld</cite>
+zijn (wat je dan weer kunt afleiden uit de URI&#8217;s van de types).</li>
+<li><strong>Plannen</strong>: Deze categorie bevat nu enkel de <cite>beheersplannen</cite> en zal op termijn
+uitgebreid worden met de <cite>erfgoedrichtplannen</cite></li>
 </ul>
 <p>Stel dat je enkel de objecten wenst te zien die aangeduid zijn:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -X GET https://geo.onroerenderfgoed.be/zoekdiensten/afbakeningen?<span class="p">&amp;</span><span class="nv">buffer</span><span class="o">=</span>100<span class="p">&amp;</span><span class="nv">geef_geomtrie</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">categorie</span><span class="o">=</span>aanduidingsobjecten
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -X GET https://geo.onroerenderfgoed.be/zoekdiensten/afbakeningen?<span class="p">&amp;</span><span class="nv">buffer</span><span class="o">=</span>100<span class="p">&amp;</span><span class="nv">geef_geometrie</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">categorie</span><span class="o">=</span>aanduidingsobjecten
 </pre></div>
 </div>
 <p>In dat geval krijg je dus enkel beschermingen, vaststellingen of
@@ -9762,21 +9761,6 @@ bijkomende noden hebben.</p>
     
 
 
-<div class="section">
-  <span style="float: left;">
-  
-  
-  <a href="../waar-ligt-ons-erfgoed/">
-    <i class="fa fa-arrow-circle-left"></i>
-    Waar ligt ons Erfgoed?
-  </a>
-  
-  </span>
-  <span>&nbsp;</span>
-  <span style="float: right;">
-  
-</div>
-
   
   
   </div>
@@ -9791,8 +9775,8 @@ bijkomende noden hebben.</p>
   
   <h2>
   
-  <i class="fa fa-calendar"></i>
-    Mar 22, 2017
+    <i class="fa fa-pencil"></i>
+     Draft 
   
   </h2>
 
@@ -9822,9 +9806,7 @@ bijkomende noden hebben.</p>
   
   <li><i class="fa-fw fa fa-folder-open"></i>
     
-      
-      <a href="../../../blog/category/services/">services</a>,
-      
+      services,
     
       
       <a href="../../../blog/category/gis/">GIS</a>
@@ -9832,6 +9814,11 @@ bijkomende noden hebben.</p>
     </li>
   
 
+  
+  <li><i class="fa-fw fa fa-tag"></i>
+    
+      goezoekdiensten
+    </li>
   
   
   </ul>
@@ -9843,7 +9830,7 @@ bijkomende noden hebben.</p>
   <ul>
     
     
-      <li><a href="../waar-ligt-ons-erfgoed/">Mar 14 - Waar ligt ons Erfgoed?</a></li>
+      <li><a href="../waar-ligt-ons-erfgoed/">Jun 02 - Waar ligt ons Erfgoed?</a></li>
     
       <li><a href="../../2016/atramhasis-0.5.0/">Sep 14 - Atramhasis v0.5.0 released</a></li>
     
@@ -9858,6 +9845,7 @@ bijkomende noden hebben.</p>
 <li class="toctree-l2"><a class="reference internal" href="../../../projects/#libraries">Libraries</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../publications/">Publications</a></li>
 </ul>
 
 
@@ -9891,6 +9879,13 @@ bijkomende noden hebben.</p>
         <a href="../../../blog/tag/geoserver/">geoserver</a></li>
       
     
+      
+      <li class="ablog-cloud ablog-cloud-3">
+        <a href="../../../blog/tag/geozoekdiensten/">geozoekdiensten</a></li>
+      
+    
+      
+    
   </ul>
 </div>
 
@@ -9899,11 +9894,11 @@ bijkomende noden hebben.</p>
   <ul>
   
     
-    <li><a href="../../../blog/category/gis/">GIS (2)</a></li>
+    <li><a href="../../../blog/category/gis/">GIS (1)</a></li>
     
   
     
-    <li><a href="../../../blog/category/skos/">SKOS (1)</a></li>
+    <li><a href="../../../blog/category/open-source/">open source (1)</a></li>
     
   
     
@@ -9911,7 +9906,9 @@ bijkomende noden hebben.</p>
     
   
     
-    <li><a href="../../../blog/category/services/">services (1)</a></li>
+  
+    
+    <li><a href="../../../blog/category/thesaurus/">thesaurus (1)</a></li>
     
   
   </ul>
@@ -9922,7 +9919,7 @@ bijkomende noden hebben.</p>
   <ul>
   
     
-    <li><a href="../../../blog/2017/">2017 (2)</a></li>
+    <li><a href="../../../blog/2017/">2017 (1)</a></li>
     
   
     
