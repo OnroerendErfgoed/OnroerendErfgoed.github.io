@@ -7,10 +7,10 @@
 Geozoekdiensten. Wat ligt er hier?
 ==================================
 
-Zoals beloogfd (:ref:`waar-ligt-ons-erfgoed`) geven we je graag wat meer informatie over onze
+Zoals beloofd (:ref:`waar-ligt-ons-erfgoed`) geven we je graag wat meer informatie over onze
 Geozoekdiensten. Deze zoekdiensten bestaan momenteel uit één enkele webservice
 die uitermate geschikt is om één enkele vraag te beantwoorden: `Wat ligt er in
-een bepaald gebied?`. De gebruiker of client stuurt een geometrie naar de
+een bepaald gebied?` De gebruiker of client stuurt een geometrie naar de
 webservice en de webservice laat weten welk erfgoed er deels of geheel in deze
 geometrie ligt. Dit resultaat is een simpele `JSON` datastructuur waarin je
 voor elk object informatie krijgt zoals een `id`, een `uri`, een `type` en de
@@ -55,7 +55,7 @@ thesaurus. Daar kun je bijvoorbeeld te weten komen dat deze inventaris soms ook
 met de code `ile_park` benoemd wordt.
 
 De geometrie wordt in `geojson` formaat doorgestuurd. Omdat de geografische
-informatie nog al groot kan zijn en mogelijk ook niet zo relevant, kun je de
+informatie nogal groot kan zijn en mogelijk ook niet zo relevant, kun je de
 service ook laten weten dat je deze niet wenst te ontvangen:
 
 .. code-block:: bash
@@ -101,6 +101,6 @@ https://geo.onroerenderfgoed/zoekdiensten/api_doc
 
 De geozoekdiensten zijn een vrij simpele webservice die heel veel informatie kan
 bieden. We hopen dan ook dat deze voor de buitenwereld even nuttig zal zijn als
-ze voor ons is. We vernemen graag wat jullie er van vinden en of jullie nog
+voor ons. We vernemen graag wat jullie er van vinden en of jullie nog
 bijkomende noden hebben. Opmerkingen, vragen of verdere wensen mag je ons toesturen
 via mailto:ict@onroerenderfgoed.be.

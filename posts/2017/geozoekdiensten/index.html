@@ -89,10 +89,10 @@
         
   <div class="section" id="geozoekdiensten-wat-ligt-er-hier">
 <h1>Geozoekdiensten. Wat ligt er hier?<a class="headerlink" href="#geozoekdiensten-wat-ligt-er-hier" title="Permalink to this headline">¶</a></h1>
-<p>Zoals beloogfd (<a class="reference internal" href="../waar-ligt-ons-erfgoed/#waar-ligt-ons-erfgoed"><span class="std std-ref">Waar ligt ons Erfgoed?</span></a>) geven we je graag wat meer informatie over onze
+<p>Zoals beloofd (<a class="reference internal" href="../waar-ligt-ons-erfgoed/#waar-ligt-ons-erfgoed"><span class="std std-ref">Waar ligt ons Erfgoed?</span></a>) geven we je graag wat meer informatie over onze
 Geozoekdiensten. Deze zoekdiensten bestaan momenteel uit één enkele webservice
 die uitermate geschikt is om één enkele vraag te beantwoorden: <cite>Wat ligt er in
-een bepaald gebied?</cite>. De gebruiker of client stuurt een geometrie naar de
+een bepaald gebied?</cite> De gebruiker of client stuurt een geometrie naar de
 webservice en de webservice laat weten welk erfgoed er deels of geheel in deze
 geometrie ligt. Dit resultaat is een simpele <cite>JSON</cite> datastructuur waarin je
 voor elk object informatie krijgt zoals een <cite>id</cite>, een <cite>uri</cite>, een <cite>type</cite> en de
@@ -242,7 +242,7 @@ je meer wenst te weten over dit type, volg je de <cite>uri</cite> naar de de ach
 thesaurus. Daar kun je bijvoorbeeld te weten komen dat deze inventaris soms ook
 met de code <cite>ile_park</cite> benoemd wordt.</p>
 <p>De geometrie wordt in <cite>geojson</cite> formaat doorgestuurd. Omdat de geografische
-informatie nog al groot kan zijn en mogelijk ook niet zo relevant, kun je de
+informatie nogal groot kan zijn en mogelijk ook niet zo relevant, kun je de
 service ook laten weten dat je deze niet wenst te ontvangen:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -X GET https://geo.onroerenderfgoed.be/zoekdiensten/afbakeningen?<span class="p">&amp;</span><span class="nv">buffer</span><span class="o">=</span>100<span class="p">&amp;</span><span class="nv">geef_geometrie</span><span class="o">=</span>0
 </pre></div>
@@ -281,7 +281,7 @@ onze levende api documentatie aan. Deze kan je raadplegen op
 <a class="reference external" href="https://geo.onroerenderfgoed/zoekdiensten/api_doc">https://geo.onroerenderfgoed/zoekdiensten/api_doc</a></p>
 <p>De geozoekdiensten zijn een vrij simpele webservice die heel veel informatie kan
 bieden. We hopen dan ook dat deze voor de buitenwereld even nuttig zal zijn als
-ze voor ons is. We vernemen graag wat jullie er van vinden en of jullie nog
+voor ons. We vernemen graag wat jullie er van vinden en of jullie nog
 bijkomende noden hebben. Opmerkingen, vragen of verdere wensen mag je ons toesturen
 via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoed&#46;be">mailto:ict<span>&#64;</span>onroerenderfgoed<span>&#46;</span>be</a>.</p>
 </div>
