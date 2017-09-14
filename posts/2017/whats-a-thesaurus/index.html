@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Atramhasis v0.5.0 released &#8212; Flanders Heritage - Team Information  documentation</title>
+    <title>What’s a thesaurus? &#8212; Flanders Heritage - Team Information  documentation</title>
     
     <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -98,39 +98,75 @@
     <div class="large-9 columns">
       <div class="body panel" role="main">
         
-  <div class="section" id="atramhasis-v0-5-0-released">
-<h1>Atramhasis v0.5.0 released<a class="headerlink" href="#atramhasis-v0-5-0-released" title="Permalink to this headline">¶</a></h1>
-<p>A new version (0.5.0) of <a class="reference external" href="http://pypi.python.org/pypi/atramhasis">Atramhasis</a> has been released.
-Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
-SKOS vocabularies, thesauri, authority files, word lists, ... Atramhasis also
-comes with an admin interface you can use to add the concepts and collections of
-your vocabularies.</p>
-<p>This release is a major update based on the <a class="reference external" href="http://pypi.python.org/pypi/skosprovider">Skosprovider</a>
-0.6.0 line of libraries. The most visible change is with the public and admin
-interfaces. These have been completely overhauled to provide a more pleasing
-userexperience. Among other things visitors are now pointed towards popular
-concepts and concepts they have recently visited. Browsing an entire conceptscheme
-tree has been redesigned.</p>
-<p>The admin interface now offers users an option to edit certain aspects of a
-conceptscheme such as the labels, notes and sources. Editing in general has been
-update and improved. Links between the public interface and the admin interface
-have been added to make switching from one to the other easier. Notes and
-sources can now contain certain HTML tags, allowing greater flexibility in
-defining concepts and collections.</p>
-<p>A command line script was added to make it easy to import an entire
-conceptscheme, eg. when migrating from another system. It is now possible to
-import a RDF, CSV or JSON file on the command line in your Atramhasis instance.
-With earlier versions you had to script this yourself.</p>
-<p>As always, bugs have been fixed, code has been rewritten and documenation has
-been updated. See
-<a class="reference external" href="https://github.com/OnroerendErfgoed/atramhasis/milestone/8?closed=1">https://github.com/OnroerendErfgoed/atramhasis/milestone/8?closed=1</a> for the full
-list of changes.</p>
-<p>We invite everybody to try out the beta release. The public frontend can be
-found at <a class="reference external" href="http://glacial-bastion-1106.herokuapp.com/">http://glacial-bastion-1106.herokuapp.com/</a>. For the admin backend, go
-to <a class="reference external" href="http://glacial-bastion-1106.herokuapp.com/admin">http://glacial-bastion-1106.herokuapp.com/admin</a>. Please login using a
-Mozilla Persona account. You will have full access to the admin. If you
-encounter problems logging in, please let us know. Either through this forum or
-our <a class="reference external" href="https://github.com/OnroerendErfgoed/atramhasis">Github tracker</a>.</p>
+  <div class="section" id="what-s-a-thesaurus">
+<h1>What&#8217;s a thesaurus?<a class="headerlink" href="#what-s-a-thesaurus" title="Permalink to this headline">¶</a></h1>
+<p>We recently released a new version of Atramhasis (<a class="reference internal" href="../atramhasis-0.6.0/#atramhasis-0.6.0"><span class="std std-ref">Atramhasis v0.6.0 released</span></a>), our
+web based thesaurus editor. But what is a thesaurus and why would a heritage
+organisation want one?</p>
+<p>Our colleagues at <a class="reference external" href="http://www.historicengland.org.uk">Historic England</a> define
+a thesaurus as <em>A structured wordlist used to standardize terminology. It is used
+to assist in indexing and retrieving information within databases that make use
+of the same terminology</em>. A lot of opportunities arise from structuring related
+terms.</p>
+<p>First of all, it is possible to express equivalencies. Defining what terms are
+equivalent makes it easier to find what one is looking for. This used to be done
+by stating that two terms are synonyms. Nowadays it’s more common to state that
+both terms are verbal expressions of the same concept. While before we would
+have stated that <em>Jugendstil</em> is equal to <em>Art Nouveau</em>, today we would say that
+there is a concept of a certain artistic style that is labelled with both
+<em>Jugendstil</em> and <em>Art Nouveau</em>. A fairly subtle difference that mainly impacts
+how you interact with thesauri.</p>
+<p>Secondly, there are hierarchical relationship. Typically this is done by stating
+that one term is broader than another and correspondingly that the other term is
+narrower than the first one. This makes it possibkme in a thesaurus to
+state that a cathedral is a church and that a church is a religious building.
+From this we can conclude that cathedrals are religious buildings as well. It is
+important to note that not all hierarchical relations in thesauri are of the
+<em>is a</em> type. <em>Is part of</em> and <em>Is an instance of</em> relations exist
+as well. They do complicate certain matters, so be careful when considering them.
+Consult <a class="reference external" href="https://link.springer.com/article/10.1007/s00799-015-0162-2">On the composition of ISO 25964 hierarchical relations (BTG, BTP, BTI)</a> to see how they
+affect the whole of the relations between terms in your thesaurus.</p>
+<p>The final type of relationship is the associative relationship. This is the
+<em>softest</em> relationship, stating that two terms or concepts are related. This
+might be <em>coal mine</em> is related to <em>miner’s houses</em> because in Flanders every
+coal mine had it’s own little town where all the mineworkers lived together.</p>
+<p>One other important aspect of thesauri is that they allow defining a scope note.
+This is a written definition of the concept and how it should be used in
+databases. It’s a critical feature that allows users to evaluate if a certain
+concept actually means what they think it means. Over the years, we have found
+that asking experts to define concepts they thought were self-evident has caused
+heated discussions. As long as you don&#8217;t define what something means everyone
+can use a concept in the way they want to use it and ignore the fact that not
+everyone might share their opinion.</p>
+<p>So, thesauri allow us to reach consenus on the meaning of certain concepts and
+share our knowledge about these concepts with the outside world (that&#8217;s why we
+publish them as open data). But we do have another, very pratical, reason for
+building and maintaining them. We use these controlled to help indexing our main
+databases and information systems. When you go searching for
+<a class="reference external" href="https://inventaris.onroerenderfgoed.be/erfgoedobjecten?typologie=fonteinen">fountains</a>
+in our inventory management system, our thesaurus is used. When the inventory
+receives the query for <em>fountains</em> it checks if it&#8217;s actually in the thesaurus.
+If not, no record can be indexed with that term, so it stops the search. If it
+is, the system checks if there are more specific version of fountains present in
+the thesaurus. In this case, there&#8217;s also a concept of <em>water tricks</em> that is
+defined as a specific type of fountain. So, when our inventory management
+systems answers you query for fountains it gives you all records indexed as <em>fountains</em>
+or as <em>water tricks</em>.</p>
+<p>Interestingly enough, those <em>water tricks</em> also demonstrate another handy
+feature of our thesauri. If you look at the record for <a class="reference external" href="https://id.erfgoed.net/thesauri/erfgoedtypes/1524">water tricks</a> you will notice we call
+them <em>bedriegertjes</em> in Dutch, but do not actually have an English label for
+them. Luckily, we have linked our concept of <em>bedriegertjes</em> with the concept of
+<em>bedriegertjes</em> in the <a class="reference external" href="http://www.getty.edu/research/tools/vocabularies/aat/">Art &amp; Architecture Thesaurus</a>.
+This huge thesaurus tells us that <em>bedriegertjes</em> are known in English as <em>water
+tricks</em> or <em>joke fountains</em>.. It even tells us what they are called in German
+and Spanish. Opening us up to wealth of possible interactions with other
+systems.</p>
+<p>In the end, theauri are a means. Not an end. Our prime concern is managing
+heritage, not building thesauri. But they do help us tremendously in defining
+what that heritage is, in searching through that heritage and in linking the
+heritage on our local level to the transnational level. If you want to know more
+about our thesauri, have a look at <a class="reference internal" href="../../../publications/#movdme2017"><span class="std std-ref">Calling it what it is</span></a>,
+where we explain how we built them and provide you with some do&#8217;s and don&#8217;ts.</p>
 </div>
 
   <div class="section">
@@ -141,16 +177,15 @@ our <a class="reference external" href="https://github.com/OnroerendErfgoed/atra
 <div class="section">
   <span style="float: left;">
   
+  
+  <a href="../atramhasis-0.6.0/">
+    <i class="fa fa-arrow-circle-left"></i>
+    Atramhasis v0.6.0 released
+  </a>
+  
   </span>
   <span>&nbsp;</span>
   <span style="float: right;">
-  
-  
-  <a href="../../2017/waar-ligt-ons-erfgoed/">
-    Waar ligt ons Erfgoed?
-    <i class="fa fa-arrow-circle-right"></i>
-  </a>
-  </span>
   
 </div>
 
@@ -169,7 +204,7 @@ our <a class="reference external" href="https://github.com/OnroerendErfgoed/atra
   <h2>
   
   <i class="fa fa-calendar"></i>
-    Sep 14, 2016
+    Sep 14, 2017
   
   </h2>
 
@@ -200,24 +235,25 @@ our <a class="reference external" href="https://github.com/OnroerendErfgoed/atra
   <li><i class="fa-fw fa fa-folder-open"></i>
     
       
-      <a href="../../../blog/category/releases/">releases</a>,
-      
-    
-      
-      <a href="../../../blog/category/thesaurus/">thesaurus</a>,
-      
-    
-      
-      <a href="../../../blog/category/open-source/">open source</a>
+      <a href="../../../blog/category/thesaurus/">thesaurus</a>
       
     </li>
   
 
   
-  <li><i class="fa-fw fa fa-tag"></i>
+  <li><i class="fa-fw fa fa-tags"></i>
+      
     
       
-      <a href="../../../blog/tag/atramhasis/">atramhasis</a>
+      <a href="../../../blog/tag/vocabulary/">vocabulary</a>,
+      
+    
+      
+      <a href="../../../blog/tag/indexing/">indexing</a>,
+      
+    
+      
+      <a href="../../../blog/tag/search/">search</a>
       
     </li>
   
@@ -231,13 +267,13 @@ our <a class="reference external" href="https://github.com/OnroerendErfgoed/atra
   <ul>
     
     
-      <li><a href="../../2017/whats-a-thesaurus/">Sep 14 - What's a thesaurus?</a></li>
+      <li><a href="../atramhasis-0.6.0/">Aug 24 - Atramhasis v0.6.0 released</a></li>
     
-      <li><a href="../../2017/atramhasis-0.6.0/">Aug 24 - Atramhasis v0.6.0 released</a></li>
+      <li><a href="../geozoekdiensten/">Aug 14 - Geozoekdiensten. Wat ligt er hier?</a></li>
     
-      <li><a href="../../2017/geozoekdiensten/">Aug 14 - Geozoekdiensten. Wat ligt er hier?</a></li>
+      <li><a href="../waar-ligt-ons-erfgoed/">Jun 02 - Waar ligt ons Erfgoed?</a></li>
     
-      <li><a href="../../2017/waar-ligt-ons-erfgoed/">Jun 02 - Waar ligt ons Erfgoed?</a></li>
+      <li><a href="../../2016/atramhasis-0.5.0/">Sep 14 - Atramhasis v0.5.0 released</a></li>
     
   </ul>
 </div>
