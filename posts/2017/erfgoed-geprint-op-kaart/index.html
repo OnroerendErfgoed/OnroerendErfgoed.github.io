@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Waar ligt ons Erfgoed? &#8212; Flanders Heritage - Team Information  documentation</title>
+    <title>Erfgoed geprint op een kaart &#8212; Flanders Heritage - Team Information  documentation</title>
     
     <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -98,54 +98,78 @@
     <div class="large-9 columns">
       <div class="body panel" role="main">
         
-  <div class="section" id="waar-ligt-ons-erfgoed">
-<h1>Waar ligt ons Erfgoed?<a class="headerlink" href="#waar-ligt-ons-erfgoed" title="Permalink to this headline">¶</a></h1>
-<p>Eén van de meest karakteristieke eigenschappen van onroerend erfgoed, is
-ongetwijfeld het <cite>onroerende</cite> karakter van dat erfgoed. Onze landschappen,
-monumenten, archeologische sites, ... hebben allemaal een locatie. Ze bevinden zich
-ergens en (uitgezonderd <a class="reference external" href="https://besluiten.onroerenderfgoed.be/besluiten?rechtsgevolgen=https%3A%2F%2Fid.erfgoed.net%2Fthesauri%2Fbesluittypes%2F19">een paar vreemde eenden</a>)
-zijn ze daar altijd al geweest. Als ze niet meer op hun oorspronkelijke plaats liggen,
-bestaan ze niet meer. Maar hoe weet je nu wat waar ligt?</p>
-<p>Als mens op zoek naar informatie heb je verschillende mogelijkheden. Je kunt
-naar ons <a class="reference external" href="https://geo.onroerenderfgoed.be">Geoportaal</a> gaan en naar hartelust
-zoomen op de kaart totdat je de plaats die je wil bekijken in het vizier hebt.
-Dan kun je met enkele muisklikken zien wat voor erfgoed terug te vinden is op
-die locatie. Indien je liever niet op een kaart kijkt, kun je naar onze <a class="reference external" href="https://inventaris.onroerenderfgoed.be">Inventaris</a> surfen en via één van de
-zoekformulieren zoeken naar al het erfgoed in een bepaalde straat of gemeente.
-Je resultaten zullen minder exact wat je zocht zijn, maar je zult je al snel
-kunnen verdiepen in de geschiedenis en de architectuur van de omgeving waarin je
-geïnteresseerd bent.</p>
-<img alt="../../../_images/geoportaal.png" src="../../../_images/geoportaal.png" />
-<p><em>Alle geografische informatie over onroerend erfgoed kan je vinden op https://geo.onroerenderfgoed.be</em></p>
-<p>Het is natuurlijk leuk om snel even iets te bekijken op ons Geoportaal
-of een stuk door de inventaris te bladeren, maar misschien is de manier waarop
-wij de informatie presenteren niet ideaal voor de vragen die je zelf voor ogen
-hebt. Je kunt natuurlijk zelf aan de slag met de gegevens die wij aanbieden. Zo
-kun je de verschillende erfgoedinventarissen en de beschermde en vastgestelde
-aanduidingsobjecten <a class="reference external" href="http://inventaris.onroerenderfgoed.be/portaal/kaarten">downloaden als GIS bestanden</a>. Met deze bestanden
-kan je zelf aan de slag in je favoriete GIS programma en naar hartelust
-analyseren. Elke geometrie is voorzien van een URL naar een webpagina waar je
-meer informatie over dat bepaalde erfgoed- of aanduidingsobject kunt vinden.</p>
-<p>Dergelijke downloads bieden het voordeel dat je ze kunt gebruiken zonder
-netwerkverbinding en dat ze erg snel zijn. Nadelig daarbij is dan weer dat er
-elke nacht een nieuwe download wordt aangemaakt en dat je bestanden dus na één
-dag al verouderd zijn. Je kunt natuurlijk elke dag de laatste versie downloaden,
-maar je kunt ook onze OGC webservices gebruiken. Daarvoor kun je onze <a class="reference external" href="https://geo.onroerenderfgoed.be/geoserver">Geoserver</a> raadplegen. Met deze services kun
-je onze data in je eigen GIS projecten inladen. In tegenstelling tot de
-downloads, zijn deze services altijd de courante versie. Zo kost het je geen
-moeite om op de hoogte te blijven van de actuele situatie.</p>
-<p>Wie echter voldoende technisch geschoold is en onze data in zijn eigen systemen
-wenst te gebruiken kan ook gebruik maken van onze <cite>Geozoekdiensten</cite>. Deze
-zoekdiensten bestaan momenteel uit één enkele webservice die uitermate geschikt
-is om één enkele vraag te beantwoorden: <cite>Wat ligt er in een bepaald gebied?</cite>. De
-gebruier of client stuurt een geometrie naar de webservice en de webservice laat
-weten welk erfgoed er deels of geheel in deze geometrie ligt. Dit resultaat is
-een simpele <cite>JSON</cite> datastructuur waarin je voor elk object informatie
-krijgt zoals een <cite>id</cite>, een <cite>uri</cite>, een <cite>type</cite> en de volledige <cite>geometrie</cite>. We
-gebruiken deze zoekdiensten nu al een tijdje in onze eigen toepassingen, maar we
-willen ze nu met jullie delen.</p>
-<p>In <a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><span class="std std-ref">Geozoekdiensten. Wat ligt er hier?</span></a> vertellen we je exact hoe je gebruik kunt maken
-van deze zoekdienst.</p>
+  <div class="section" id="erfgoed-geprint-op-een-kaart">
+<h1>Erfgoed geprint op een kaart<a class="headerlink" href="#erfgoed-geprint-op-een-kaart" title="Permalink to this headline">¶</a></h1>
+<p>Via het Geoportaal (<a class="reference internal" href="../waar-ligt-ons-erfgoed/#waar-ligt-ons-erfgoed"><span class="std std-ref">Waar ligt ons Erfgoed?</span></a>) kan een mens makkelijk zien
+waar ons erfgoed ligt. Via de service Geozoekdiensten (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><span class="std std-ref">Geozoekdiensten. Wat ligt er hier?</span></a>)
+kan een machine makkelijk opvragen welk erfgoed in een bepaald gebied ligt. Maar
+wat doe je dan met die informatie? Vanaf nu kan je er in elk geval makkelijker
+zelf mee aan de slag. Namelijk: Hoe kan je zelf kaartjes maken van het gevonden erfgoed?</p>
+<p>Om deze kaartjes te genereren kan gebruik gemaakt worden van de
+<a class="reference external" href="https://github.com/OnroerendErfgoed/static_map_generator">statische kaartgenerator</a> module ontwikkeld door en voor het agentschap
+Onroerend Erfgoed in samenwerking met externe partners.</p>
+<div class="section" id="static-map-generator">
+<h2>Static map generator<a class="headerlink" href="#static-map-generator" title="Permalink to this headline">¶</a></h2>
+<p>Het doel van deze <a class="reference external" href="https://github.com/OnroerendErfgoed/static_map_generator">statische kaartgenerator</a> is het genereren van statische kaarten die zijn samengesteld uit:</p>
+<ul class="simple">
+<li>verschillende geografische formaten zoals GeoJSON</li>
+<li>een achtergrondlaag zoals WMS</li>
+<li>lay-out-overlays zoals tekst en schaal.</li>
+</ul>
+<p>Op basis van een configuratiebestand maakt de kaartgenerator van alle afzonderlijke
+lagen een afbeelding. De afbeelding bevat een schaalbalk. De afbeelding kan
+worden teruggegeven als een foto of een base64 formaat.</p>
+<p>De statische kaartgenerator kan zowel als een <a class="reference external" href="http://python.org">Python</a> module en of als een <cite>REST</cite>
+service gebruikt worden. Daardoor kan je de module makkelijk in je eigen
+project inbouwen. Als je zelf met <a class="reference external" href="http://python.org">Python</a> werkt, gebruik je gewoon de
+bibliotheek. Als je niet met <a class="reference external" href="http://python.org">Python</a> werkt, kan je de kaartgenerator
+installeren als een aparte toepassing op een server en deze dan als service
+aanroepen.</p>
+</div>
+<div class="section" id="de-erfgoedatlas-van-een-gemeente">
+<h2>De erfgoedatlas van een gemeente<a class="headerlink" href="#de-erfgoedatlas-van-een-gemeente" title="Permalink to this headline">¶</a></h2>
+<p>De <a class="reference external" href="https://inventaris.onroerenderfgoed.be">inventaris</a> is een mooi werkinstrument voor wie ons erfgoed wil leren
+kennen. Maar soms is het handig om een lokale kopie van informatie te hebben.
+Zodat je de baan op kunt zonder internetverbinding of zelfs zonder computer.
+Geen nood, door een paar van onze diensten te combineren maak je zo je eigen
+erfgoedatlas.</p>
+<p>In volgend voorbeeld zal de gemeente Edegem gebruikt worden. Dit allemaal in een
+kort scriptje hieronder voorgesteld. Eerst worden alle erfgoedobjecten en
+aanduidingsobjecten opgevraagd binnen de gemeente via de geozoekdiensten. Er
+wordt een basis configuratie opgesteld om de afbeelding aan te maken: achtergrondlaag,
+tekst, breedte en hoogte afbeelding. De geometrie van elk object wordt als een afzonderlijke
+laag toegevoegd aan de configuratie. Ten slotte wordt de configuratie meegegeven
+aan de statische kaartgenerator die op zijn beurt de afbeelding zal teruggeven.</p>
+<p>De afbakening van Edegem halen we hier uit een GeoJson bestand dat we voordien
+hebben aangemaakt op basis van de gegevens die <a class="reference external" href="https://www.agiv.be">Informatie Vlaanderen</a> ter
+beschikking stelt.</p>
+<p>Zo bekom je een mooie kaart van al het erfgoed dat wij kennen in de gemeente
+Edegem.</p>
+<img alt="../../../_images/Edegem.png" src="../../../_images/Edegem.png" />
+</div>
+<div class="section" id="inzoomen-op-de-objecten-op-kaart">
+<h2>Inzoomen op de objecten op kaart<a class="headerlink" href="#inzoomen-op-de-objecten-op-kaart" title="Permalink to this headline">¶</a></h2>
+<p>Het is ook mogelijk om voor elk erfgoedobject afzonderlijk een kaartje te genereren.
+Dit wordt voorgesteld in volgend script. Bij wijze van voorbeeld, wordt er hier
+een andere andere achtergrondlaag gebruikt en wordt telkens de naam van het
+erfgoedobject bij op de kaart geplaatst.</p>
+<p>Zoals je hieronder kunt zien beschikken we nu over een kaartje per object uit de
+inventaris. Het staat je nog vrij om die allemaal af te drukken of nog verder te
+verwerken. Niet vergeten dat zowel onze gegevens als de gegevens van <a class="reference external" href="https://www.agiv.be">Informatie
+Vlaanderen</a> <a class="reference external" href="`https://overheid.vlaanderen.be/opendata`">open data</a> zijn en dus vrij ter jullie beschikking staan.</p>
+<p>Wil je zelf aan de slag met de kaartgenerator, kijk dan naar de <a class="reference external" href="https://github.com/OnroerendErfgoed/static_map_generator">statische
+kaartgenerator</a> op Github. Meer informatie over de kan je vinden in deze
+blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><span class="std std-ref">Geozoekdiensten. Wat ligt er hier?</span></a>) of op de levende API docs op
+<a class="reference external" href="https://geo.onroerenderfgoed.be/zoekdiensten/api_doc">https://geo.onroerenderfgoed.be/zoekdiensten/api_doc</a></p>
+<p><em>Fort 5</em></p>
+<img alt="../../../_images/Fort_5.png" src="../../../_images/Fort_5.png" />
+<p><em>Hazeschranshoeven</em></p>
+<img alt="../../../_images/Hazeschranshoeven.png" src="../../../_images/Hazeschranshoeven.png" />
+<p><em>Kasteel Hof ter Linden</em></p>
+<img alt="../../../_images/Kasteel_Hof_ter_Linden.png" src="../../../_images/Kasteel_Hof_ter_Linden.png" />
+<p><em>Garden City Elsdonk</em></p>
+<img alt="../../../_images/Garden_City_Elsdonk.png" src="../../../_images/Garden_City_Elsdonk.png" />
+</div>
 </div>
 
   <div class="section">
@@ -157,21 +181,14 @@ van deze zoekdienst.</p>
   <span style="float: left;">
   
   
-  <a href="../../2016/atramhasis-0.5.0/">
+  <a href="../whats-a-thesaurus/">
     <i class="fa fa-arrow-circle-left"></i>
-    Atramhasis v0.5.0 released
+    What's a thesaurus?
   </a>
   
   </span>
   <span>&nbsp;</span>
   <span style="float: right;">
-  
-  
-  <a href="../geozoekdiensten/">
-    Geozoekdiensten. Wat ligt er hier?
-    <i class="fa fa-arrow-circle-right"></i>
-  </a>
-  </span>
   
 </div>
 
@@ -190,7 +207,7 @@ van deze zoekdienst.</p>
   <h2>
   
   <i class="fa fa-calendar"></i>
-    Jun 02, 2017
+    Oct 03, 2017
   
   </h2>
 
@@ -201,7 +218,7 @@ van deze zoekdienst.</p>
   <li><i class="fa-fw fa fa-user"></i>
     
       
-      <a href="../../../blog/author/koen-van-daele/">Koen van Daele</a>
+      <a href="../../../blog/author/tinne-cahy/">Tinne Cahy</a>
       
     </li>
   
@@ -221,6 +238,10 @@ van deze zoekdienst.</p>
   <li><i class="fa-fw fa fa-folder-open"></i>
     
       
+      <a href="../../../blog/category/services/">services</a>,
+      
+    
+      
       <a href="../../../blog/category/gis/">GIS</a>
       
     </li>
@@ -231,11 +252,7 @@ van deze zoekdienst.</p>
       
     
       
-      <a href="../../../blog/tag/geoportaal/">geoportaal</a>,
-      
-    
-      
-      <a href="../../../blog/tag/geoserver/">geoserver</a>,
+      <a href="../../../blog/tag/static_map_generator/">static_map_generator</a>,
       
     
       
@@ -253,13 +270,13 @@ van deze zoekdienst.</p>
   <ul>
     
     
-      <li><a href="../erfgoed-geprint-op-kaart/">Oct 03 - Erfgoed geprint op een kaart</a></li>
-    
       <li><a href="../whats-a-thesaurus/">Sep 14 - What's a thesaurus?</a></li>
     
       <li><a href="../atramhasis-0.6.0/">Aug 24 - Atramhasis v0.6.0 released</a></li>
     
       <li><a href="../geozoekdiensten/">Aug 14 - Geozoekdiensten. Wat ligt er hier?</a></li>
+    
+      <li><a href="../waar-ligt-ons-erfgoed/">Jun 02 - Waar ligt ons Erfgoed?</a></li>
     
       <li><a href="../../2016/atramhasis-0.5.0/">Sep 14 - Atramhasis v0.5.0 released</a></li>
     
