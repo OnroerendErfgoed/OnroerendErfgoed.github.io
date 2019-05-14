@@ -1,30 +1,20 @@
 <!doctype html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
     <title>Erfgoed geprint op een kaart &#8212; Flanders Heritage - Team Information  documentation</title>
-    
     <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../../../_static/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <link rel="author" title="About these documents" href="../../../about/" />
-    <link rel="top" title="Flanders Heritage - Team Information  documentation" href="../../../" />
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
   
 
  
@@ -53,8 +43,7 @@
     ul.postlist-style-circle {list-style-type: circle;}
   </style>
 
-  </head>
-  <body role="document">
+  </head><body>
 <!-- container -->
 <div class="container">
   <script type="text/javascript" src="//widgets.vlaanderen.be/widget/live/5499d8dc0848446e91022c6dba9db343?mtime=1421237274"></script>
@@ -112,9 +101,9 @@ Onroerend Erfgoed in samenwerking met externe partners.</p>
 <h2>Static map generator<a class="headerlink" href="#static-map-generator" title="Permalink to this headline">¶</a></h2>
 <p>Het doel van deze <a class="reference external" href="https://github.com/OnroerendErfgoed/static_map_generator">statische kaartgenerator</a> is het genereren van statische kaarten die zijn samengesteld uit:</p>
 <ul class="simple">
-<li>verschillende geografische formaten zoals GeoJSON</li>
-<li>een achtergrondlaag zoals WMS</li>
-<li>lay-out-overlays zoals tekst en schaal.</li>
+<li><p>verschillende geografische formaten zoals GeoJSON</p></li>
+<li><p>een achtergrondlaag zoals WMS</p></li>
+<li><p>lay-out-overlays zoals tekst en schaal.</p></li>
 </ul>
 <p>Op basis van een configuratiebestand maakt de kaartgenerator van alle afzonderlijke
 lagen een afbeelding. De afbeelding bevat een schaalbalk. De afbeelding kan
@@ -143,14 +132,14 @@ aan de statische kaartgenerator die op zijn beurt de afbeelding zal teruggeven.<
 <p>De afbakening van Edegem halen we hier uit een GeoJson bestand dat we voordien
 hebben aangemaakt op basis van de gegevens die <a class="reference external" href="https://www.agiv.be">Informatie Vlaanderen</a> ter
 beschikking stelt.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">static_map_generator.generator</span> <span class="kn">import</span> <span class="n">Generator</span>
 
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s1">&#39;Edegem.json&#39;</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;Edegem.json&#39;</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">edegem_geojson</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
 
@@ -193,7 +182,7 @@ beschikking stelt.</p>
         <span class="p">}</span>
     <span class="p">)</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s1">&#39;maps/Edegem/Edegem.png&#39;</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;maps/Edegem/Edegem.png&#39;</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">Generator</span><span class="o">.</span><span class="n">generate_stream</span><span class="p">(</span><span class="n">municipality_body</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -207,7 +196,7 @@ Edegem.</p>
 Dit wordt voorgesteld in volgend script. Bij wijze van voorbeeld, wordt er hier
 een andere andere achtergrondlaag gebruikt en wordt telkens de naam van het
 erfgoedobject bij op de kaart geplaatst.</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">requests</span>
@@ -215,7 +204,7 @@ erfgoedobject bij op de kaart geplaatst.</p>
 <span class="kn">from</span> <span class="nn">static_map_generator.generator</span> <span class="kn">import</span> <span class="n">Generator</span>
 
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s1">&#39;Edegem.json&#39;</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;Edegem.json&#39;</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">edegem_geojson</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 
 
@@ -270,7 +259,7 @@ erfgoedobject bij op de kaart geplaatst.</p>
         <span class="p">)</span>
 
         <span class="n">filename</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s2">&quot;naam&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;.png&#39;</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="s1">&#39;maps/Edegem&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;maps/Edegem&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">Generator</span><span class="o">.</span><span class="n">generate_stream</span><span class="p">(</span><span class="n">obj_body</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -304,7 +293,7 @@ blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><
   
   <a href="../whats-a-thesaurus/">
     <i class="fa fa-arrow-circle-left"></i>
-    What's a thesaurus?
+    What’s a thesaurus?
   </a>
   
   </span>
@@ -335,7 +324,7 @@ blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><
   <h2>
   
   <i class="fa fa-calendar"></i>
-    Oct 03, 2017
+    03 oktober 2017
   
   </h2>
 
@@ -343,7 +332,7 @@ blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><
     
 
   
-  <li><i class="fa-fw fa fa-user"></i>
+  <li id="author"><span><i class="fa-fw fa fa-user"></i>
     
       
       <a href="../../../blog/author/tinne-cahy/">Tinne Cahy</a>
@@ -354,7 +343,7 @@ blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><
   
 
   
-  <li><i class="fa-fw fa fa-language"></i>
+  <li id="language"><span><i class="fa-fw fa fa-language"></i>
     
       
       <a href="../../../blog/language/nederlands/">Nederlands</a>
@@ -363,7 +352,7 @@ blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><
   
 
   
-  <li><i class="fa-fw fa fa-folder-open"></i>
+  <li id="category"><span><i class="fa-fw fa fa-folder-open"></i>
     
       
       <a href="../../../blog/category/services/">services</a>,
@@ -376,11 +365,11 @@ blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><
   
 
   
-  <li><i class="fa-fw fa fa-tags"></i>
+  <li id="tags"><span><i class="fa-fw fa fa-tags"></i>
       
     
       
-      <a href="../../../blog/tag/static_map_generator/">static_map_generator</a>,
+      <a href="../../../blog/tag/static_map_generator/">static_map_generator</a>
       
     
       
@@ -398,15 +387,15 @@ blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><
   <ul>
     
     
-      <li><a href="../../2018/atramhasis-docker/">Jan 11 - Running an Atramhasis demo site with Docker</a></li>
+      <li><a href="../../2018/atramhasis-docker/">11 januari - Running an Atramhasis demo site with Docker</a></li>
     
-      <li><a href="../whats-a-thesaurus/">Sep 14 - What's a thesaurus?</a></li>
+      <li><a href="../whats-a-thesaurus/">14 september - What’s a thesaurus?</a></li>
     
-      <li><a href="../atramhasis-0.6.0/">Aug 24 - Atramhasis v0.6.0 released</a></li>
+      <li><a href="../atramhasis-0.6.0/">24 augustus - Atramhasis v0.6.0 released</a></li>
     
-      <li><a href="../geozoekdiensten/">Aug 14 - Geozoekdiensten. Wat ligt er hier?</a></li>
+      <li><a href="../geozoekdiensten/">14 augustus - Geozoekdiensten. Wat ligt er hier?</a></li>
     
-      <li><a href="../waar-ligt-ons-erfgoed/">Jun 02 - Waar ligt ons Erfgoed?</a></li>
+      <li><a href="../waar-ligt-ons-erfgoed/">02 juni - Waar ligt ons Erfgoed?</a></li>
     
   </ul>
 </div>
@@ -464,6 +453,8 @@ blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><
       
     
       
+    
+      
       <li class="ablog-cloud ablog-cloud-1">
         <a href="../../../blog/tag/search/">search</a></li>
       
@@ -487,6 +478,8 @@ blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><
   
     
     <li><a href="../../../blog/category/gis/">GIS (3)</a></li>
+    
+  
     
   
     
@@ -555,7 +548,7 @@ blog (<a class="reference internal" href="../geozoekdiensten/#geozoekdiensten"><
     <div class="footer-bottom-inner inner">
       <p class="copyright">
         &#169; Copyright 2016-2017, Flanders Heritage Agency.
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
       </p>
       <p class="pull-right">
         <a href="#">Terug naar boven</a>

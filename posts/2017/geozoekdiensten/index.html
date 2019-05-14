@@ -1,30 +1,20 @@
 <!doctype html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+    <meta charset="utf-8" />
     <title>Geozoekdiensten. Wat ligt er hier? &#8212; Flanders Heritage - Team Information  documentation</title>
-    
     <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../../../../_static/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/language_data.js"></script>
     <link rel="author" title="About these documents" href="../../../about/" />
-    <link rel="top" title="Flanders Heritage - Team Information  documentation" href="../../../" />
+    <link rel="index" title="Index" href="../../../genindex/" />
+    <link rel="search" title="Search" href="../../../search/" />
   
 
  
@@ -53,8 +43,7 @@
     ul.postlist-style-circle {list-style-type: circle;}
   </style>
 
-  </head>
-  <body role="document">
+  </head><body>
 <!-- container -->
 <div class="container">
   <script type="text/javascript" src="//widgets.vlaanderen.be/widget/live/5499d8dc0848446e91022c6dba9db343?mtime=1421237274"></script>
@@ -111,13 +100,13 @@ volledige <cite>geometrie</cite>.</p>
 <p>Zoals vaak zegt een voorbeeld meer dan duizend woorden. Stel dat we al het
 erfgoed willen kennen in een straal van honderd meter rond een bepaald punt in
 Vlaanderen:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -X GET --header <span class="s1">&#39;Accept: application/json&#39;</span> <span class="s1">&#39;https://geo.onroerenderfgoed.be/zoekdiensten/afbakeningen?categorie=aanduidingsobjecten&amp;geometrie=%7B%22type%22%3A%20%22Point%22%2C%20%22coordinates%22%3A%20%5B4.7676665601685%2C50.985228897907%5D%7D&amp;buffer=100&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -X GET --header <span class="s1">&#39;Accept: application/json&#39;</span> <span class="s1">&#39;https://geo.onroerenderfgoed.be/zoekdiensten/afbakeningen?categorie=aanduidingsobjecten&amp;geometrie=%7B%22type%22%3A%20%22Point%22%2C%20%22coordinates%22%3A%20%5B4.7676665601685%2C50.985228897907%5D%7D&amp;buffer=100&#39;</span>
 </pre></div>
 </div>
 <p>Daarop krijgen we een lijst van resultaten terug. Elke van deze resultaten is
 een <cite>JSON</cite> object met de attributen <cite>id</cite>, <cite>uri</cite>, <cite>categorie</cite>, <cite>type</cite>, <cite>naam</cite> en
 <cite>geometrie</cite>.</p>
-<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;categorie&quot;</span><span class="p">:</span><span class="s2">&quot;erfgoedobjecten&quot;</span><span class="p">,</span>
   <span class="nt">&quot;naam&quot;</span><span class="p">:</span><span class="s2">&quot;Slotgracht van het Hof ter Bruggen&quot;</span><span class="p">,</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">134454</span><span class="p">,</span>
@@ -242,7 +231,7 @@ opvraagt via de browser kom je uit op een pagina over het object in de
 <a class="reference external" href="https://inventaris.onroerenderfgoed.be">Inventaris Onroerend Erfgoed</a>. Indien
 je liever de achterliggende ruwe data in <cite>JSON</cite> formaat bekijkt, dan stuur je
 een <cite>Accept: application/json</cite> header mee in een GET request.</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -L -X GET --header <span class="s1">&#39;Accept: application/json&#39;</span> <span class="s1">&#39;https://id.erfgoed.net/erfgoedobjecten/134454&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -L -X GET --header <span class="s1">&#39;Accept: application/json&#39;</span> <span class="s1">&#39;https://id.erfgoed.net/erfgoedobjecten/134454&#39;</span>
 </pre></div>
 </div>
 <p>In dit geval hebben we een erfgoedobject gevonden uit de wetenschappelijke
@@ -255,25 +244,25 @@ met de code <cite>ile_park</cite> benoemd wordt.</p>
 <p>De geometrie wordt in <cite>geojson</cite> formaat doorgestuurd. Omdat de geografische
 informatie nogal groot kan zijn en mogelijk ook niet zo relevant, kun je de
 service ook laten weten dat je deze niet wenst te ontvangen:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -X GET https://geo.onroerenderfgoed.be/zoekdiensten/afbakeningen?<span class="p">&amp;</span><span class="nv">buffer</span><span class="o">=</span>100<span class="p">&amp;</span><span class="nv">geef_geometrie</span><span class="o">=</span>0
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -X GET https://geo.onroerenderfgoed.be/zoekdiensten/afbakeningen?<span class="p">&amp;</span><span class="nv">buffer</span><span class="o">=</span><span class="m">100</span><span class="p">&amp;</span><span class="nv">geef_geometrie</span><span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
 <p>Standaard zal de service naar alle soorten objecten zoeken, maar je kan hier ook
 in filteren met de parameter <cite>categorie</cite>. Hierin heb je verschillende
 mogelijkheden:</p>
 <ul class="simple">
-<li><strong>Erfgoedobjecten</strong>: Deze categorie bevat alle inhoudelijke objecten die met
-erfgoed te maken hebben. Dit zijn de <cite>wetenschappelijke inventarissen</cite>.</li>
-<li><strong>Aanduidingsobjecten</strong>: De aanduidingsobjecten of aanduidingen zijn de juridische
+<li><p><strong>Erfgoedobjecten</strong>: Deze categorie bevat alle inhoudelijke objecten die met
+erfgoed te maken hebben. Dit zijn de <cite>wetenschappelijke inventarissen</cite>.</p></li>
+<li><p><strong>Aanduidingsobjecten</strong>: De aanduidingsobjecten of aanduidingen zijn de juridische
 verankeringen van erfgoedobjecten. Deze kunnen zowel <cite>beschermd</cite> als <cite>vastgesteld</cite>
-zijn (wat je dan weer kunt afleiden uit de URI&#8217;s van de types). Verder vallen
+zijn (wat je dan weer kunt afleiden uit de URI’s van de types). Verder vallen
 hier ook nog de <cite>erfgoedlandschappen</cite> en de <cite>Unesco kernzones</cite> en <cite>Unesco
-bufferzones</cite> onder.</li>
-<li><strong>Plannen</strong>: Deze categorie bevat nu enkel de <cite>beheersplannen</cite> en zal op termijn
-uitgebreid worden met de <cite>erfgoedrichtplannen</cite></li>
+bufferzones</cite> onder.</p></li>
+<li><p><strong>Plannen</strong>: Deze categorie bevat nu enkel de <cite>beheersplannen</cite> en zal op termijn
+uitgebreid worden met de <cite>erfgoedrichtplannen</cite></p></li>
 </ul>
 <p>Stel dat je enkel de objecten wenst te zien die aangeduid zijn:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl -X GET https://geo.onroerenderfgoed.be/zoekdiensten/afbakeningen?<span class="p">&amp;</span><span class="nv">buffer</span><span class="o">=</span>100<span class="p">&amp;</span><span class="nv">geef_geometrie</span><span class="o">=</span>0<span class="p">&amp;</span><span class="nv">categorie</span><span class="o">=</span>aanduidingsobjecten
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ curl -X GET https://geo.onroerenderfgoed.be/zoekdiensten/afbakeningen?<span class="p">&amp;</span><span class="nv">buffer</span><span class="o">=</span><span class="m">100</span><span class="p">&amp;</span><span class="nv">geef_geometrie</span><span class="o">=</span><span class="m">0</span><span class="p">&amp;</span><span class="nv">categorie</span><span class="o">=</span>aanduidingsobjecten
 </pre></div>
 </div>
 <p>In dat geval krijg je dus enkel beschermingen, vaststellingen of
@@ -339,7 +328,7 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
   <h2>
   
   <i class="fa fa-calendar"></i>
-    Aug 14, 2017
+    14 augustus 2017
   
   </h2>
 
@@ -347,7 +336,7 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
     
 
   
-  <li><i class="fa-fw fa fa-user"></i>
+  <li id="author"><span><i class="fa-fw fa fa-user"></i>
     
       
       <a href="../../../blog/author/koen-van-daele/">Koen van Daele</a>
@@ -358,7 +347,7 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
   
 
   
-  <li><i class="fa-fw fa fa-language"></i>
+  <li id="language"><span><i class="fa-fw fa fa-language"></i>
     
       
       <a href="../../../blog/language/nederlands/">Nederlands</a>
@@ -367,7 +356,7 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
   
 
   
-  <li><i class="fa-fw fa fa-folder-open"></i>
+  <li id="category"><span><i class="fa-fw fa fa-folder-open"></i>
     
       
       <a href="../../../blog/category/services/">services</a>,
@@ -380,7 +369,7 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
   
 
   
-  <li><i class="fa-fw fa fa-tag"></i>
+  <li id="tags"><span><i class="fa-fw fa fa-tag"></i>
     
       
       <a href="../../../blog/tag/geozoekdiensten/">geozoekdiensten</a>
@@ -397,15 +386,15 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
   <ul>
     
     
-      <li><a href="../../2018/atramhasis-docker/">Jan 11 - Running an Atramhasis demo site with Docker</a></li>
+      <li><a href="../../2018/atramhasis-docker/">11 januari - Running an Atramhasis demo site with Docker</a></li>
     
-      <li><a href="../erfgoed-geprint-op-kaart/">Oct 03 - Erfgoed geprint op een kaart</a></li>
+      <li><a href="../erfgoed-geprint-op-kaart/">03 oktober - Erfgoed geprint op een kaart</a></li>
     
-      <li><a href="../whats-a-thesaurus/">Sep 14 - What's a thesaurus?</a></li>
+      <li><a href="../whats-a-thesaurus/">14 september - What’s a thesaurus?</a></li>
     
-      <li><a href="../atramhasis-0.6.0/">Aug 24 - Atramhasis v0.6.0 released</a></li>
+      <li><a href="../atramhasis-0.6.0/">24 augustus - Atramhasis v0.6.0 released</a></li>
     
-      <li><a href="../waar-ligt-ons-erfgoed/">Jun 02 - Waar ligt ons Erfgoed?</a></li>
+      <li><a href="../waar-ligt-ons-erfgoed/">02 juni - Waar ligt ons Erfgoed?</a></li>
     
   </ul>
 </div>
@@ -463,6 +452,8 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
       
     
       
+    
+      
       <li class="ablog-cloud ablog-cloud-1">
         <a href="../../../blog/tag/search/">search</a></li>
       
@@ -486,6 +477,8 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
   
     
     <li><a href="../../../blog/category/gis/">GIS (3)</a></li>
+    
+  
     
   
     
@@ -554,7 +547,7 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
     <div class="footer-bottom-inner inner">
       <p class="copyright">
         &#169; Copyright 2016-2017, Flanders Heritage Agency.
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.6.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.0.1.
       </p>
       <p class="pull-right">
         <a href="#">Terug naar boven</a>
