@@ -2,10 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Flanders Heritage - Team Information Blog</title>
   <id>True/blog/atom.xml</id>
-  <updated>2018-01-11T00:00:00Z</updated>
+  <updated>2019-05-15T00:00:00Z</updated>
   <link href="True" />
   <link href="True/blog/atom.xml" rel="self" />
   <generator uri="http://ablog.readthedocs.org" version="0.9.2">ABlog</generator>
+  <entry xml:base="True/blog/atom.xml">
+    <title type="text">Van zoeken naar vinden op de nieuwe inventaris</title>
+    <id>True/posts/2019/inventaris-zoeken-inleiding/</id>
+    <updated>2019-05-15T00:00:00Z</updated>
+    <published>2019-05-15T00:00:00Z</published>
+    <link href="True/posts/2019/inventaris-zoeken-inleiding/" />
+    <author>
+      <name>Koen van Daele</name>
+    </author>
+    <content type="html">&lt;p&gt;Sinds &lt;a class=&quot;reference external&quot; href=&quot;https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd&quot;&gt;13 mei&lt;/a&gt;
+staat er een gloednieuwe inventaris op &lt;a class=&quot;reference external&quot; href=&quot;https://inventaris.onroerenderfgoed.be&quot;&gt;https://inventaris.onroerenderfgoed.be&lt;/a&gt;.
+Zoals altijd is het even aanpassen. En dat is misschien het duidelijkste
+in de zoekmogelijkheden. Sommige mogelijkheden zijn blijven bestaan,
+andere zijn lichtjes of sterk gewijzigd. Omdat het even wennen is, lijsten we
+op onze IT blog de voornaamste mogelijkheden qua zoeken op. Vandaag geven we
+een aantal algemene principes mee, die we later verder uitdiepen.&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="True/blog/atom.xml">
     <title type="text">Running an Atramhasis demo site with Docker</title>
     <id>True/posts/2018/atramhasis-docker/</id>
