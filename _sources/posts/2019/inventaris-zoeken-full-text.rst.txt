@@ -1,5 +1,5 @@
 .. post::
-   :category: services, inventaris
+   :category: services
    :tags: inventaris
    :author: Koen Van Daele
    :language: nl
@@ -7,7 +7,8 @@
 Full text zoeken in de inventaris
 =================================
 
-Sinds 13 mei staat er een gloednieuwe inventaris op https://inventaris.onroerenderfgoed.be.
+Sinds `13 mei <https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd>`_
+staat er een gloednieuwe inventaris op https://inventaris.onroerenderfgoed.be.
 Zoals altijd is het even aanpassen. Omdat verandering altijd even wennen is, lijsten we
 op onze IT blog de voornaamste mogelijkheden qua zoeken op. De vorige keer 
 (:ref:`inventaris-zoeken-inleiding`) gaven we een aantal algemene principes mee,
@@ -117,8 +118,8 @@ We hopen dat het duidelijk is dat je met de nieuwe zoekmachine in de inventaris
 krachtige full-text zoekopdrachten kunt uitvoeren eens je de mogelijkheden een
 beetje onder de knie hebt. Samengevat zijn die:
 
-* Meerdere zoektermen worden met AND gecombineerd
-* Dit kan je expliciet maken met `+`
+* Meerdere zoektermen worden impliciet met AND gecombineerd, je kan dit
+  expliciet maken met `+`
 * Je kunt ze ook combineren met een OR combinatie via `|`
 * Je kunt een term uitsluiten met de NOT operator via `-`
 * Je kunt zoektermen combineren tot 1 zoekterm door de termen tussen `"` te
