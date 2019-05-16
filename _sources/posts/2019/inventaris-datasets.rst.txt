@@ -1,0 +1,18 @@
+.. post::
+   :category: inventory
+   :tags: inventaris
+   :author: Koen Van Daele
+   :language: nl
+
+De vijf datasets in de inventaris onroerend erfgoed
+===================================================
+
+Op `13 mei <https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd>`_
+lanceerden we een gloednieuwe `inventaris onroerend erfgoed <https://inventaris.onroerenderfgoed.be>`_.
+Wie de nieuwe inventaris al gebruikt heeft, heeft vast wel gemerkt dat er
+sprake is van vijf verschillende datasets: erfgoedobjecten,
+aanduidingsobjecten, personen, thema's en gebeurtenissen. Hierbij vormen
+erfgoed- en aanduidingsobjecten de kern van de inventaris databank. De andere
+drie datasets, personen, thema's en gebeurtenissen, spelen een ondersteunende
+rol. In dit blog-artikel gaan we wat dieper in op de verschillene datasets en leggen 
+we uit waar elke dataset voor dient.
