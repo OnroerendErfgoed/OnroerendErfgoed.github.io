@@ -2,10 +2,30 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Flanders Heritage - Team Information Blog</title>
   <id>True/blog/atom.xml</id>
-  <updated>2019-05-15T00:00:00Z</updated>
+  <updated>2019-06-18T00:00:00Z</updated>
   <link href="True" />
   <link href="True/blog/atom.xml" rel="self" />
   <generator uri="http://ablog.readthedocs.org" version="0.9.2">ABlog</generator>
+  <entry xml:base="True/blog/atom.xml">
+    <title type="text">Erfgoedobjecten en aanduidingsobjecten</title>
+    <id>True/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/</id>
+    <updated>2019-06-18T00:00:00Z</updated>
+    <published>2019-06-18T00:00:00Z</published>
+    <link href="True/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/" />
+    <author>
+      <name>Koen van Daele</name>
+    </author>
+    <content type="html">&lt;p&gt;Op &lt;a class=&quot;reference external&quot; href=&quot;https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd&quot;&gt;13 mei&lt;/a&gt;
+lanceerden we een gloednieuwe &lt;a class=&quot;reference external&quot; href=&quot;https://inventaris.onroerenderfgoed.be&quot;&gt;Inventaris Onroerend Erfgoed&lt;/a&gt;.
+Wie de nieuwe inventaris al gebruikt heeft, heeft vast wel gemerkt dat er
+sprake is van vijf verschillende datasets: erfgoedobjecten,
+aanduidingsobjecten, personen, thema’s en gebeurtenissen. Hierbij vormen
+erfgoed- en aanduidingsobjecten de kern van de inventarisdatabank. In dit
+blog-artikel gaan we dieper in op deze twee datasets. De andere
+drie datasets, personen, thema’s en gebeurtenissen, spelen een ondersteunende
+rol. Deze komen later aan bod.&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="True/blog/atom.xml">
     <title type="text">Van zoeken naar vinden op de nieuwe inventaris</title>
     <id>True/posts/2019/inventaris-zoeken-inleiding/</id>
