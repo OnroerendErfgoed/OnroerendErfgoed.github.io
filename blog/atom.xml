@@ -2,10 +2,30 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Flanders Heritage - Team Information Blog</title>
   <id>True/blog/atom.xml</id>
-  <updated>2019-06-18T00:00:00Z</updated>
+  <updated>2019-07-25T00:00:00Z</updated>
   <link href="True" />
   <link href="True/blog/atom.xml" rel="self" />
   <generator uri="http://ablog.readthedocs.org" version="0.9.2">ABlog</generator>
+  <entry xml:base="True/blog/atom.xml">
+    <title type="text">Full text zoeken in de inventaris</title>
+    <id>True/posts/2019/inventaris-zoeken-full-text/</id>
+    <updated>2019-07-25T00:00:00Z</updated>
+    <published>2019-07-25T00:00:00Z</published>
+    <link href="True/posts/2019/inventaris-zoeken-full-text/" />
+    <author>
+      <name>Koen van Daele</name>
+    </author>
+    <content type="html">&lt;p&gt;Sinds &lt;a class=&quot;reference external&quot; href=&quot;https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd&quot;&gt;13 mei&lt;/a&gt;
+staat er een gloednieuwe inventaris op &lt;a class=&quot;reference external&quot; href=&quot;https://inventaris.onroerenderfgoed.be&quot;&gt;https://inventaris.onroerenderfgoed.be&lt;/a&gt;.
+Zoals altijd is het even aanpassen. Omdat verandering altijd even wennen is, lijsten we
+op onze IT blog de voornaamste mogelijkheden qua zoeken op. De vorige keer
+(&lt;a class=&quot;reference internal&quot; href=&quot;../posts/2019/inventaris-zoeken-inleiding/#inventaris-zoeken-inleiding&quot;&gt;&lt;span class=&quot;std std-ref&quot;&gt;Van zoeken naar vinden op de nieuwe inventaris&lt;/span&gt;&lt;/a&gt;) gaven we een aantal algemene principes mee,
+vandaag verdiepen we ons in full-text zoeken. Alhoewel we de
+erfgoedobjecten (&lt;a class=&quot;reference internal&quot; href=&quot;../posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/#inventaris-erfgoedobjecten-aanduidingsobjecten&quot;&gt;&lt;span class=&quot;std std-ref&quot;&gt;Erfgoedobjecten en aanduidingsobjecten&lt;/span&gt;&lt;/a&gt;) hier
+als voorbeeld gebruiken, ondersteunen onze andere modules dit soort
+zoekoperaties eveneens en met dezelfde syntax.&lt;/p&gt;
+</content>
+  </entry>
   <entry xml:base="True/blog/atom.xml">
     <title type="text">Erfgoedobjecten en aanduidingsobjecten</title>
     <id>True/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/</id>
