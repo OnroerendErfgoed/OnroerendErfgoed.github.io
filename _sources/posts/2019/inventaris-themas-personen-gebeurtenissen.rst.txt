@@ -1,0 +1,68 @@
+.. post:: 
+   :category: inventory
+   :tags: inventaris, themas, personen, gebeurtenissen
+   :author: Koen Van Daele
+   :language: nl
+
+Thema's, personen en gebeurtenissen
+===================================
+
+Op `13 mei <https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd>`_
+lanceerden we een gloednieuwe `Inventaris Onroerend Erfgoed <https://inventaris.onroerenderfgoed.be>`_.
+Wie de nieuwe inventaris al gebruikt heeft, heeft vast wel gemerkt dat er
+sprake is van vijf verschillende datasets: erfgoedobjecten,
+aanduidingsobjecten, personen, thema's en gebeurtenissen. In het verleden
+(:ref:`inventaris-erfgoedobjecten-aanduidingsobjecten`) hadden we het al over
+de erfgoed- en aanduidingsobjecten als kern van de inventarisdatabank. Deze
+keer gaan we dieper in op de drie andere datasets.
+
+Onze dataset **personen** is er al bij sinds de lancering van de eerste
+inventaris in mei 2009. De dataset bevat personen of organisaties die
+belangrijk geweest zijn bij het tot stand komen van het erfgoed dat we
+beschrijving. Meestal zijn dit architecten, aannemers, bouwmeesters,
+opdrachtgevers, bouwheren, kunstenaars, beeldhouwers, ... De dataset ontstond
+toen we in 2007-2009 werkten aan het typeren van onze erfgoedobjecten. Tot dan
+waren dat voornamelijk tekstuele documenten. Dit bemoeilijkte het zoeken
+echter. Zeker met vaak voorkomende namen was het moeilijk om bijvoorbeeld `alle
+gebouwen van een bepaalde architect` te vinden. Daarom werd er samen met het
+toekennen van thesaurustermen (en het opstellen van de thesaurus), ook werk
+gemaakt van het identificeren van de betrokken personen. Zo bouwden we langzaam
+een `authority file` op waarin we canonieke versies van de betrokken ontwerpers
+en andere personen opstelden. Voor het agentschap is de dataset van de
+personen, net zoals onze thesauri, geen kerndataset. Mochten we geen
+`Inventaris Onroerend Erfgoed <https://inventaris.onroerenderfgoed.be>`_ beheren,
+dan hadden we ook geen nood aan informatie over de betrokken personen. 
+
+Over de jaren heen is de dataset uitgegroeid tot een mooie staalkaart van
+ontwerpers, kunstenaars en architecten die een rol van betekenis gespeeld
+hebben voor ons Vlaamse erfgoed. Waar mogelijk vullen we de gegevens van elk
+aan; andere namen waaronder ze gekend zijn, geboorte- en sterfdata, plaatsen
+waar ze gewoond of gewerkt hebben, beroepen die ze hebben uitgeoefend,
+opleidingen die ze hebben genoten en een korte biografie. Elke persoon wordt
+gekoppeld aan de erfgoedobjecten waarmee hij of zij een band heeft als
+ontwerper, uitvoerder, opdrachtgever, ... Zo kun je via onze personen dataset
+snel een who's who van het Vlaamse onroerend erfgoed raadplegen.
+
+De dataset **gebeurtenissen** is er eigenlijk ook al bij sinds de lancering van
+de eerste inventaris in mei 2009, maar was lange tijd enkel intern te
+raadplegen. Onder een gebeurtenis verstaan we een actie of handeling,
+uitgevoerd op een bepaald moment door één of meerdere personen of organisaties.
+In de praktijk houden wij ons enkel bezig met handelingen die uitgevoerd worden
+op of over onroerend erfgoed. Een gebeurtenis is een eerder abstract begrip en
+kan gaan van een heel korte handeling: een opmeting van een boom over een
+opgraving of werfcontrole tot een groot project zoals een
+inventarisatiecampagne. Het komt altijd neer op X en Y deden werk van het
+type A op locatie L van datum I tot datum J. Bij een gebeurtenis nemen we soms
+ook een uitgebreide tekstuele beschrijving op en links naar verdere
+informatiebronnen. Soms gaan we een gebeurtenis ook opdelen in kleine
+deelgebeurtenissen. Het finale doel is dat we stukken informatie kunnen duiden
+en kunnen aangeven hoe deze informatie ontstaan is. Zo kun je bij een typisch
+erfgoedobject zien in welk inventarisatiecampagne het voor het eerst opgepikt
+is, wanneer het object opnieuw geïnventariseerd werd en wanneer het adres
+uitgebreid gecontroleerd werd.
+
+De derde en laatste dataset, die van de **themas** is veel later ontstaan dan
+de andere twee, maar bevat sinds de nieuwe versie wel gegevens die al aanwezig
+waren in de versie van mei 2009.
+
+Heb je nog vragen of suggesties, neem dan `contact op met ons <ict@onroerenderfgoed.be>`_.
