@@ -1,4 +1,4 @@
-.. post:: 
+.. post:: 2019-09-30 
    :category: inventory
    :tags: inventaris, themas, personen, gebeurtenissen
    :author: Koen Van Daele
@@ -29,7 +29,7 @@ architect `Baksteen <https://inventaris.onroerenderfgoed.be/personen/7927>`_ was
 Daarom werd er samen met het toekennen van thesaurustermen (en het opstellen 
 van de thesauri), ook werk gemaakt van het identificeren van alle betrokken
 personen. Zo bouwden we langzaam een `authority file` op waarin we canonieke 
-versies van de betrokken ontwerpers en andere personen opstelden. Voor het 
+versies van de betrokken ontwerpers en andere personen bijhouden. Voor het 
 agentschap is de dataset van de personen, net zoals onze thesauri, 
 geen kerndataset. Mochten we geen
 `Inventaris Onroerend Erfgoed <https://inventaris.onroerenderfgoed.be>`_ beheren,
@@ -38,7 +38,7 @@ dan hadden we ook geen nood aan informatie over de betrokken personen.
 Over de jaren heen is de dataset uitgegroeid tot een mooie staalkaart van
 ontwerpers, kunstenaars en architecten die een rol van betekenis gespeeld
 hebben voor ons Vlaamse erfgoed. Waar mogelijk vullen we de gegevens van elk
-aan; andere namen waaronder ze gekend zijn, geboorte- en sterfdata (of
+aan: andere namen waaronder ze gekend zijn, geboorte- en sterfdata (of
 oprichtingsdata in het geval van organisaties of groepen), plaatsen
 waar ze gewoond of gewerkt hebben, beroepen die ze hebben uitgeoefend,
 opleidingen die ze hebben genoten en een korte biografie. Elke persoon of
@@ -92,6 +92,11 @@ geraadpleegde pagina's op de website en worden vaak gebruikt door externen als
 een historisch kader voor onroerend erfgoed in Vlaanderen. Zo kun je meer te
 weten komen over `de historische kern van Gent <Gent - middeleeuwse stadskern>`_,
 `de Lippenslaan te Knokke <https://inventaris.onroerenderfgoed.be/themas/7250>`_ 
-of `de haven van Antwerpen <https://inventaris.onroerenderfgoed.be/themas/13659>`_
+of `de haven van Antwerpen <https://inventaris.onroerenderfgoed.be/themas/13659>`_.
+
+We hopen dat het doel van deze drie ondersteunende datasets hiermee is
+duidelijk is geworden. Geen van deze drie datasets vorm de essentie van de
+inventaris onroerend erfgoed, maar alle drie maken ze de inventaris
+interessanter of nuttiger. 
 
 Heb je nog vragen of suggesties, neem dan `contact op met ons <ict@onroerenderfgoed.be>`_.
