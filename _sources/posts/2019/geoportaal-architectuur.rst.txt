@@ -1,0 +1,49 @@
+.. post:: 
+   :category: services, gis
+   :tags: geoportaal, geoserver
+   :author: Koen Van Daele
+   :language: en
+
+Flanders Heritage Geoportal: All Together Now!
+==============================================
+
+`Flanders Heritage <https://www.onroerenderfgoed.be>`_ has had a `geoportal
+<https://geo.onroerenderfgoed.be>`_ since 2013. Although it has grown and
+transformed over the years, the basic goals and the architectural design have
+remained largely unchanged. Our first and main requirement was that we wanted
+something that was easy to use for a large userbase. We had observed that other
+geoportals tended to cater to the GIS professionals and quite often sought to
+build an online version of a desktop GIS. This creates a web application that
+might be versatile and quite powerful to people who know GIS, but is ultimately
+inaccessible to user who have no GIS experience. We wanted to create a user
+experience similar to `Google Maps` and other webbased mapping platforms, but
+specifically tailored to users looking for information on cultural heritage. We
+also wanted the geoportal to feel like an integral part of our online
+information source. To achieve this we created reports that always link to our
+online sources through their persistent URI's. These URI's are present as
+metadata in all our geographical data and link features back to their authentic
+source where the data is always up to date.
+
+A second requirement came about through the data we wanted to show. While
+Flanders Heritage creates, maintains and publishes geodata about immovable 
+cultural heritage, it does not publish other geodata. We have always relied
+heavily on `Flanders Information Agency <https://informatie.vlaanderen.be>`_
+(the former Agentschap Geografische Informatie Vlaanderen or AGIV) as our partner for
+supplying us with geographical basemaps and non-heritage related information
+layers. We also had other layers we wanted to incorporate, from other entities
+of the Flemish Government such as `Mercator <>`_ or other countries (`RCE
+<>`_). We not only rely upon `Informatie Vlaanderen` for geographical layers,
+but they also provide alfanumerical services that help in navigating maps.
+There's the CRAB services that enumerates all address data in Flanders, the
+CAPAKEY service that provides data on cadastral parcels and a geolocation
+service that helps to quickly find a certain address in a free-form text-search
+style. We wanted to use all these services and store as little data as possible
+from these other services. A few caches here and there are fine, but not
+full-scale copies of other services and databases. We fetch the data at it's
+point of origin so the data we present are as uptodate as possible.
+
+Finally, from a technical point of view we wanted to work with open source
+software and have the maintenance of the portal be fairly simply, while still
+allowing us to configure things in an optimal way. We wanted to make the easy
+things simple to do and the hard things doable. This philosopy has worked out
+well for us. 
