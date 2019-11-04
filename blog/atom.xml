@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title type="text">Flanders Heritage - Team Information Blog</title>
-  <id>True/blog/atom.xml</id>
+  <id>https://onroerenderfgoed.github.io/blog/atom.xml</id>
   <updated>2019-10-31T00:00:00Z</updated>
-  <link href="True" />
-  <link href="True/blog/atom.xml" rel="self" />
+  <link href="https://onroerenderfgoed.github.io/" />
+  <link href="https://onroerenderfgoed.github.io/blog/atom.xml" rel="self" />
   <generator uri="http://ablog.readthedocs.org" version="0.9.2">ABlog</generator>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Zoeken in de beeldbank</title>
-    <id>True/posts/2019/beeldbank-zoeken/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2019/beeldbank-zoeken/</id>
     <updated>2019-10-31T00:00:00Z</updated>
     <published>2019-10-31T00:00:00Z</published>
-    <link href="True/posts/2019/beeldbank-zoeken/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2019/beeldbank-zoeken/" />
     <author>
       <name>Koen van Daele</name>
     </author>
@@ -25,12 +25,12 @@ Vandaag geven we je wat meer uitleg bij de zoekfuncties van de beeldbank en hoe
 je er het meeste uit kan halen.&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Thema’s, personen en gebeurtenissen</title>
-    <id>True/posts/2019/inventaris-themas-personen-gebeurtenissen/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2019/inventaris-themas-personen-gebeurtenissen/</id>
     <updated>2019-09-30T00:00:00Z</updated>
     <published>2019-09-30T00:00:00Z</published>
-    <link href="True/posts/2019/inventaris-themas-personen-gebeurtenissen/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2019/inventaris-themas-personen-gebeurtenissen/" />
     <author>
       <name>Koen van Daele</name>
     </author>
@@ -44,12 +44,12 @@ de erfgoed- en aanduidingsobjecten als kern van de inventarisdatabank. Deze
 keer gaan we dieper in op de drie andere datasets.&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Tien jaar inventaris</title>
-    <id>True/posts/2019/inventaris-nieuw/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2019/inventaris-nieuw/</id>
     <updated>2019-08-14T00:00:00Z</updated>
     <published>2019-08-14T00:00:00Z</published>
-    <link href="True/posts/2019/inventaris-nieuw/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2019/inventaris-nieuw/" />
     <author>
       <name>Koen van Daele</name>
     </author>
@@ -69,12 +69,12 @@ inventaris de laatste 10 jaar meegemaakt heeft, met een focus op de
 technologische kant.&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Full text zoeken in de inventaris</title>
-    <id>True/posts/2019/inventaris-zoeken-full-text/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2019/inventaris-zoeken-full-text/</id>
     <updated>2019-07-25T00:00:00Z</updated>
     <published>2019-07-25T00:00:00Z</published>
-    <link href="True/posts/2019/inventaris-zoeken-full-text/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2019/inventaris-zoeken-full-text/" />
     <author>
       <name>Koen van Daele</name>
     </author>
@@ -89,12 +89,12 @@ als voorbeeld gebruiken, ondersteunen onze andere modules dit soort
 zoekoperaties eveneens en met dezelfde syntax.&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Erfgoedobjecten en aanduidingsobjecten</title>
-    <id>True/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/</id>
     <updated>2019-06-18T00:00:00Z</updated>
     <published>2019-06-18T00:00:00Z</published>
-    <link href="True/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/" />
     <author>
       <name>Koen van Daele</name>
     </author>
@@ -110,12 +110,12 @@ rol. Deze komen later aan bod
 (&lt;a class=&quot;reference internal&quot; href=&quot;../posts/2019/inventaris-themas-personen-gebeurtenissen/#inventaris-themas-personen-gebeurtenissen&quot;&gt;&lt;span class=&quot;std std-ref&quot;&gt;Thema’s, personen en gebeurtenissen&lt;/span&gt;&lt;/a&gt;).&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Van zoeken naar vinden op de nieuwe inventaris</title>
-    <id>True/posts/2019/inventaris-zoeken-inleiding/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2019/inventaris-zoeken-inleiding/</id>
     <updated>2019-05-15T00:00:00Z</updated>
     <published>2019-05-15T00:00:00Z</published>
-    <link href="True/posts/2019/inventaris-zoeken-inleiding/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2019/inventaris-zoeken-inleiding/" />
     <author>
       <name>Koen van Daele</name>
     </author>
@@ -128,12 +128,12 @@ op onze IT blog de voornaamste mogelijkheden qua zoeken op. Vandaag geven we
 een aantal algemene principes mee, die we later verder uitdiepen.&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Running an Atramhasis demo site with Docker</title>
-    <id>True/posts/2018/atramhasis-docker/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2018/atramhasis-docker/</id>
     <updated>2018-01-11T00:00:00Z</updated>
     <published>2018-01-11T00:00:00Z</published>
-    <link href="True/posts/2018/atramhasis-docker/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2018/atramhasis-docker/" />
     <author>
       <name>Maarten Vermeyen, Koen van Daele</name>
     </author>
@@ -144,12 +144,12 @@ simple web interface. This allows any user with access to a web browser to
 consult the thesauri and if so wanted AND authorised, to edit them.&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Erfgoed geprint op een kaart</title>
-    <id>True/posts/2017/erfgoed-geprint-op-kaart/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2017/erfgoed-geprint-op-kaart/</id>
     <updated>2017-10-03T00:00:00Z</updated>
     <published>2017-10-03T00:00:00Z</published>
-    <link href="True/posts/2017/erfgoed-geprint-op-kaart/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2017/erfgoed-geprint-op-kaart/" />
     <author>
       <name>Tinne Cahy</name>
     </author>
@@ -160,12 +160,12 @@ wat doe je dan met die informatie? Vanaf nu kan je er in elk geval makkelijker
 zelf mee aan de slag. Namelijk: Hoe kan je zelf kaartjes maken van het gevonden erfgoed?&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">What’s a thesaurus?</title>
-    <id>True/posts/2017/whats-a-thesaurus/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2017/whats-a-thesaurus/</id>
     <updated>2017-09-14T00:00:00Z</updated>
     <published>2017-09-14T00:00:00Z</published>
-    <link href="True/posts/2017/whats-a-thesaurus/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2017/whats-a-thesaurus/" />
     <author>
       <name>Koen van Daele</name>
     </author>
@@ -174,12 +174,12 @@ web based thesaurus editor. But what is a thesaurus and why would a heritage
 organisation want one?&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Atramhasis v0.6.0 released</title>
-    <id>True/posts/2017/atramhasis-0.6.0/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2017/atramhasis-0.6.0/</id>
     <updated>2017-08-24T00:00:00Z</updated>
     <published>2017-08-24T00:00:00Z</published>
-    <link href="True/posts/2017/atramhasis-0.6.0/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2017/atramhasis-0.6.0/" />
     <author>
       <name>Koen van Daele</name>
     </author>
@@ -191,12 +191,12 @@ your vocabularies. To make integrating vocabularies with your other IT systems
 easy, all data in Atramhasis is exposed through a read an write REST webservice.&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Geozoekdiensten. Wat ligt er hier?</title>
-    <id>True/posts/2017/geozoekdiensten/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2017/geozoekdiensten/</id>
     <updated>2017-08-14T00:00:00Z</updated>
     <published>2017-08-14T00:00:00Z</published>
-    <link href="True/posts/2017/geozoekdiensten/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2017/geozoekdiensten/" />
     <author>
       <name>Koen van Daele</name>
     </author>
@@ -210,12 +210,12 @@ voor elk object informatie krijgt zoals een &lt;cite&gt;id&lt;/cite&gt;, een &lt
 volledige &lt;cite&gt;geometrie&lt;/cite&gt;.&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Waar ligt ons Erfgoed?</title>
-    <id>True/posts/2017/waar-ligt-ons-erfgoed/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2017/waar-ligt-ons-erfgoed/</id>
     <updated>2017-06-02T00:00:00Z</updated>
     <published>2017-06-02T00:00:00Z</published>
-    <link href="True/posts/2017/waar-ligt-ons-erfgoed/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2017/waar-ligt-ons-erfgoed/" />
     <author>
       <name>Koen van Daele</name>
     </author>
@@ -227,12 +227,12 @@ zijn ze daar altijd al geweest. Als ze niet meer op hun oorspronkelijke plaats l
 bestaan ze niet meer. Maar hoe weet je nu wat waar ligt?&lt;/p&gt;
 </content>
   </entry>
-  <entry xml:base="True/blog/atom.xml">
+  <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
     <title type="text">Atramhasis v0.5.0 released</title>
-    <id>True/posts/2016/atramhasis-0.5.0/</id>
+    <id>https://onroerenderfgoed.github.io/posts/2016/atramhasis-0.5.0/</id>
     <updated>2016-09-14T00:00:00Z</updated>
     <published>2016-09-14T00:00:00Z</published>
-    <link href="True/posts/2016/atramhasis-0.5.0/" />
+    <link href="https://onroerenderfgoed.github.io/posts/2016/atramhasis-0.5.0/" />
     <author>
       <name>Koen van Daele</name>
     </author>
