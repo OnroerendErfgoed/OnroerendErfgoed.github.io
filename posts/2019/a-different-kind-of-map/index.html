@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Running an Atramhasis demo site with Docker &#8212; Flanders Heritage - Team Information  documentation</title>
+    <title>A different kind of map &#8212; Flanders Heritage - Team Information  documentation</title>
     <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -87,71 +87,95 @@
     <div class="large-9 columns">
       <div class="body panel" role="main">
         
-  <div class="section" id="running-an-atramhasis-demo-site-with-docker">
-<h1>Running an Atramhasis demo site with Docker<a class="headerlink" href="#running-an-atramhasis-demo-site-with-docker" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="http://atramhasis.readthedocs.io/">Atramhasis</a> is an online SKOS editor.
-It allows a user to create and edit an online thesaurus (<a class="reference internal" href="../../2017/whats-a-thesaurus/#whats-a-thesaurus"><span class="std std-ref">What’s a thesaurus?</span></a>)
-or vocabulary adhering to the <a class="reference external" href="http://www.w3.org/TR/skos-reference/">SKOS specification</a> through a
-simple web interface. This allows any user with access to a web browser to
-consult the thesauri and if so wanted AND authorised, to edit them.</p>
-<p>While it used to be a bit of work to set up a demo instance of Atramhasis, we
-have now provided a <a class="reference external" href="https://hub.docker.com/r/atramhasis/demo/">Docker image</a>
-available that allows you to quickly get a demo instance up and running.
-The Docker image contains both a demo application and the related
-<a class="reference external" href="http://linkeddatafragments.org/">Linked Data Fragments</a> server.</p>
-<p>After <a class="reference external" href="https://docs.docker.com/engine/installation/#supported-platforms">installing Docker for your operating system</a> (the CE
-edition works is more than sufficient for this), you
-can simply pull the image and run a container. Once you’ve
-executed the following commands, you should be able to
-visit the demo application in your browser on
-<a class="reference external" href="http://localhost:6543">http://localhost:6543</a>. A Linked Data Fragments server is also included
-in the demo, which is accessible on <a class="reference external" href="http://localhost:3000">http://localhost:3000</a>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker pull atramhasis/demo
-$ sudo docker run -p 6543:6543 -p 3000:3000 atramhasis/demo
-</pre></div>
-</div>
-<p>Alternatively, you can run a specific version of Atramhasis
-(starting from atramhasis 0.6.4):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo docker pull atramhasis/demo:0.6.4
-$ sudo docker run -p 6543:6543 -p 3000:3000 atramhasis/demo:0.6.4
-</pre></div>
-</div>
-<p>While this is a fast and easy way to get a first impression of
-Atramhasis, please be aware  that any edits you make when running the
-image, will be discarded when you stop the Docker container. If you want
-to test the application over a longer period of time, this is probably not
-what you’re looking for. If you need persistence, but still want to use
-Docker, you can customise the
-<a class="reference external" href="https://github.com/OnroerendErfgoed/atramhasis-demo-docker/">Dockerfile</a>
-to suit your needs.</p>
+  <div class="section" id="a-different-kind-of-map">
+<h1>A different kind of map<a class="headerlink" href="#a-different-kind-of-map" title="Permalink to this headline">¶</a></h1>
+<p>At <a class="reference external" href="https://www.onroerenderfgoed.be">Flanders Heritage</a> we love maps! Almost
+all the heritage - I’m looking at you, heritage afloat - we’re dealing with
+on a daily basis is located somewhere. Quite a lot of our information systems
+have some geographical component in them and spatial data is part of our bread
+and butter. But sometimes, we also deal with maps that are not geographical in
+nature. Today, we’ll take a look at sitemaps. Just like regular maps, these
+have served us wel in helping people discover and find our heritage.</p>
+<p>Sitemaps are simple XML documents that can be added to a webserver. These can
+then be read by search engines and indexed. Reading a sitemaps tells a search
+engine what webpages are present on your server. It’s essentially, a huge file
+full of links, with a suggestion for your favourite search engine to have a
+look at them. Recently we added one for <a class="reference external" href="https://beeldbank.onroerenderfgoed.be">our image database</a>. This site publishes some 280.000
+images of cultural heritage. Most of them taken by or for us. A large majority
+of those (some 233.000) can even be reused freely under an open data license.
+So, why did we add a sitemap and what have we gotten out of it?</p>
+<p>To understand why they might be helpful, we have to understand
+how a search engine normally discovers and finds you website and webpages. This
+is done by a process known as <cite>crawling</cite>. The search engine acts a
+bit like a human surfing the web: it reads a webpage and indexes it (adds the
+page to an index if the page has enough relevant content) and then looks at all
+outgoing links. It follows these and repeats the process. While the actual
+process in deciding if and how a page gets indexed is more complicated, the
+mechanism for discovery of pages is quite simple. It means that, as long
+as a webpage is linked from at least one other webpage that is known by a
+search engine, it will eventually be analysed by the crawler. Off course, this
+is a rather slow process. It depends on some other site linking to your site
+and your site having good internal links. Since the web is huge these days, it might
+take a long time for crawlers to discover new pages and sites. Can’t we just
+guide these crawlers in discovering new stuff?</p>
+<img alt="../../../_images/sitemaps_sitemap_example.png" src="../../../_images/sitemaps_sitemap_example.png" />
+<p><em>A few lines from a sitemap file for https://beeldbank.onroerenderfgoed.be</em></p>
+<p>So the sitemap comes to the rescue! It’s a simple XML file that can
+contain all the individual webpages on your website. If you want to be
+nice to the crawlers you can add when a page was last updated. This helps the
+crawler decide if it should reanalyse a certain page or just ignore it for now.
+Since a website can be quite big, it’s possible (and for large sites unavoidable)
+to split your sitemap into several files. In that case, one file functions as the
+<a class="reference external" href="https://beeldbank.onroerenderfgoed.be/sitemap_index.xml">sitemap index</a> and points
+to all the individual files. Everyone of those sitemap files may contain up
+to 50.000 webpages. Together the should give search engines a good idea what
+information might be found on your site.</p>
+<img alt="../../../_images/sitemaps_sitemap_index.png" src="../../../_images/sitemaps_sitemap_index.png" />
+<p><em>The sitemap index file for https://beeldbank.onroerenderfgoed.be pointing</em></p>
+<p>Once you have a sitemap file, you can let the searchengines know where it can
+be found. You can either submit these manually to a search engine or advertise
+the presence of the sitemap in a <cite>robots.txt</cite> file (a file that contains some
+hints for search engine crawlers on how to analyse your site). Once a sitemap
+is picked up by a search engine, the engine goes to work on the contents of the file.
+Analysing and indexing them. Depending on the search engine and the number of
+links it might take a few days or weeks before it’s fully up to date with all
+the pages on your site.</p>
+<p>Off course, that’s nice in theory, but does it actually work? Compiling a sitemap
+file for a website with thousands of links can (and should) be automated, but it
+still requires some work. And nobody likes doing unnecessary work! Luckily for us,
+<cite>Google</cite> offers us some tools to check how it’s indexing your websites. We can
+see how many pages are present in the index, how many pages were considered but not
+accepted and which pages produce errors making it impossible for Google to
+index them. We can also check how often our site appears in search results and
+how often people actually click on those search result and actually reach our
+website.</p>
+<p><em>Coverage for https://beeldbank.onroerenderfgoed.be before and after the
+sitemap was introduced (mid oktober)</em></p>
+<p>If we look at the coverage our site has, we can compare the periode before we
+added the sitemap with the period after we added it. This graph clearly
+show that adding the sitemap quickly increased our coverage. We have not yet
+reached full coverage for the entire site. Currently some 220.000 pages are
+indexed. Google chooses how and when it indexes sitemaps, so we can’t predict
+how long it will take or if it will ever be completed.</p>
+<p><em>Search performance for https://beeldbank.onroerenderfgoed.be before and after the
+sitemap was introduced (mid oktober)</em></p>
+<p>This next graph shows us how the site has been performing in search results
+after we added the sitemap and it was processed by Google. The site went from
+appearing between 200 and 400 times a day in search results to appearing 800-1200 times
+per day. This has also lead to an increase in clicks to our website. Where we
+use to have 5-10 people ckicking through every day, we are seeing between 30
+and 40 new clicks. The relative percentage of people who click through hasn’t
+really changed, but off course the absolute numbers have.</p>
+<p>As we have seen, creating a sitemap is a bit of work, but it does increase your
+site’s visibility in search results tremendously. So, give it a go and add a
+sitemap to your site. <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoed&#46;be">Let us know</a> if and how it
+worked for you.</p>
 </div>
 
   <div class="section">
   
     
 
-
-<div class="section">
-  <span style="float: left;">
-  
-  
-  <a href="../../2017/erfgoed-geprint-op-kaart/">
-    <i class="fa fa-arrow-circle-left"></i>
-    Erfgoed geprint op een kaart
-  </a>
-  
-  </span>
-  <span>&nbsp;</span>
-  <span style="float: right;">
-  
-  
-  <a href="../../2019/inventaris-zoeken-inleiding/">
-    Van zoeken naar vinden op de nieuwe inventaris
-    <i class="fa fa-arrow-circle-right"></i>
-  </a>
-  </span>
-  
-</div>
 
   
   
@@ -167,8 +191,8 @@ to suit your needs.</p>
   
   <h2>
   
-  <i class="fa fa-calendar"></i>
-    11 januari 2018
+    <i class="fa fa-pencil"></i>
+     Draft 
   
   </h2>
 
@@ -177,10 +201,6 @@ to suit your needs.</p>
 
   
   <li id="author"><span><i class="fa-fw fa fa-user"></i>
-    
-      
-      <a href="../../../blog/author/maarten-vermeyen/">Maarten Vermeyen</a>,
-      
     
       
       <a href="../../../blog/author/koen-van-daele/">Koen van Daele</a>
@@ -202,22 +222,19 @@ to suit your needs.</p>
   
   <li id="category"><span><i class="fa-fw fa fa-folder-open"></i>
     
-      
-      <a href="../../../blog/category/thesaurus/">thesaurus</a>,
-      
-    
-      
-      <a href="../../../blog/category/open-source/">open source</a>
-      
+      architecture
     </li>
   
 
   
-  <li id="tags"><span><i class="fa-fw fa fa-tag"></i>
+  <li id="tags"><span><i class="fa-fw fa fa-tags"></i>
+      
     
       
-      <a href="../../../blog/tag/atramhasis/">atramhasis</a>
+      <a href="../../../blog/tag/search/">search</a>
       
+    
+      sitemaps
     </li>
   
   
@@ -230,15 +247,15 @@ to suit your needs.</p>
   <ul>
     
     
-      <li><a href="../../2019/beeldbank-zoeken/">31 oktober - Zoeken in de beeldbank</a></li>
+      <li><a href="../beeldbank-zoeken/">31 oktober - Zoeken in de beeldbank</a></li>
     
-      <li><a href="../../2019/inventaris-themas-personen-gebeurtenissen/">30 september - Thema’s, personen en gebeurtenissen</a></li>
+      <li><a href="../inventaris-themas-personen-gebeurtenissen/">30 september - Thema’s, personen en gebeurtenissen</a></li>
     
-      <li><a href="../../2019/inventaris-nieuw/">14 augustus - Tien jaar inventaris</a></li>
+      <li><a href="../inventaris-nieuw/">14 augustus - Tien jaar inventaris</a></li>
     
-      <li><a href="../../2019/inventaris-zoeken-full-text/">25 juli - Full text zoeken in de inventaris</a></li>
+      <li><a href="../inventaris-zoeken-full-text/">25 juli - Full text zoeken in de inventaris</a></li>
     
-      <li><a href="../../2019/inventaris-erfgoedobjecten-aanduidingsobjecten/">18 juni - Erfgoedobjecten en aanduidingsobjecten</a></li>
+      <li><a href="../inventaris-erfgoedobjecten-aanduidingsobjecten/">18 juni - Erfgoedobjecten en aanduidingsobjecten</a></li>
     
   </ul>
 </div>
