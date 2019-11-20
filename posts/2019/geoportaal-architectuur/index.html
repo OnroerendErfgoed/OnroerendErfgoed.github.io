@@ -96,14 +96,15 @@ something that was easy to use for a large userbase. We had observed that other
 geoportals tended to cater to the GIS professionals and quite often sought to
 build an online version of a desktop GIS. This creates a web application that
 might be versatile and quite powerful to people who know GIS, but is ultimately
-inaccessible to user who have no GIS experience. We wanted to create a user
+inaccessible to users who have no GIS experience. We wanted to create a user
 experience similar to <cite>Google Maps</cite> and other webbased mapping platforms, but
 specifically tailored to users looking for information on cultural heritage. We
 also wanted the geoportal to feel like an integral part of our online
-information source. To achieve this we created reports that always link to our
+information systems. To achieve this we created reports that always link to our
 online sources through their persistent URI’s. These URI’s are present as
 metadata in all our geographical data and link features back to their authentic
-source where the data is always up to date.</p>
+source. The database you can go to for the latest version of record,  where
+the data is always up to date.</p>
 <p>A second requirement came about through the data we wanted to show. While
 Flanders Heritage creates, maintains and publishes geodata about immovable
 cultural heritage, it does not publish other geodata. We have always relied
@@ -111,16 +112,19 @@ heavily on <a class="reference external" href="https://informatie.vlaanderen.be"
 (the former Agentschap Geografische Informatie Vlaanderen or AGIV) as our partner for
 supplying us with geographical basemaps and non-heritage related information
 layers. We also had other layers we wanted to incorporate, from other entities
-of the Flemish Government such as <a href="#id1"><span class="problematic" id="id2">`Mercator &lt;&gt;`_</span></a> or other countries (<a href="#id3"><span class="problematic" id="id4">`RCE
-&lt;&gt;`_</span></a>). We not only rely upon <cite>Informatie Vlaanderen</cite> for geographical layers,
-but they also provide alfanumerical services that help in navigating maps.
-There’s the CRAB services that enumerates all address data in Flanders, the
-CAPAKEY service that provides data on cadastral parcels and a geolocation
+of the Flemish Government such as <a class="reference external" href="https://mercator.vlaanderen.be/">Mercator</a>
+or other countries (<a class="reference external" href="https://www.cultureelerfgoed.nl/">RCE</a>). We not only
+rely upon <cite>Flanders Information Agency</cite> for geographical layers,
+they also provide alfanumerical services that help in navigating maps.
+There’s the <a class="reference external" href="https://overheid.vlaanderen.be/informatie-vlaanderen/producten-diensten/centraal-referentieadressenbestand-crab">CRAB service that enumerates all address data in Flanders</a>
+, the <a class="reference external" href="https://overheid.vlaanderen.be/capakey-rest-service">CAPAKEY service</a>
+that provides data on cadastral parcels and a geolocation
 service that helps to quickly find a certain address in a free-form text-search
-style. We wanted to use all these services and store as little data as possible
-from these other services. A few caches here and there are fine, but not
+style. We wanted to use all these services, but not just copy their data, as
+would have happened ten years earlier. We wanted to store as little data as
+possible from these services. A few caches here and there are fine, but not
 full-scale copies of other services and databases. We fetch the data at it’s
-point of origin so the data we present are as uptodate as possible.</p>
+point of origin so the data we can show our end users are as uptodate as possible.</p>
 <p>Finally, from a technical point of view we wanted to work with open source
 software (both for costs reasons and because it fit our tecnical stack nicely).
 We also wanted he maintenance of the portal be fairly simply, while still
@@ -129,24 +133,27 @@ wanted to make the easy things simple to do and the hard things doable.
 This philosopy has worked out well for us. Adding new layers is done through
 configuration in code, which has allowed us to eg. optimise how layers are
 combined.</p>
-<p>The geoportal consists of a back- and a frontend. The frontend is the most
-sizeable piece of code (about 98% of all code is JS, HTML and CSS) and
+<img alt="../../../_images/geoportaal_architectuur.png" src="../../../_images/geoportaal_architectuur.png" />
+<p><em>Software architecture of the Flanders Heritage Geoportal</em></p>
+<p>So, if those were the main design considerations, where did we end up? As all
+modern applications, the geoportal consists of a back- and a frontend. The frontend is the most
+sizeable piece of code (about 98% of all code is Javascript, HTML and CSS) and
 consists of the map layout, UI/UX and general presentation layout. Since the
-code was written several years ago, it still uses a rather old JS framework,
-Dojo. The mapping interface was written in Openlayers 2, but was upgraded to
-Openlayers 3 (and PROJ 4) a few years ago. The HTML and CSS comes from our
-implementation of the Flemish corporate style for websites using the Zurb
-Foundation framework. The geoportal
-frontend communicates entirely through services with either our own geoportal
-backend or other webservices.</p>
+code was written several years ago, it still uses a rather old Javascript
+framework, <a class="reference external" href="https://dojotoolkit.org">Dojo</a>. The mapping interface uses
+<a class="reference external" href="https://openlayers.org">Openlayers</a> (and <a class="reference external" href="http://proj4js.org/">PROJ 4</a>).
+The HTML and CSS comes from our implementation of the Flemish corporate style
+for websites using the <cite>Zurb Foundation framework &lt;https://foundation.zurb.com/&gt;`_</cite>.
+The geoportal frontend communicates entirely through services with either our
+own geoportal backend or other webservices.</p>
 <p>Those other webservices are for the largest part INSPIRE compliant WMS, WMTS
 and WFS services hosted by one of several parties:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><a href="#id5"><span class="problematic" id="id6">`Flanders Information Agency &lt;&gt;`_</span></a> hosts a large number of reference datasets
-such as basemaps, aerial photography, historic maps, address data,
-cadastrals parcels, … in the offical <a href="#id7"><span class="problematic" id="id8">`Flemish INSPIRE node &lt;&gt;`_</span></a>.</p></li>
-<li><p><a href="#id9"><span class="problematic" id="id10">`Mercator &lt;&gt;`_</span></a> is an INSPIRE subnode that hosts datasets and maps dealing
+<ul class="simple">
+<li><p><a class="reference external" href="https://informatie.vlaanderen.be">Flanders Information Agency</a> hosts
+a large number of reference datasets such as basemaps, aerial photography,
+historic maps, address data,     cadastrals parcels, … in the offical
+<a class="reference external" href="https://www.geopunt.be">Flemish INSPIRE node</a>.</p></li>
+<li><p><a class="reference external" href="https://mercator.vlaanderen.be/">Mercator</a> is an INSPIRE subnode that hosts datasets and maps dealing
 with environmental data, but als our heritage data.</p></li>
 <li><p>Specifically for our geoportal we host our own Geoserver instance. This
 allows us a bit more control over certain presentation related issues and is
@@ -158,7 +165,6 @@ current day political boundaries, so it can be interesting for our users to
 have a look across the border. Having other published WMS services makes
 this easy to incorporate.</p></li>
 </ul>
-</div></blockquote>
 <p>Finally we also use a few layers that are not a part of INSPIRE. We use
 OpenStreetMap as a good baselayer for general use and the NGI Topographical map
 for those who are interested. And for fun we also added the Pelagios map of
@@ -167,8 +173,7 @@ the Roman World.</p>
 framework. Apart from serving the static files for the frontend, it has two
 major functions. It’s main job is to proxy certain location services by
 <cite>Flanders Information Agency</cite>:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>Geolocation, a service that suggests adressess based on simple text imput
 and returns geographical coordinates. It’s a quick and easy way to navigate
 our map of Flanders.</p></li>
@@ -183,11 +188,9 @@ municipalities, cadastral divisions and section and parcel numbers. Similar
 to the CRAB service, we use this service to guide our users through the
 Belgian cadastral system to the parcel they are interested in.</p></li>
 </ul>
-</div></blockquote>
 <p>Nowadays, these three services are freely and openly available, so the need to
 proxy them might be less obvious now than when we started:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>In te beginning both CRAB and CAPAKEY were SOAP services, difficult, if not
 impossible, to work with from within a browser using JS. Recently, CAPAKEY
 switched to a REST Service, so technically we could access it directly.
@@ -207,7 +210,6 @@ number of calls we have to make to the upstream services tremendously.</p></li>
 provinces, not present in either CRAB or CAPAKEY. We also incorporated a
 python library of all country codes, to be used in address validations.</p></li>
 </ul>
-</div></blockquote>
 <p>If you yourself have a need for Flemish address or parcel data, and you’re
 using Python, feel free to use or <cite>CRABpy</cite> library. If you’re using the same
 framework we are, <cite>Pyramid</cite>, you can also use <cite>CRABpy_pyramid</cite> that makes it
@@ -236,7 +238,7 @@ us. It has been in use for years now and is used quite a lot. The cost of
 building and maintaining it however, has been fairly low. The portal itself
 requires very little when it comes to hardware to run on and has a very low
 footrpint when running. Interested in our setup, have a look at our software
-libraries at <a href="#id11"><span class="problematic" id="id12">`https://github.com/onroerenderfgoed`_</span></a> or drop us a line at
+libraries at <a class="reference external" href="https://github.com/onroerenderfgoed">Github</a> or drop us a line at
 <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoed&#46;be">ict<span>&#64;</span>onroerenderfgoed<span>&#46;</span>be</a></p>
 </div>
 
