@@ -15,7 +15,9 @@
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;em&gt;The Flanders Heritage geoportal in 2014&lt;/em&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;a class=&quot;reference external&quot; href=&quot;https://www.onroerenderfgoed.be&quot;&gt;Flanders Heritage&lt;/a&gt; has had a &lt;a class=&quot;reference external&quot; href=&quot;https://geo.onroerenderfgoed.be&quot;&gt;geoportal&lt;/a&gt; since 2013. Although it has grown and
+transformed over the years, the basic goals and the architectural design have
+remained largely unchanged.&lt;/p&gt;
 </content>
   </entry>
   <entry xml:base="https://onroerenderfgoed.github.io/blog/atom.xml">
