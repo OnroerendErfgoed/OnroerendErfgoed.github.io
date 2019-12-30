@@ -105,9 +105,470 @@ we are striving towards adopting the HTTP Link header method of pagination, as
 specified by
 <a class="reference external" href="https://github.com/Informatievlaanderen/generieke-hypermedia-api/blob/master/paginering.md#http">https://github.com/Informatievlaanderen/generieke-hypermedia-api/blob/master/paginering.md#http</a>
 and detailed in <a class="reference external" href="https://tools.ietf.org/html/rfc5988">https://tools.ietf.org/html/rfc5988</a>.</p>
-<p><a class="reference external" href="https://bib.onroerenderfgoed.be/werken?titel=knokke">https://bib.onroerenderfgoed.be/werken?titel=knokke</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;https://bib.onroerenderfgoed.be/werken?titel=knokke&amp;per_pagina=10&amp;pagina=2&gt;; rel=&quot;next&quot;, &lt;https://bib.onroerenderfgoed.be/werken?titel=knokke&amp;per_pagina=10&amp;pagina=17&gt;; rel=&quot;last&quot;, &lt;https://bib.onroerenderfgoed.be/werken?titel=knokke&amp;per_pagina=10&amp;pagina=1&gt;; rel=&quot;first&quot;
+<p>If we want to see this in action, we need to link at the <cite>Link</cite> http header.
+There are several ways to do this. You can use a commandline tool such as curl,
+a web browser plugin or a standalone REST client. Whichever one you use, should
+be able to show you this information. In our examples we’ll be using CURL, a
+tool that is generally present or easy to install on a Linux or Mac computer.</p>
+<p>Suppose we are interested in books and documents about <cite>Knokke</cite>, a coastal town
+in Flanders. We can do this by using the REST api at
+<a class="reference external" href="https://bib.onroerenderfgoed.be/api_docs">https://bib.onroerenderfgoed.be/api_docs</a>. This teaches us that we can call
+<a class="reference external" href="https://bib.onroerenderfgoed.be/werken">https://bib.onroerenderfgoed.be/werken</a> with the <cite>titel</cite> parameter. So,
+<a class="reference external" href="https://bib.onroerenderfgoed.be/werken?titel=knokke">https://bib.onroerenderfgoed.be/werken?titel=knokke</a> gives us books that contain
+<cite>Knokke</cite> in the title or have a chapter that contains it in the title:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ curl -G -i -H Accept:application/json https://bib.onroerenderfgoed.be/werken?titel=knokke
+HTTP/1.1 200 OK
+Date: Mon, 16 Dec 2019 19:51:07 GMT
+Server: Apache
+Content-Type: application/json
+Content-Length: 3933
+Access-Control-Expose-Headers: Content-Range, X-Content-Range
+Accept-Ranges: items
+Content-Range: items 0-9/167
+Link: &lt;https://bib.onroerenderfgoed.be/werken?titel=knokke&amp;per_pagina=10&amp;pagina=2&gt;; rel=&quot;next&quot;, &lt;https://bib.onroerenderfgoed.be/werken?titel=knokke&amp;per_pagina=10&amp;pagina=17&gt;; rel=&quot;last&quot;, &lt;https://bib.onroerenderfgoed.be/werken?titel=knokke&amp;per_pagina=10&amp;pagina=1&gt;; rel=&quot;first&quot;
+X-Content-Type-Options: nosniff
+Access-Control-Allow-Origin: *
+Set-Cookie: BIGipServerPOOL-AUTO-vioe-informatiecatalogus-prod-std=456599562.20480.0000; path=/; Httponly
+X-Permitted-Cross-Domain-Policies: none
+X-XSS-Protection: 1; mode=block
+
+[{&quot;publicatietype&quot;: {&quot;url&quot;: &quot;http://purl.org/ontology/bibo/Document&quot;, &quot;naam&quot;: &quot;Document&quot;, &quot;id&quot;: 1}, &quot;titel&quot;: &quot;Het landelijke Knokke&quot;, &quot;self&quot;: &quot;https://bib.onroerenderfgoed.be/werken/552291&quot;, &quot;uri&quot;: &quot;https://id.erfgoed.net/infocat/werken/552291&quot;, &quot;serie&quot;: {&quot;naam&quot;: &quot;GEEN SERIE&quot;, &quot;id&quot;: 0}, &quot;auteur&quot;: &quot;D&#39;hont A.&quot;, &quot;id&quot;: 552291, &quot;omschrijving&quot;: &quot;Het landelijke Knokke&quot;}, {&quot;jaar&quot;: &quot;2011&quot;, &quot;publicatietype&quot;: {&quot;url&quot;: &quot;http://purl.org/ontology/bibo/Document&quot;, &quot;naam&quot;: &quot;Document&quot;, &quot;id&quot;: 1}, &quot;titel&quot;: &quot;Duin&amp;Water, Knokke&quot;, &quot;self&quot;: &quot;https://bib.onroerenderfgoed.be/werken/545629&quot;, &quot;uri&quot;: &quot;https://id.erfgoed.net/infocat/werken/545629&quot;, &quot;serie&quot;: {&quot;naam&quot;: &quot;GEEN SERIE&quot;, &quot;id&quot;: 0}, &quot;auteur&quot;: &quot;Decraemer S.&quot;, &quot;id&quot;: 545629, &quot;omschrijving&quot;: &quot;Duin&amp;Water, Knokke&quot;}, {&quot;jaar&quot;: &quot;1976&quot;, &quot;publicatietype&quot;: {&quot;url&quot;: &quot;http://purl.org/ontology/bibo/Document&quot;, &quot;naam&quot;: &quot;Document&quot;, &quot;id&quot;: 1}, &quot;titel&quot;: &quot;Dagklapper uit Knokke&quot;, &quot;self&quot;: &quot;https://bib.onroerenderfgoed.be/werken/552280&quot;, &quot;uri&quot;: &quot;https://id.erfgoed.net/infocat/werken/552280&quot;, &quot;serie&quot;: {&quot;naam&quot;: &quot;GEEN SERIE&quot;, &quot;id&quot;: 0}, &quot;auteur&quot;: &quot;D&#39;Hont A.&quot;, &quot;id&quot;: 552280, &quot;omschrijving&quot;: &quot;Dagklapper uit Knokke&quot;}, {&quot;jaar&quot;: &quot;2006&quot;, &quot;publicatietype&quot;: {&quot;url&quot;: &quot;http://purl.org/ontology/bibo/Document&quot;, &quot;naam&quot;: &quot;Document&quot;, &quot;id&quot;: 1}, &quot;titel&quot;: &quot;Een casino voor de toekomst&quot;, &quot;self&quot;: &quot;https://bib.onroerenderfgoed.be/werken/545165&quot;, &quot;uri&quot;: &quot;https://id.erfgoed.net/infocat/werken/545165&quot;, &quot;serie&quot;: {&quot;naam&quot;: &quot;GEEN SERIE&quot;, &quot;id&quot;: 0}, &quot;id&quot;: 545165, &quot;omschrijving&quot;: &quot;Een casino voor de toekomst&quot;}, {&quot;jaar&quot;: &quot;2004&quot;, &quot;publicatietype&quot;: {&quot;url&quot;: &quot;http://purl.org/ontology/bibo/Document&quot;, &quot;naam&quot;: &quot;Document&quot;, &quot;id&quot;: 1}, &quot;titel&quot;: &quot;Knokke-Heist natuurlijk&quot;, &quot;self&quot;: &quot;https://bib.onroerenderfgoed.be/werken/552299&quot;, &quot;uri&quot;: &quot;https://id.erfgoed.net/infocat/werken/552299&quot;, &quot;serie&quot;: {&quot;naam&quot;: &quot;GEEN SERIE&quot;, &quot;id&quot;: 0}, &quot;auteur&quot;: &quot;Struyf K.&quot;, &quot;id&quot;: 552299, &quot;omschrijving&quot;: &quot;Knokke-Heist natuurlijk&quot;}, {&quot;jaar&quot;: &quot;2000&quot;, &quot;publicatietype&quot;: {&quot;url&quot;: &quot;http://purl.org/ontology/bibo/Document&quot;, &quot;naam&quot;: &quot;Document&quot;, &quot;id&quot;: 1}, &quot;titel&quot;: &quot;Knokke-Heist geboekstaafd&quot;, &quot;self&quot;: &quot;https://bib.onroerenderfgoed.be/werken/552277&quot;, &quot;uri&quot;: &quot;https://id.erfgoed.net/infocat/werken/552277&quot;, &quot;serie&quot;: {&quot;naam&quot;: &quot;GEEN SERIE&quot;, &quot;id&quot;: 0}, &quot;id&quot;: 552277, &quot;omschrijving&quot;: &quot;Knokke-Heist geboekstaafd&quot;}, {&quot;jaar&quot;: &quot;2001&quot;, &quot;publicatietype&quot;: {&quot;url&quot;: &quot;http://purl.org/ontology/bibo/Document&quot;, &quot;naam&quot;: &quot;Document&quot;, &quot;id&quot;: 1}, &quot;titel&quot;: &quot;Nellens Albertstrand Casino Knokke&quot;, &quot;self&quot;: &quot;https://bib.onroerenderfgoed.be/werken/552290&quot;, &quot;uri&quot;: &quot;https://id.erfgoed.net/infocat/werken/552290&quot;, &quot;serie&quot;: {&quot;naam&quot;: &quot;GEEN SERIE&quot;, &quot;id&quot;: 0}, &quot;auteur&quot;: &quot;D&#39;hont A.&quot;, &quot;id&quot;: 552290, &quot;omschrijving&quot;: &quot;Nellens Albertstrand Casino Knokke&quot;}, {&quot;jaar&quot;: &quot;2007&quot;, &quot;publicatietype&quot;: {&quot;url&quot;: &quot;http://purl.org/ontology/bibo/Document&quot;, &quot;naam&quot;: &quot;Document&quot;, &quot;id&quot;: 1}, &quot;titel&quot;: &quot;Archeologisch onderzoek op de hoek van de Kursaalstraat en de Kerkstraat te Knokke-Heist&quot;, &quot;self&quot;: &quot;https://bib.onroerenderfgoed.be/werken/534021&quot;, &quot;uri&quot;: &quot;https://id.erfgoed.net/infocat/werken/534021&quot;, &quot;serie&quot;: {&quot;naam&quot;: &quot;GEEN SERIE&quot;, &quot;id&quot;: 0}, &quot;id&quot;: 534021, &quot;omschrijving&quot;: &quot;Archeologisch onderzoek op de hoek van de Kursaalstraat en de Kerkstraat te Knokke-Heist&quot;}, {&quot;jaar&quot;: &quot;2010&quot;, &quot;publicatietype&quot;: {&quot;url&quot;: &quot;http://purl.org/ontology/bibo/Document&quot;, &quot;naam&quot;: &quot;Document&quot;, &quot;id&quot;: 1}, &quot;titel&quot;: &quot;Verstild versteend verleden&quot;, &quot;self&quot;: &quot;https://bib.onroerenderfgoed.be/werken/536850&quot;, &quot;uri&quot;: &quot;https://id.erfgoed.net/infocat/werken/536850&quot;, &quot;serie&quot;: {&quot;naam&quot;: &quot;GEEN SERIE&quot;, &quot;id&quot;: 0}, &quot;id&quot;: 536850, &quot;omschrijving&quot;: &quot;Verstild versteend verleden&quot;}, {&quot;jaar&quot;: &quot;1985&quot;, &quot;publicatietype&quot;: {&quot;url&quot;: &quot;http://purl.org/ontology/bibo/Document&quot;, &quot;naam&quot;: &quot;Document&quot;, &quot;id&quot;: 1}, &quot;titel&quot;: &quot;Het Knokke van toen&quot;, &quot;self&quot;: &quot;https://bib.onroerenderfgoed.be/werken/13455&quot;, &quot;uri&quot;: &quot;https://id.erfgoed.net/infocat/werken/13455&quot;, &quot;volume&quot;: &quot;14&quot;, &quot;serie&quot;: {&quot;naam&quot;: &quot;Het \&quot;Dorp\&quot; van toen&quot;, &quot;id&quot;: 499957}, &quot;auteur&quot;: &quot;LANNOY Danny&quot;, &quot;id&quot;: 13455, &quot;omschrijving&quot;: &quot;Het Knokke van toen&quot;}]
 </pre></div>
+</div>
+<p>This <strong class="command">curl</strong> command fetches books and documents (<cite>werken</cite>) from
+our library catalog that have <cite>knokke</cite> in the title. We also ask it to print
+the headers. Within those headers, we care about the <cite>Link</cite> header in this
+case.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Link: &lt;https://bib.onroerenderfgoed.be/werken?titel=knokke&amp;per_pagina=10&amp;pagina=2&gt;; rel=&quot;next&quot;, &lt;https://bib.onroerenderfgoed.be/werken?titel=knokke&amp;per_pagina=10&amp;pagina=17&gt;; rel=&quot;last&quot;, &lt;https://bib.onroerenderfgoed.be/werken?titel=knokke&amp;per_pagina=10&amp;pagina=1&gt;; rel=&quot;first&quot;
+</pre></div>
+</div>
+<p>While we
+immediately get some results back, this is only a partial result set. When we
+look at the <cite>Link</cite> header, it tells us there are more pages of results. There’s
+a <cite>next</cite> page, a <cite>last</cite> page and a <cite>first</cite> page. Since we’re currently at page
+1, there’s no <cite>previous</cite> page. By following the links here, we can either keep
+on requesting the next page or we can jump straight to the last page. It’s
+important to note that the client should not assume anything about the links
+it’s getting back. We might be tempted to calculate that if there
+are 17 pages and each pages contains at most 10 records, there are between 161
+and 170 results. But the server is not obliged to put any of this information
+in the link or to honor anything about it. The link should treated as just
+that, a link, and it could just have well been something that is not
+interpretable. This does reveal one major weakness of using the <cite>Link</cite> header
+for pagination purposes, there’s no mechanism to indicate how manty results
+the are or how many links the client will need to follow to reach the end of
+the result set. AS far as the client is concerned, there’s a next link and a
+last link. If there’s no next link, we’re at the last page and if
+the next and last links are identical, we’re at the last-but-one page. But
+there’s no way to discern when we’re in the middle how far away we are from the
+end. On the other hand, our client needs no knowledge whatsoever of the
+structure inherent in our URL’s. It does not need to understand if there’s a
+<cite>page</cite> or a <cite>pagina</cite> parameter or <cite>limit</cite> and <cite>offset</cite> parameters or other
+simiar mechanisms for pagination. This allows us to reuse client code for lots
+of different webservices. All the client needs to know is that if there’s a
+<cite>next</cite> link, it can fetch more results.</p>
+<p>So, if we now want to fetch the second page of results, we use this command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ curl -G -i -H Accept:application/json https://bib.onroerenderfgoed.be/werken?titel=knokke\&amp;per_pagina=10\&amp;pagina=2
+</pre></div>
+</div>
+<div class="section" id="all-your-data-belongs-to-us">
+<h2>All your data belongs to us!<a class="headerlink" href="#all-your-data-belongs-to-us" title="Permalink to this headline">¶</a></h2>
+<p>To demonstrate this, we have written a small Python script that queries several
+of our information systems for information and handles all pagination of results
+through the <cite>Link</cite> header. In Python, it’s common to use the <cite>requests</cite> library
+for doing calls to REST services. It turns out that we’re even more fortunate,
+since <cite>requests</cite> has built in support for the <cite>Link</cite> header. This makes it dead
+simple to iterate over all the results. For this little excercise, we’re
+fetching all the images, erfgoedobjecten, aanduidingsobjecten and themas from
+the municipality of <cite>Knokke-Heist</cite>. It takes very little effort to write and
+delivers a mass of URI’s at our feet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># Our endpoints</span>
+<span class="n">INVENTARIS</span> <span class="o">=</span> <span class="s1">&#39;https://inventaris.onroerenderfgoed.be&#39;</span>
+<span class="n">AFBEELDINGEN</span> <span class="o">=</span> <span class="s1">&#39;https://beeldbank.onroerenderfgoed.be/images&#39;</span>
+<span class="n">ERFGOEDOBJECTEN</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/erfgoedobjecten&#39;</span>
+<span class="n">AANDUIDINGSOBJECTEN</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/aanduidingsobjecten&#39;</span>
+<span class="n">THEMAS</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/themas&#39;</span>
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Fetch all data from a url until there are no more `next` urls in the Link</span>
+<span class="sd">    header.</span>
+
+<span class="sd">    :param str url: The url to fetch from</span>
+<span class="sd">    :param dict parameters: A dict of query string parameters</span>
+<span class="sd">    :rtype: dict</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+    <span class="n">data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+    <span class="k">while</span> <span class="s1">&#39;next&#39;</span> <span class="ow">in</span> <span class="n">res</span><span class="o">.</span><span class="n">links</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">links</span><span class="p">[</span><span class="s1">&#39;next&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">],</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="c1"># Determine the CRAB ID for the gemeente you want</span>
+<span class="c1"># https://loc.geopunt.be/v4/Location?q=knokke-heist</span>
+<span class="n">MUNICIPALITY_ID</span> <span class="o">=</span> <span class="mi">191</span>
+
+<span class="c1"># Fetch all data</span>
+<span class="n">afbeeldingen</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">AFBEELDINGEN</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;municipality&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+<span class="n">erfgoedobjecten</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">ERFGOEDOBJECTEN</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;gemeente&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+<span class="n">aanduidingsobjecten</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">AANDUIDINGSOBJECTEN</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;gemeente&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+<span class="n">themas</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">THEMAS</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;gemeente&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+
+<span class="c1"># Add everything together</span>
+<span class="n">stuff</span> <span class="o">=</span> <span class="n">afbeeldingen</span> <span class="o">+</span> <span class="n">erfgoedobjecten</span> <span class="o">+</span> <span class="n">aanduidingsobjecten</span> <span class="o">+</span> <span class="n">themas</span>
+
+<span class="c1"># Print the URIs of all objects involved</span>
+<span class="n">uris</span> <span class="o">=</span> <span class="p">[</span><span class="n">thing</span><span class="p">[</span><span class="s1">&#39;uri&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">thing</span> <span class="ow">in</span> <span class="n">stuff</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">uris</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If we execute this command, we now get a big, long list of URI’s on our screen.
+It works perfectly, but it’s not that satisfying. A URI might be good for a
+machine, but we don’t really know what it represents. So, what can we do?</p>
+<p>Another interesting technique in the Linked Data world is called <a class="reference external" href="https://json-ld.org">JSON-LD (JSON
+for Linking Data)</a>. It allows us to turn plain old JSON into linked data and
+make our objects more compatible. The basic idea is that we map our JSON dataset
+to actual RDF objects by defining a <cite>context</cite>. In this context, we map keys in
+our JSON to RDF properties. As an example, here’s a simple context that can be
+used on our image database endpoint:</p>
+<div class="highlight-json-ld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;dct&quot;</span><span class="p">:</span> <span class="s2">&quot;http://purl.org/dc/terms/&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:title&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:description&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;@id&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This context defines a namespace shorthand, <cite>dct</cite>, and maps it to the Dublin
+Core Terms namespace <cite>http://purl.org/dc/terms/</cite>. It allows us to write
+<cite>dct:title</cite> as shorthand for <cite>http://purl.org/dc/terms/title</cite>. We have also
+defined <cite>uri</cite> to be an alias for <cite>&#64;id</cite>. <cite>&#64;id</cite> in JSON-ld indicates the
+unique identifier for a certain record or resource. Applying this context to an
+image from our image database gives us the following JSON data:</p>
+<div class="highlight-json-ld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nd">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/afbeeldingen/392715&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;http://purl.org/dc/terms/title&quot;</span><span class="p">:</span> <span class="s2">&quot;Villa Cools met kinesistenpraktijk&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;http://purl.org/dc/terms/description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This tells us there’s a resource with the id <cite>https://id.erfgoed.net/afbeeldingen/392715</cite>
+that can be described with a <cite>title</cite> from the Dublin Core Terms vocabulary.
+Quite common in JSON-LD would be to assign a type to the resource we’re talking
+about. We might know this record comes from the image database, but it’s
+currently not reflected in our data. Once we add data from the inventory we
+might not be able to tell the difference anymore. In JSON-LD we would add an
+<cite>&#64;type</cite> key and set it to the URI of a class from an RDF vocabulary like this:</p>
+<div class="highlight-json-ld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nd">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/afbeeldingen/392715&quot;</span><span class="p">,</span>
+    <span class="nd">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;http://purl.org/dc/dcmitype/Image&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;http://purl.org/dc/terms/title&quot;</span><span class="p">:</span> <span class="s2">&quot;Villa Cools met kinesistenpraktijk&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;http://purl.org/dc/terms/description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We’ll use JSON-LD to enhance our script. We want to homogenise our dataset of
+all information from <cite>Knokke-Heist</cite> so we are left with only records having the
+same structure.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pyld</span> <span class="kn">import</span> <span class="n">jsonld</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># Our endpoints</span>
+<span class="n">INVENTARIS</span> <span class="o">=</span> <span class="s1">&#39;https://inventaris.onroerenderfgoed.be&#39;</span>
+<span class="n">AFBEELDINGEN</span> <span class="o">=</span> <span class="s1">&#39;https://beeldbank.onroerenderfgoed.be/images&#39;</span>
+<span class="n">ERFGOEDOBJECTEN</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/erfgoedobjecten&#39;</span>
+<span class="n">AANDUIDINGSOBJECTEN</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/aanduidingsobjecten&#39;</span>
+<span class="n">THEMAS</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/themas&#39;</span>
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Fetch all data from a url until there are no more `next` urls in the Link</span>
+<span class="sd">    header.</span>
+
+<span class="sd">    :param str url: The url to fetch from</span>
+<span class="sd">    :param dict parameters: A dict of query string parameters</span>
+<span class="sd">    :rtype: dict</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+    <span class="n">data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+    <span class="k">while</span> <span class="s1">&#39;next&#39;</span> <span class="ow">in</span> <span class="n">res</span><span class="o">.</span><span class="n">links</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">links</span><span class="p">[</span><span class="s1">&#39;next&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">],</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="k">def</span> <span class="nf">add_type</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">rtype</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add the resource type to a resource</span>
+
+<span class="sd">    :param list collection: Collection of resources to add a type to</span>
+<span class="sd">    :param str rtype: The type of all resources in this collection</span>
+<span class="sd">    :rtype: list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">collection</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;@type&#39;</span><span class="p">:</span> <span class="n">rtype</span><span class="p">})</span>
+
+<span class="k">def</span> <span class="nf">add_locatie_samenvatting</span><span class="p">(</span><span class="n">afbeeldingen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Summarize the location of an image</span>
+
+<span class="sd">    :param list afbeeldingen: Collection of afbeeldingen to summarize</span>
+<span class="sd">    :rtype: list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">afbeeldingen</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">hnr</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;housenumber&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="n">straat</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;street&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="n">gemeente</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;municipality&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="n">prov</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;province&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">straat</span> <span class="ow">and</span> <span class="n">hnr</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;{} {} ({})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">straat</span><span class="p">,</span> <span class="n">hnr</span><span class="p">,</span> <span class="n">gemeente</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">straat</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;{} ({})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">straat</span><span class="p">,</span> <span class="n">gemeente</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;{} ({})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeente</span><span class="p">,</span> <span class="n">prov</span><span class="p">)</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;locatie_samenvatting&#39;</span><span class="p">:</span> <span class="n">s</span><span class="p">})</span>
+
+<span class="c1"># Determine the CRAB ID for the gemeente you want</span>
+<span class="c1"># https://loc.geopunt.be/v4/Location?q=knokke-heist</span>
+<span class="n">MUNICIPALITY_ID</span> <span class="o">=</span> <span class="mi">191</span>
+
+<span class="c1"># Fetch all data</span>
+<span class="n">afbeeldingen</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">AFBEELDINGEN</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;municipality&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+<span class="n">erfgoedobjecten</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">ERFGOEDOBJECTEN</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;gemeente&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+<span class="n">aanduidingsobjecten</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">AANDUIDINGSOBJECTEN</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;gemeente&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+<span class="n">themas</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">THEMAS</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;gemeente&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+
+<span class="c1"># Add everything together and transform to linked data</span>
+<span class="n">inventaris_context</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dct&quot;</span><span class="p">:</span> <span class="s2">&quot;http://purl.org/dc/terms/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:title&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;korte_beschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:description&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;locatie_samenvatting&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:spatial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;@id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Thema&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Thema&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Erfgoedobject&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Erfgoedobject&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Aanduidingsobject&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Aanduidingsobject&quot;</span>
+<span class="p">}</span>
+<span class="n">beeldbank_context</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dct&quot;</span><span class="p">:</span> <span class="s2">&quot;http://purl.org/dc/terms/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:title&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:description&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;locatie_samenvatting&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:spatial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;@id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Afbeelding&quot;</span><span class="p">:</span> <span class="s2">&quot;https://purl.org/dc/dcmiType/Image&quot;</span>
+<span class="p">}</span>
+
+<span class="c1"># Add types to all datasets and location summary to images</span>
+<span class="n">add_type</span><span class="p">(</span><span class="n">erfgoedobjecten</span><span class="p">,</span> <span class="s2">&quot;Erfgoedobject&quot;</span><span class="p">)</span>
+<span class="n">erfgoedobjecten</span> <span class="o">=</span> <span class="n">jsonld</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">erfgoedobjecten</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expandContext&#39;</span><span class="p">:</span><span class="n">inventaris_context</span><span class="p">})</span>
+<span class="n">add_type</span><span class="p">(</span><span class="n">aanduidingsobjecten</span><span class="p">,</span> <span class="s2">&quot;Aanduidingsobject&quot;</span><span class="p">)</span>
+<span class="n">aanduidingsobjecten</span> <span class="o">=</span> <span class="n">jsonld</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">aanduidingsobjecten</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expandContext&#39;</span><span class="p">:</span><span class="n">inventaris_context</span><span class="p">})</span>
+<span class="n">add_type</span><span class="p">(</span><span class="n">themas</span><span class="p">,</span> <span class="s2">&quot;Thema&quot;</span><span class="p">)</span>
+<span class="n">themas</span> <span class="o">=</span> <span class="n">jsonld</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">themas</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expandContext&#39;</span><span class="p">:</span><span class="n">inventaris_context</span><span class="p">})</span>
+<span class="n">add_type</span><span class="p">(</span><span class="n">afbeeldingen</span><span class="p">,</span> <span class="s2">&quot;Afbeelding&quot;</span><span class="p">)</span>
+<span class="n">add_locatie_samenvatting</span><span class="p">(</span><span class="n">afbeeldingen</span><span class="p">)</span>
+<span class="n">afbeeldingen</span> <span class="o">=</span> <span class="n">jsonld</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">afbeeldingen</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expandContext&#39;</span><span class="p">:</span><span class="n">beeldbank_context</span><span class="p">})</span>
+
+<span class="c1"># Add all datasets together</span>
+<span class="n">stuff</span> <span class="o">=</span> <span class="n">erfgoedobjecten</span> <span class="o">+</span> <span class="n">aanduidingsobjecten</span> <span class="o">+</span> <span class="n">themas</span> <span class="o">+</span> <span class="n">afbeeldingen</span>
+
+<span class="c1"># Compact all data to simplify the keys we&#39;re working with</span>
+<span class="n">dct_context</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dct&quot;</span><span class="p">:</span> <span class="s2">&quot;http://purl.org/dc/terms/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:title&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:description&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;spatial&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:spatial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;@id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;@type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Thema&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Thema&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Erfgoedobject&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Erfgoedobject&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Aanduidingsobject&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Aanduidingsobject&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Afbeelding&quot;</span><span class="p">:</span> <span class="s2">&quot;https://purl.org/dc/dcmiType/Image&quot;</span>
+<span class="p">}</span>
+<span class="n">compactstuff</span> <span class="o">=</span> <span class="n">jsonld</span><span class="o">.</span><span class="n">compact</span><span class="p">(</span><span class="n">stuff</span><span class="p">,</span> <span class="n">dct_context</span><span class="p">)</span>
+
+<span class="c1"># Print all records to the screen</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">compactstuff</span><span class="p">[</span><span class="s1">&#39;@graph&#39;</span><span class="p">]:</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="s1">&#39;{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">*</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Type: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;URI: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;uri&#39;</span><span class="p">]))</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Location: {}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;spatial&#39;</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="s1">&#39;description&#39;</span> <span class="ow">in</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">])</span>
+    <span class="k">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pyld</span> <span class="kn">import</span> <span class="n">jsonld</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Our endpoints</span>
+<span class="n">INVENTARIS</span> <span class="o">=</span> <span class="s1">&#39;https://inventaris.onroerenderfgoed.be&#39;</span>
+<span class="n">AFBEELDINGEN</span> <span class="o">=</span> <span class="s1">&#39;https://beeldbank.onroerenderfgoed.be/images&#39;</span>
+<span class="n">ERFGOEDOBJECTEN</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/erfgoedobjecten&#39;</span>
+<span class="n">AANDUIDINGSOBJECTEN</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/aanduidingsobjecten&#39;</span>
+<span class="n">THEMAS</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/themas&#39;</span>
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Fetch all data from a url until there are no more `next` urls in the Link</span>
+<span class="sd">    header.</span>
+
+<span class="sd">    :param str url: The url to fetch from</span>
+<span class="sd">    :param dict parameters: A dict of query string parameters</span>
+<span class="sd">    :rtype: dict</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameters</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+
+    <span class="n">data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+    <span class="k">while</span> <span class="s1">&#39;next&#39;</span> <span class="ow">in</span> <span class="n">res</span><span class="o">.</span><span class="n">links</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">links</span><span class="p">[</span><span class="s1">&#39;next&#39;</span><span class="p">][</span><span class="s1">&#39;url&#39;</span><span class="p">],</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="k">def</span> <span class="nf">add_type</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">rtype</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Add the resource type to a resource</span>
+
+<span class="sd">    :param list collection: Collection of resources to add a type to</span>
+<span class="sd">    :param str rtype: The type of all resources in this collection</span>
+<span class="sd">    :rtype: list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">collection</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;@type&#39;</span><span class="p">:</span> <span class="n">rtype</span><span class="p">})</span>
+
+<span class="k">def</span> <span class="nf">add_locatie_samenvatting</span><span class="p">(</span><span class="n">afbeeldingen</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Summarize the location of an image</span>
+
+<span class="sd">    :param list afbeeldingen: Collection of afbeeldingen to summarize</span>
+<span class="sd">    :rtype: list</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">afbeeldingen</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">hnr</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;housenumber&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="n">straat</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;street&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="n">gemeente</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;municipality&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="n">prov</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;province&#39;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">straat</span> <span class="ow">and</span> <span class="n">hnr</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;{} {} ({})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">straat</span><span class="p">,</span> <span class="n">hnr</span><span class="p">,</span> <span class="n">gemeente</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">straat</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;{} ({})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">straat</span><span class="p">,</span> <span class="n">gemeente</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;{} ({})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gemeente</span><span class="p">,</span> <span class="n">prov</span><span class="p">)</span>
+        <span class="n">a</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;locatie_samenvatting&#39;</span><span class="p">:</span> <span class="n">s</span><span class="p">})</span>
+
+<span class="c1"># Determine the CRAB ID for the gemeente you want</span>
+<span class="c1"># https://loc.geopunt.be/v4/Location?q=knokke-heist</span>
+<span class="n">MUNICIPALITY_ID</span> <span class="o">=</span> <span class="mi">191</span>
+
+<span class="c1"># Fetch all data</span>
+<span class="n">afbeeldingen</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">AFBEELDINGEN</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;municipality&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+<span class="n">erfgoedobjecten</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">ERFGOEDOBJECTEN</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;gemeente&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+<span class="n">aanduidingsobjecten</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">AANDUIDINGSOBJECTEN</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;gemeente&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+<span class="n">themas</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">THEMAS</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;gemeente&#39;</span><span class="p">:</span> <span class="n">MUNICIPALITY_ID</span><span class="p">})</span>
+
+<span class="c1"># Add everything together and transform to linked data</span>
+<span class="n">inventaris_context</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dct&quot;</span><span class="p">:</span> <span class="s2">&quot;http://purl.org/dc/terms/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;naam&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:title&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;korte_beschrijving&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:description&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;locatie_samenvatting&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:spatial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;@id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Thema&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Thema&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Erfgoedobject&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Erfgoedobject&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Aanduidingsobject&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Aanduidingsobject&quot;</span>
+<span class="p">}</span>
+<span class="n">beeldbank_context</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dct&quot;</span><span class="p">:</span> <span class="s2">&quot;http://purl.org/dc/terms/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:title&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:description&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;locatie_samenvatting&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:spatial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;@id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Afbeelding&quot;</span><span class="p">:</span> <span class="s2">&quot;https://purl.org/dc/dcmiType/Image&quot;</span>
+<span class="p">}</span>
+
+<span class="n">add_type</span><span class="p">(</span><span class="n">erfgoedobjecten</span><span class="p">,</span> <span class="s2">&quot;Erfgoedobject&quot;</span><span class="p">)</span>
+<span class="n">erfgoedobjecten</span> <span class="o">=</span> <span class="n">jsonld</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">erfgoedobjecten</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expandContext&#39;</span><span class="p">:</span><span class="n">inventaris_context</span><span class="p">})</span>
+<span class="n">add_type</span><span class="p">(</span><span class="n">aanduidingsobjecten</span><span class="p">,</span> <span class="s2">&quot;Aanduidingsobject&quot;</span><span class="p">)</span>
+<span class="n">aanduidingsobjecten</span> <span class="o">=</span> <span class="n">jsonld</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">aanduidingsobjecten</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expandContext&#39;</span><span class="p">:</span><span class="n">inventaris_context</span><span class="p">})</span>
+<span class="n">add_type</span><span class="p">(</span><span class="n">themas</span><span class="p">,</span> <span class="s2">&quot;Thema&quot;</span><span class="p">)</span>
+<span class="n">themas</span> <span class="o">=</span> <span class="n">jsonld</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">themas</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expandContext&#39;</span><span class="p">:</span><span class="n">inventaris_context</span><span class="p">})</span>
+<span class="n">add_type</span><span class="p">(</span><span class="n">afbeeldingen</span><span class="p">,</span> <span class="s2">&quot;Afbeelding&quot;</span><span class="p">)</span>
+<span class="n">add_locatie_samenvatting</span><span class="p">(</span><span class="n">afbeeldingen</span><span class="p">)</span>
+<span class="n">afbeeldingen</span> <span class="o">=</span> <span class="n">jsonld</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">afbeeldingen</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;expandContext&#39;</span><span class="p">:</span><span class="n">beeldbank_context</span><span class="p">})</span>
+
+<span class="n">stuff</span> <span class="o">=</span> <span class="n">erfgoedobjecten</span> <span class="o">+</span> <span class="n">aanduidingsobjecten</span> <span class="o">+</span> <span class="n">themas</span> <span class="o">+</span> <span class="n">afbeeldingen</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>
+
+<span class="n">dct_context</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dct&quot;</span><span class="p">:</span> <span class="s2">&quot;http://purl.org/dc/terms/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:title&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:description&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;spatial&quot;</span><span class="p">:</span> <span class="s2">&quot;dct:spatial&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;uri&quot;</span><span class="p">:</span> <span class="s2">&quot;@id&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;@type&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Thema&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Thema&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Erfgoedobject&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Erfgoedobject&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Aanduidingsobject&quot;</span><span class="p">:</span> <span class="s2">&quot;https://id.erfgoed.net/vocab/ontology#Aanduidingsobject&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Afbeelding&quot;</span><span class="p">:</span> <span class="s2">&quot;https://purl.org/dc/dcmiType/Image&quot;</span>
+<span class="p">}</span>
+<span class="n">compactstuff</span> <span class="o">=</span> <span class="n">jsonld</span><span class="o">.</span><span class="n">compact</span><span class="p">(</span><span class="n">stuff</span><span class="p">,</span> <span class="n">dct_context</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;heritage.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">fieldnames</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;uri&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;spatial&#39;</span><span class="p">]</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="n">fieldnames</span><span class="p">)</span>
+
+    <span class="n">writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">compactstuff</span><span class="p">[</span><span class="s1">&#39;@graph&#39;</span><span class="p">]:</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="c1">#for s in compactstuff[&#39;@graph&#39;]:</span>
+    <span class="c1">#print(s)</span>
+    <span class="c1">#h = &#39;{}&#39;.format(s[&#39;title&#39;])</span>
+    <span class="c1">#print(h)</span>
+    <span class="c1">#print(len(h)*&#39;=&#39;)</span>
+    <span class="c1">#print(&#39;Type: {}&#39;.format(s[&#39;@type&#39;]))</span>
+    <span class="c1">#print(&#39;URI: {}&#39;.format(s[&#39;@id&#39;]))</span>
+    <span class="c1">#if &#39;description&#39; in s:</span>
+    <span class="c1">#    print(s[&#39;description&#39;])</span>
+    <span class="c1">#print()</span>
+
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -335,15 +796,11 @@ and detailed in <a class="reference external" href="https://tools.ietf.org/html/
   <ul>
   
     
-    <li><a href="../../../blog/category/gis/">GIS (4)</a></li>
+    <li><a href="../../../blog/category/gis/">GIS (5)</a></li>
     
   
     
     <li><a href="../../../blog/category/architecture/">architecture (1)</a></li>
-    
-  
-    
-    <li><a href="../../../blog/category/gis/">gis (1)</a></li>
     
   
     
