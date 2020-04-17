@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Atramhasis v0.6.0 released &#8212; Flanders Heritage - Information and Technology  documentation</title>
+    <title>OSLO Cultuur: use cases voor onroerend erfgoed &#8212; Flanders Heritage - Information and Technology  documentation</title>
     <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -87,85 +87,67 @@
     <div class="large-9 columns">
       <div class="body panel" role="main">
         
-  <div class="section" id="atramhasis-v0-6-0-released">
-<h1>Atramhasis v0.6.0 released<a class="headerlink" href="#atramhasis-v0-6-0-released" title="Permalink to this headline">¶</a></h1>
-<p>A new version (0.6.0) of <a href="#id1"><span class="problematic" id="id2">:pypi:`Atramhasis &lt;atramhasis&gt;`</span></a> has been released.
-Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
-SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis
-comes with an admin interface you can use to add the concepts and collections of
-your vocabularies. To make integrating vocabularies with your other IT systems
-easy, all data in Atramhasis is exposed through a read an write REST webservice.</p>
-<p>This release is a major update based on the <a href="#id3"><span class="problematic" id="id4">:pypi:`Skosprovider &lt;skosprovider&gt;`</span></a>
-0.7.0 line of libraries. The major new features of this release have to do with
-Linked Data. It is now possible to have Atramhasis create nightly dumps per
-conceptscheme. Before, they had to be created on the fly. Which was a rather
-costly operation for larger conceptschemes. Using these nightly dumps it’s now
-very easy to run your own <a class="reference external" href="https://linkeddatafragments.org">Linked Data Fragments server</a>.
-The new version can generate a config file for such a server that you can use to
-setup the server. By default this config will work with the Turtle files that can
-be generated every night. But if you have access to the
-<a class="reference external" href="HDTlibrary">https://github.com/rdfhdt/hdt-cpp</a>, you can also work with HDT
-files for a masssive performance boost. See the section <cite>Running a Linked
-Data Fragments server</cite> in the <a class="reference external" href="https://atramhasis.readthedocs.io">Atramhasis documentation</a> for more information.</p>
-<p>Other minor enhancements were added as well. It’s now possible to have
-Atramhasis generate URI’s for concepts when importing a conceptscheme on the
-commandline. Previously, if you imported a <cite>CSV</cite> or <cite>JSON</cite> file that didn’t
-contain URI’s, they would be generated using a default pattern that ensured
-internal data integrity but was never the right pattern for the user. It is now
-possible to specify such a pattern when importing. If for some reason, this is
-not sufficient, users are advised to generate the URI’s before importing as
-Atramhasis will respect those.</p>
-<p>A new type of labels callel sortlabels have also been added. Users can add these
-to concepts and collections to make it possible to apply custom sorting
-strategies. Most thesauri are seen as textual in nature and users expect these
-to be sorted alphanumerically. But some thesauri are different. Flanders Heritage
-has a list of <a class="reference external" href="https://thesaurus.onroerenderfgoed.be/conceptschemes/DATERINGEN">historic periods</a>. For a
-conceptscheme like this, alphanumerical sorting makes little sense. Most people
-want to see this conceptscheme sorted chronologically. Th expect <cite>Roman</cite> to be
-listed before <cite>Medieval</cite>. While version 0.6.0 does not yet show this sort order
-in the public user interface, you can now start applying sortlabels. By creating
-a special label you can thus force the order of concepts. For the moment this is
-already accessible through the REST interface, future version will apply this
-logic to the tree view as well. It might be important to note that these work
-like other labels as well, so they are language dependent as well.</p>
-<p>As always, bugs have been fixed, code has been
-rewritten and documenation has been updated. See
-<a class="reference external" href="https://github.com/OnroerendErfgoed/atramhasis/releases/tag/0.6.0">https://github.com/OnroerendErfgoed/atramhasis/releases/tag/0.6.0</a> for the full
-list of changes.</p>
-<p>We invite everybody to try out the release. You can see a working example of
-Atramhasis at <a class="reference external" href="https://thesaurus.onroerenderfgoed.be">https://thesaurus.onroerenderfgoed.be</a>, a customised version of
-Atramhasis containing the thesauri use by <a class="reference external" href="https://www.onroerenderfgoed.be">Flanders Heritage Agency</a>.
-If you encounter problems, please let us know. Either through the
-<a class="reference external" href="https://groups.google.com/forum/#!forum/atramhasis">forum</a> or our
-<a class="reference external" href="https://github.com/OnroerendErfgoed/atramhasis">Github tracker</a>.</p>
+  <div class="section" id="oslo-cultuur-use-cases-voor-onroerend-erfgoed">
+<h1>OSLO Cultuur: use cases voor onroerend erfgoed<a class="headerlink" href="#oslo-cultuur-use-cases-voor-onroerend-erfgoed" title="Permalink to this headline">¶</a></h1>
+<p>Binnen het project <cite>OSLO Cultureel Erfgoed</cite> wordt er gewerkt met een lijst van
+usecases om het te bouwen datamodel te valideren. Cultureel erfgoed is soms een
+moeilijk te definiëren begrip aangezien verschillende landen, verschillende
+ideeën hebben over wat er nu onder cultureel erfgoed valt. In het OSLO traject
+worden er onder cultureel erfgoed drie grote thema’s gevat: roerend erfgoed,
+onroerend erfgoed en immaterieel erfgoed. Het OSLO traject werd wel opgestart
+met een sterk focus op roerend erfgoed. Daarom komt er weing tot geen onroerend
+erfgoed voor in de lijst met use cases. Om dit recht te zetten, bieden we hier
+een aantal extra uses cases aan.</p>
+<ol class="arabic simple">
+<li><p>Als eigenaar van een onroerend goed (een woning, een handelspand, een
+industrieel pand, een stuk land, …) wil ik weten welke rechtsgevolgen aan
+mijn onroerend goed gekoppeld zijn.</p></li>
+<li><p>Als notaris of vastgoedmakelaar wens ik de rechtsgevolgen van een onroerend
+goed betrokken in een transactie te kennen (<a class="reference external" href="https://www.onroerenderfgoed.be/informatie-en-meldingsplicht-bij-eigendomsoverdracht">https://www.onroerenderfgoed.be/informatie-en-meldingsplicht-bij-eigendomsoverdracht</a>).</p></li>
+<li><p>Als burger, heemkundige of onderzoeker wil ik meer weten over de materiële
+resten van het verleden in Vlaanderen. Ik wil alle barokke kerken in mijn
+provincie of gemeente kunnen vinden. Ik wil weten welke opgravingen er in de
+jaren ‘80 in mijn omgeving plaats vonden.</p></li>
+<li><p>Als Vlaams Architectuur Archief (VAI) wil ik archiefbeschrijvingen van
+archieven van architecten kunnen koppelen aan de realisaties van deze
+architect die gekend zijn in de inventaris onroerend erfgoed
+(<a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/collectie-vai-gekoppeld-aan-onze-inventaris">https://www.onroerenderfgoed.be/nieuws/collectie-vai-gekoppeld-aan-onze-inventaris</a>).</p></li>
+<li><p>Als agentschap Onroerend Erfgoed of Intergemeentelijke Onroerend
+Erfgoed Dienst wil weten welke toelatingen, adviezen en premies er in het
+verleden werden uitgereikt voor een onroerend goed.</p></li>
+<li><p>Als burger of makelaar wil ik weten of een bepaald perceel aanleiding zal
+geven tot het opstellen van een archeologienota. (<a class="reference external" href="https://www.onroerenderfgoed.be/archeologie-bij-vergunningsaanvragen-bouwheren">https://www.onroerenderfgoed.be/archeologie-bij-vergunningsaanvragen-bouwheren</a>)</p></li>
+<li><p>Als metaaldetectorist moet ik mijn vondsten melden bij het agentschap
+Onroerend Erfgoed zoals beschreven in het onroerend erfgoed decreet (<a class="reference external" href="https://www.onroerenderfgoed.be/ik-ben-metaaldetectorist">https://www.onroerenderfgoed.be/ik-ben-metaaldetectorist</a>).</p></li>
+<li><p>Als metaaldetectorist wil ik mijn vondsten op een makkelijke manier kunnen
+melden bij zowel MEDEA (<a class="reference external" href="https://medea-cms.weopendata.com/">https://medea-cms.weopendata.com/</a>) als Onroerend Erfgoed.</p></li>
+<li><p>Als burger of onderzoeker wil ik documentatie over onroerend erfgoed in de
+vorm van afbeeldingen, teksten, kaarten, bibliografiën of andere
+informatiebronnen kunnen raadplegen.</p></li>
+<li><p>Als burger wil ik de status van mijn toelatings- (<a class="reference external" href="https://www.onroerenderfgoed.be/ik-wil-werken-uitvoeren-aan-erfgoed">https://www.onroerenderfgoed.be/ik-wil-werken-uitvoeren-aan-erfgoed</a>)
+of premieaanvraag (<a class="reference external" href="https://www.onroerenderfgoed.be/ik-wil-financiele-ondersteuning-krijgen">https://www.onroerenderfgoed.be/ik-wil-financiele-ondersteuning-krijgen</a>)
+kunnen raadplegen bij de behandelende overheid.</p></li>
+<li><p>Als informatiebeheerder wil ik alle dossiers in mijn archief over een
+bepaald onroerend erfgoed (een kerk, een standbeeld, een brug, een woning,
+een boom, een pompstation, een boot, een motte, een bunker, een sluis, …)
+kunnen terugvinden, ook al zitten die in verschillende reeksen.</p></li>
+<li><p>Als onderzoeker, collectiebeheerder of overheid wil ik weten welke topstukken
+er in een bepaald onroerend erfgoed aanwezig zijn (en vice versa)</p></li>
+<li><p>Als onderzoeker of collectiebeheerder wil ik weten in welk
+onroerenderfgoeddepot (<a class="reference external" href="https://www.onroerenderfgoed.be/ik-werk-voor-een-onroerenderfgoeddepot">https://www.onroerenderfgoed.be/ik-werk-voor-een-onroerenderfgoeddepot</a>)
+het archeologische ensemble (de vondsten en de documentatie ) van een
+bepaald archeologisch onderzoek zich bevinden.</p></li>
+<li><p>Als omgevingsloket wil ik een omgevingsaanvraag voor advies voorleggen aan
+onroerend erfgoed indien het om beschermd erfgoed gaat.</p></li>
+<li><p>Als Vlaamse overheid wil ik de laag van het beschermde erfgoed kunnen
+publiceren in het INSPIRE protected sites thema.</p></li>
+</ol>
 </div>
 
   <div class="section">
   
     
 
-
-<div class="section">
-  <span style="float: left;">
-  
-  
-  <a href="../geozoekdiensten/">
-    <i class="fa fa-arrow-circle-left"></i>
-    Geozoekdiensten. Wat ligt er hier?
-  </a>
-  
-  </span>
-  <span>&nbsp;</span>
-  <span style="float: right;">
-  
-  
-  <a href="../whats-a-thesaurus/">
-    What’s a thesaurus?
-    <i class="fa fa-arrow-circle-right"></i>
-  </a>
-  </span>
-  
-</div>
 
   
   
@@ -181,8 +163,8 @@ If you encounter problems, please let us know. Either through the
   
   <h2>
   
-  <i class="fa fa-calendar"></i>
-    24 augustus 2017
+    <i class="fa fa-pencil"></i>
+     Draft 
   
   </h2>
 
@@ -204,7 +186,7 @@ If you encounter problems, please let us know. Either through the
   <li id="language"><span><i class="fa-fw fa fa-language"></i></span>
     
       
-      <a href="../../../blog/language/english/">English</a>
+      <a href="../../../blog/language/nederlands/">Nederlands</a>
       
     </li>
   
@@ -213,25 +195,28 @@ If you encounter problems, please let us know. Either through the
   <li id="category"><span><i class="fa-fw fa fa-folder-open"></i></span>
     
       
-      <a href="../../../blog/category/releases/">releases</a>,
-      
-    
-      
-      <a href="../../../blog/category/thesaurus/">thesaurus</a>,
-      
-    
-      
-      <a href="../../../blog/category/open-source/">open source</a>
+      <a href="../../../blog/category/inventory/">inventory</a>
       
     </li>
   
 
   
-  <li id="tags"><span><i class="fa-fw fa fa-tag"></i></span>
+  <li id="tags"><span><i class="fa-fw fa fa-tags"></i>
+      </span>
     
       
-      <a href="../../../blog/tag/atramhasis/">atramhasis</a>
+      <a href="../../../blog/tag/inventaris/">inventaris</a>
       
+    
+      
+      <a href="../../../blog/tag/aanduidingsobjecten/">aanduidingsobjecten</a>
+      
+    
+      
+      <a href="../../../blog/tag/erfgoedobjecten/">erfgoedobjecten</a>
+      
+    
+      OSLO
     </li>
   
   
@@ -244,7 +229,7 @@ If you encounter problems, please let us know. Either through the
   <ul>
     
     
-      <li><a href="../../2020/webpagina-verhuizen/">31 januari - Ook een webpagina kan verhuizen</a></li>
+      <li><a href="../webpagina-verhuizen/">31 januari - Ook een webpagina kan verhuizen</a></li>
     
       <li><a href="../../2019/vioe-hypermedia-api/">30 december - We are the Hypermedia!</a></li>
     
