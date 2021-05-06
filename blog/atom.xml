@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://onroerenderfgoed.github.io/</id>
   <title>Flanders Heritage - Information and Technology Blog</title>
-  <updated>2021-04-19T18:04:37.867023+00:00</updated>
+  <updated>2021-05-06T06:51:24.951627+00:00</updated>
   <link href="https://onroerenderfgoed.github.io/"/>
   <link href="https://onroerenderfgoed.github.io/blog/atom.xml" rel="self"/>
   <generator uri="https://ablog.readthedocs.org/" version="0.10.17">ABlog</generator>
@@ -13,14 +13,14 @@
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;A new version (0.5.0) of &lt;a href="#id1"&gt;&lt;span class="problematic" id="id2"&gt;:pypi:`Atramhasis &amp;lt;atramhasis&amp;gt;`&lt;/span&gt;&lt;/a&gt; has been released.
+    <content type="html">&lt;p&gt;A new version (0.5.0) of &lt;a class="reference external" href="https://pypi.org/project/atramhasis/"&gt;Atramhasis&lt;/a&gt; has been released.
 Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
 SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis also
 comes with an admin interface you can use to add the concepts and collections of
 your vocabularies.&lt;/p&gt;
 </content>
     <link href="https://onroerenderfgoed.github.io/posts/2016/atramhasis-0.5.0/" rel="alternate"/>
-    <summary>A new version (0.5.0) of :pypi:`Atramhasis &lt;atramhasis&gt;` has been released.
+    <summary>A new version (0.5.0) of Atramhasis has been released.
 Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
 SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis also
 comes with an admin interface you can use to add the concepts and collections of
@@ -89,7 +89,7 @@ volledige geometrie.</summary>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;A new version (0.6.0) of &lt;a href="#id1"&gt;&lt;span class="problematic" id="id2"&gt;:pypi:`Atramhasis &amp;lt;atramhasis&amp;gt;`&lt;/span&gt;&lt;/a&gt; has been released.
+    <content type="html">&lt;p&gt;A new version (0.6.0) of &lt;a class="reference external" href="https://pypi.org/project/atramhasis/"&gt;Atramhasis&lt;/a&gt; has been released.
 Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
 SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis
 comes with an admin interface you can use to add the concepts and collections of
@@ -97,7 +97,7 @@ your vocabularies. To make integrating vocabularies with your other IT systems
 easy, all data in Atramhasis is exposed through a read an write REST webservice.&lt;/p&gt;
 </content>
     <link href="https://onroerenderfgoed.github.io/posts/2017/atramhasis-0.6.0/" rel="alternate"/>
-    <summary>A new version (0.6.0) of :pypi:`Atramhasis &lt;atramhasis&gt;` has been released.
+    <summary>A new version (0.6.0) of Atramhasis has been released.
 Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
 SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis
 comes with an admin interface you can use to add the concepts and collections of
