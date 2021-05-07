@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>https://onroerenderfgoed.github.io/</id>
   <title>Flanders Heritage - Information and Technology Blog</title>
-  <updated>2021-05-06T06:51:24.951627+00:00</updated>
+  <updated>2021-05-07T12:58:03.315845+00:00</updated>
   <link href="https://onroerenderfgoed.github.io/"/>
   <link href="https://onroerenderfgoed.github.io/blog/atom.xml" rel="self"/>
   <generator uri="https://ablog.readthedocs.org/" version="0.10.17">ABlog</generator>
@@ -483,5 +483,29 @@ with it. (Voor deze blog mag u URI en URL als synoniemen beschouwen.)</summary>
     <category term="inventaris" label="inventaris"/>
     <category term="aanduidingsobjecten" label="aanduidingsobjecten"/>
     <published>2020-01-31T00:00:00+01:00</published>
+  </entry>
+  <entry>
+    <id>https://onroerenderfgoed.github.io/posts/2020/atramhasis-0.7.0/</id>
+    <title>Atramhasis v0.7.0 released</title>
+    <updated>2020-11-06T00:00:00+01:00</updated>
+    <author>
+      <name>Koen van Daele</name>
+    </author>
+    <content type="html">&lt;p&gt;A new version (0.7.0) of &lt;a class="reference external" href="https://pypi.org/project/atramhasis/"&gt;Atramhasis&lt;/a&gt; has been released.
+Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
+SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis
+comes with an admin interface you can use to add the concepts and collections of
+your vocabularies. To make integrating vocabularies with your other IT systems
+easy, all data in Atramhasis is exposed through a read an write REST webservice.&lt;/p&gt;
+</content>
+    <link href="https://onroerenderfgoed.github.io/posts/2020/atramhasis-0.7.0/" rel="alternate"/>
+    <summary>A new version (0.7.0) of Atramhasis has been released.
+Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
+SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis
+comes with an admin interface you can use to add the concepts and collections of
+your vocabularies. To make integrating vocabularies with your other IT systems
+easy, all data in Atramhasis is exposed through a read an write REST webservice.</summary>
+    <category term="atramhasis" label="atramhasis"/>
+    <published>2020-11-06T00:00:00+01:00</published>
   </entry>
 </feed>
