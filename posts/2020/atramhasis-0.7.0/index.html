@@ -131,6 +131,29 @@ providers in a webserver using mutiple threads. Please review the docs at
 <a class="reference external" href="https://atramhasis.readthedocs.io/en/latest/customisation.html#creating-conceptschemes">https://atramhasis.readthedocs.io/en/latest/customisation.html#creating-conceptschemes</a>
 to see how it works now. For more background, have a look at the pyramid_skosprovider
 docs at <a class="reference external" href="https://pyramid-skosprovider.readthedocs.io/en/0.9.0/install.html">https://pyramid-skosprovider.readthedocs.io/en/0.9.0/install.html</a></p>
+<p>As noted, Atramhasis 0.7.x will be the last version to support Python 2.
+Atramhasis and all related software libraries will stop supporting Python 2 or
+have already done so:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/atramhasis/">atramhasis</a> will drop support for
+Python 2 with version <cite>1.0.0</cite></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/skosprovider/">skosprovider</a> will drop support
+for Python 2 with version <cite>0.8.0</cite></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/language-tags/">language-tags</a> dropped support
+for Python 2 with version <cite>1.0.0</cite></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pyramid_skosprovider/">pyramid_skosprovider</a> will
+drop support for Python 2 with version <cite>0.10.0</cite></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/skosprovider-sqlalchemy/">skosprovider_sqlalchemy</a>
+will drop support for Python 2 with version <cite>0.7.0</cite></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/skosprovider-atramhasis/">skosprovider_atramhasis</a> dropped support for
+Python 2 with version <cite>0.4.0</cite></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/skosprovider-getty/">skosprovider_getty</a> will
+drop support for Python 2 with version <cite>0.6.0</cite></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/skosprovider-rdf/">skosprovider_rdf</a> will drop
+support for Python 2 with version <cite>0.9.0</cite></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/skosprovider_heritagedata/">skosprovider_heritagedata</a>
+is currently unmaintained</p></li>
+</ul>
 <p>We changed the implementation SKOS collections. The default assumption has
 always been that concepts in a collection were also narrower concepts of the
 collection’s superordinate concept, but the implementation for this was
