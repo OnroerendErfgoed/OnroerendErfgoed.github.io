@@ -1,25 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>https://onroerenderfgoed.github.io/</id>
   <title>Flanders Heritage - Information and Technology Blog</title>
-  <updated>2021-06-03T06:51:27.177930+00:00</updated>
+  <updated>2022-08-10T12:07:29.468188+00:00</updated>
   <link href="https://onroerenderfgoed.github.io/"/>
-  <link href="https://onroerenderfgoed.github.io/blog/atom.xml" rel="self"/>
-  <generator uri="https://ablog.readthedocs.org/" version="0.10.17">ABlog</generator>
+  <link href="https://onroerenderfgoed.github.io/en/blog/atom.xml" rel="self"/>
+  <generator uri="https://ablog.readthedocs.org/" version="0.10.23">ABlog</generator>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2016/atramhasis-0.5.0/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2016/atramhasis-0.5.0/</id>
     <title>Atramhasis v0.5.0 released</title>
     <updated>2016-09-14T00:00:00+02:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;A new version (0.5.0) of &lt;a class="reference external" href="https://pypi.org/project/atramhasis/"&gt;Atramhasis&lt;/a&gt; has been released.
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;A new version (0.5.0) of &lt;a class="reference external" href="https://pypi.org/project/atramhasis/"&gt;Atramhasis&lt;/a&gt; has been released.
 Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
 SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis also
 comes with an admin interface you can use to add the concepts and collections of
 your vocabularies.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2016/atramhasis-0.5.0/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2016/atramhasis-0.5.0/" rel="alternate"/>
     <summary>A new version (0.5.0) of Atramhasis has been released.
 Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
 SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis also
@@ -29,20 +31,22 @@ your vocabularies.</summary>
     <published>2016-09-14T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2017/waar-ligt-ons-erfgoed/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2017/waar-ligt-ons-erfgoed/</id>
     <title>Waar ligt ons Erfgoed?</title>
     <updated>2017-06-02T00:00:00+02:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;Eén van de meest karakteristieke eigenschappen van onroerend erfgoed, is
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;Eén van de meest karakteristieke eigenschappen van onroerend erfgoed, is
 ongetwijfeld het &lt;cite&gt;onroerende&lt;/cite&gt; karakter van dat erfgoed. Onze landschappen,
 monumenten, archeologische sites, … hebben allemaal een locatie. Ze bevinden zich
 ergens en (uitgezonderd &lt;a class="reference external" href="https://besluiten.onroerenderfgoed.be/besluiten?rechtsgevolgen=https%3A%2F%2Fid.erfgoed.net%2Fthesauri%2Fbesluittypes%2F19"&gt;een paar vreemde eenden&lt;/a&gt;)
 zijn ze daar altijd al geweest. Als ze niet meer op hun oorspronkelijke plaats liggen,
 bestaan ze niet meer. Maar hoe weet je nu wat waar ligt?&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2017/waar-ligt-ons-erfgoed/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2017/waar-ligt-ons-erfgoed/" rel="alternate"/>
     <summary>Eén van de meest karakteristieke eigenschappen van onroerend erfgoed, is
 ongetwijfeld het onroerende karakter van dat erfgoed. Onze landschappen,
 monumenten, archeologische sites, … hebben allemaal een locatie. Ze bevinden zich
@@ -55,13 +59,14 @@ bestaan ze niet meer. Maar hoe weet je nu wat waar ligt?</summary>
     <published>2017-06-02T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2017/geozoekdiensten/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2017/geozoekdiensten/</id>
     <title>Geozoekdiensten. Wat ligt er hier?</title>
     <updated>2017-08-14T00:00:00+02:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;Zoals beloofd (&lt;a class="reference internal" href="../posts/2017/waar-ligt-ons-erfgoed/#waar-ligt-ons-erfgoed"&gt;&lt;span class="std std-ref"&gt;Waar ligt ons Erfgoed?&lt;/span&gt;&lt;/a&gt;) geven we je graag wat meer informatie over onze
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;Zoals beloofd (&lt;a class="reference internal" href="../posts/2017/waar-ligt-ons-erfgoed/#waar-ligt-ons-erfgoed"&gt;&lt;span class="std std-ref"&gt;Waar ligt ons Erfgoed?&lt;/span&gt;&lt;/a&gt;) geven we je graag wat meer informatie over onze
 Geozoekdiensten. Deze zoekdiensten bestaan momenteel uit één enkele webservice
 die uitermate geschikt is om één enkele vraag te beantwoorden: &lt;cite&gt;Wat ligt er in
 een bepaald gebied?&lt;/cite&gt; De gebruiker of client stuurt een geometrie naar de
@@ -69,8 +74,9 @@ webservice en de webservice laat weten welk erfgoed er deels of geheel in deze
 geometrie ligt. Dit resultaat is een simpele &lt;cite&gt;JSON&lt;/cite&gt; datastructuur waarin je
 voor elk object informatie krijgt zoals een &lt;cite&gt;id&lt;/cite&gt;, een &lt;cite&gt;uri&lt;/cite&gt;, een &lt;cite&gt;type&lt;/cite&gt; en de
 volledige &lt;cite&gt;geometrie&lt;/cite&gt;.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2017/geozoekdiensten/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2017/geozoekdiensten/" rel="alternate"/>
     <summary>Zoals beloofd (waar-ligt-ons-erfgoed) geven we je graag wat meer informatie over onze
 Geozoekdiensten. Deze zoekdiensten bestaan momenteel uit één enkele webservice
 die uitermate geschikt is om één enkele vraag te beantwoorden: Wat ligt er in
@@ -83,20 +89,22 @@ volledige geometrie.</summary>
     <published>2017-08-14T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2017/atramhasis-0.6.0/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2017/atramhasis-0.6.0/</id>
     <title>Atramhasis v0.6.0 released</title>
     <updated>2017-08-24T00:00:00+02:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;A new version (0.6.0) of &lt;a class="reference external" href="https://pypi.org/project/atramhasis/"&gt;Atramhasis&lt;/a&gt; has been released.
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;A new version (0.6.0) of &lt;a class="reference external" href="https://pypi.org/project/atramhasis/"&gt;Atramhasis&lt;/a&gt; has been released.
 Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
 SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis
 comes with an admin interface you can use to add the concepts and collections of
 your vocabularies. To make integrating vocabularies with your other IT systems
 easy, all data in Atramhasis is exposed through a read an write REST webservice.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2017/atramhasis-0.6.0/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2017/atramhasis-0.6.0/" rel="alternate"/>
     <summary>A new version (0.6.0) of Atramhasis has been released.
 Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
 SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis
@@ -107,17 +115,19 @@ easy, all data in Atramhasis is exposed through a read an write REST webservice.
     <published>2017-08-24T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2017/whats-a-thesaurus/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2017/whats-a-thesaurus/</id>
     <title>What’s a thesaurus?</title>
     <updated>2017-09-14T00:00:00+02:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;We recently released a new version of Atramhasis (&lt;a class="reference internal" href="../posts/2017/atramhasis-0.6.0/#atramhasis-0.6.0"&gt;&lt;span class="std std-ref"&gt;Atramhasis v0.6.0 released&lt;/span&gt;&lt;/a&gt;), our
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;We recently released a new version of Atramhasis (&lt;a class="reference internal" href="../posts/2017/atramhasis-0.6.0/#atramhasis-0.6.0"&gt;&lt;span class="std std-ref"&gt;Atramhasis v0.6.0 released&lt;/span&gt;&lt;/a&gt;), our
 web based thesaurus editor. But what is a thesaurus and why would a heritage
 organisation want one?&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2017/whats-a-thesaurus/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2017/whats-a-thesaurus/" rel="alternate"/>
     <summary>We recently released a new version of Atramhasis (atramhasis-0.6.0), our
 web based thesaurus editor. But what is a thesaurus and why would a heritage
 organisation want one?</summary>
@@ -127,19 +137,21 @@ organisation want one?</summary>
     <published>2017-09-14T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2017/erfgoed-geprint-op-kaart/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2017/erfgoed-geprint-op-kaart/</id>
     <title>Erfgoed geprint op een kaart</title>
     <updated>2017-10-03T00:00:00+02:00</updated>
     <author>
       <name>Tinne Cahy</name>
     </author>
-    <content type="html">&lt;p&gt;Via het Geoportaal (&lt;a class="reference internal" href="../posts/2017/waar-ligt-ons-erfgoed/#waar-ligt-ons-erfgoed"&gt;&lt;span class="std std-ref"&gt;Waar ligt ons Erfgoed?&lt;/span&gt;&lt;/a&gt;) kan een mens makkelijk zien
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;Via het Geoportaal (&lt;a class="reference internal" href="../posts/2017/waar-ligt-ons-erfgoed/#waar-ligt-ons-erfgoed"&gt;&lt;span class="std std-ref"&gt;Waar ligt ons Erfgoed?&lt;/span&gt;&lt;/a&gt;) kan een mens makkelijk zien
 waar ons erfgoed ligt. Via de service Geozoekdiensten (&lt;a class="reference internal" href="../posts/2017/geozoekdiensten/#geozoekdiensten"&gt;&lt;span class="std std-ref"&gt;Geozoekdiensten. Wat ligt er hier?&lt;/span&gt;&lt;/a&gt;)
 kan een machine makkelijk opvragen welk erfgoed in een bepaald gebied ligt. Maar
 wat doe je dan met die informatie? Vanaf nu kan je er in elk geval makkelijker
 zelf mee aan de slag. Namelijk: Hoe kan je zelf kaartjes maken van het gevonden erfgoed?&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2017/erfgoed-geprint-op-kaart/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2017/erfgoed-geprint-op-kaart/" rel="alternate"/>
     <summary>Via het Geoportaal (waar-ligt-ons-erfgoed) kan een mens makkelijk zien
 waar ons erfgoed ligt. Via de service Geozoekdiensten (geozoekdiensten)
 kan een machine makkelijk opvragen welk erfgoed in een bepaald gebied ligt. Maar
@@ -150,19 +162,21 @@ zelf mee aan de slag. Namelijk: Hoe kan je zelf kaartjes maken van het gevonden 
     <published>2017-10-03T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2018/atramhasis-docker/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2018/atramhasis-docker/</id>
     <title>Running an Atramhasis demo site with Docker</title>
     <updated>2018-01-11T00:00:00+01:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;a class="reference external" href="http://atramhasis.readthedocs.io/"&gt;Atramhasis&lt;/a&gt; is an online SKOS editor.
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://atramhasis.readthedocs.io/"&gt;Atramhasis&lt;/a&gt; is an online SKOS editor.
 It allows a user to create and edit an online thesaurus (&lt;a class="reference internal" href="../posts/2017/whats-a-thesaurus/#whats-a-thesaurus"&gt;&lt;span class="std std-ref"&gt;What’s a thesaurus?&lt;/span&gt;&lt;/a&gt;)
 or vocabulary adhering to the &lt;a class="reference external" href="http://www.w3.org/TR/skos-reference/"&gt;SKOS specification&lt;/a&gt; through a
 simple web interface. This allows any user with access to a web browser to
 consult the thesauri and if so wanted AND authorised, to edit them.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2018/atramhasis-docker/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2018/atramhasis-docker/" rel="alternate"/>
     <summary>Atramhasis is an online SKOS editor.
 It allows a user to create and edit an online thesaurus (whats-a-thesaurus)
 or vocabulary adhering to the SKOS specification through a
@@ -172,21 +186,23 @@ consult the thesauri and if so wanted AND authorised, to edit them.</summary>
     <published>2018-01-11T00:00:00+01:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2019/inventaris-zoeken-inleiding/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2019/inventaris-zoeken-inleiding/</id>
     <title>Van zoeken naar vinden op de nieuwe inventaris</title>
     <updated>2019-05-15T00:00:00+02:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;Sinds &lt;a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd"&gt;13 mei&lt;/a&gt;
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;Sinds &lt;a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd"&gt;13 mei&lt;/a&gt;
 staat er een gloednieuwe inventaris op &lt;a class="reference external" href="https://inventaris.onroerenderfgoed.be"&gt;https://inventaris.onroerenderfgoed.be&lt;/a&gt;.
 Zoals altijd is het even aanpassen. En dat is misschien het duidelijkste
 in de zoekmogelijkheden. Sommige mogelijkheden zijn blijven bestaan,
 andere zijn lichtjes of sterk gewijzigd. Omdat het even wennen is, lijsten we
 op onze IT blog de voornaamste mogelijkheden qua zoeken op. Vandaag geven we
 een aantal algemene principes mee, die we later verder uitdiepen.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2019/inventaris-zoeken-inleiding/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2019/inventaris-zoeken-inleiding/" rel="alternate"/>
     <summary>Sinds 13 mei
 staat er een gloednieuwe inventaris op https://inventaris.onroerenderfgoed.be.
 Zoals altijd is het even aanpassen. En dat is misschien het duidelijkste
@@ -199,13 +215,14 @@ een aantal algemene principes mee, die we later verder uitdiepen.</summary>
     <published>2019-05-15T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/</id>
     <title>Erfgoedobjecten en aanduidingsobjecten</title>
     <updated>2019-06-18T00:00:00+02:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;Op &lt;a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd"&gt;13 mei&lt;/a&gt;
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;Op &lt;a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd"&gt;13 mei&lt;/a&gt;
 lanceerden we een gloednieuwe &lt;a class="reference external" href="https://inventaris.onroerenderfgoed.be"&gt;Inventaris Onroerend Erfgoed&lt;/a&gt;.
 Wie de nieuwe inventaris al gebruikt heeft, heeft vast wel gemerkt dat er
 sprake is van vijf verschillende datasets: erfgoedobjecten,
@@ -215,8 +232,9 @@ blog-artikel gaan we dieper in op deze twee datasets. De andere
 drie datasets, personen, thema’s en gebeurtenissen, spelen een ondersteunende
 rol. Deze komen later aan bod
 (&lt;a class="reference internal" href="../posts/2019/inventaris-themas-personen-gebeurtenissen/#inventaris-themas-personen-gebeurtenissen"&gt;&lt;span class="std std-ref"&gt;Thema’s, personen en gebeurtenissen&lt;/span&gt;&lt;/a&gt;).&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/" rel="alternate"/>
     <summary>Op 13 mei
 lanceerden we een gloednieuwe Inventaris Onroerend Erfgoed.
 Wie de nieuwe inventaris al gebruikt heeft, heeft vast wel gemerkt dat er
@@ -233,13 +251,14 @@ rol. Deze komen later aan bod
     <published>2019-06-18T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2019/inventaris-zoeken-full-text/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2019/inventaris-zoeken-full-text/</id>
     <title>Full text zoeken in de inventaris</title>
     <updated>2019-07-25T00:00:00+02:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;Sinds &lt;a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd"&gt;13 mei&lt;/a&gt;
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;Sinds &lt;a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd"&gt;13 mei&lt;/a&gt;
 staat er een gloednieuwe inventaris op &lt;a class="reference external" href="https://inventaris.onroerenderfgoed.be"&gt;https://inventaris.onroerenderfgoed.be&lt;/a&gt;.
 Zoals altijd is het even aanpassen. Omdat verandering altijd even wennen is, lijsten we
 op onze IT blog de voornaamste mogelijkheden qua zoeken op. De vorige keer
@@ -248,8 +267,9 @@ vandaag verdiepen we ons in full-text zoeken. Alhoewel we de
 erfgoedobjecten (&lt;a class="reference internal" href="../posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/#inventaris-erfgoedobjecten-aanduidingsobjecten"&gt;&lt;span class="std std-ref"&gt;Erfgoedobjecten en aanduidingsobjecten&lt;/span&gt;&lt;/a&gt;) hier
 als voorbeeld gebruiken, ondersteunen onze andere modules dit soort
 zoekoperaties eveneens en met dezelfde syntax.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2019/inventaris-zoeken-full-text/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2019/inventaris-zoeken-full-text/" rel="alternate"/>
     <summary>Sinds 13 mei
 staat er een gloednieuwe inventaris op https://inventaris.onroerenderfgoed.be.
 Zoals altijd is het even aanpassen. Omdat verandering altijd even wennen is, lijsten we
@@ -265,13 +285,14 @@ zoekoperaties eveneens en met dezelfde syntax.</summary>
     <published>2019-07-25T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2019/inventaris-nieuw/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2019/inventaris-nieuw/</id>
     <title>Tien jaar inventaris</title>
     <updated>2019-08-14T00:00:00+02:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;Sinds &lt;a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd"&gt;13 mei&lt;/a&gt;
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;Sinds &lt;a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd"&gt;13 mei&lt;/a&gt;
 staat er een gloednieuwe inventaris op &lt;a class="reference external" href="https://inventaris.onroerenderfgoed.be"&gt;https://inventaris.onroerenderfgoed.be&lt;/a&gt;.
 Op het eerste zicht ziet ze er vooral heel erg anders uit, maar wie de vorige
 inventaris goed kende herkent heel veel zaken. De gegevens op de
@@ -285,8 +306,9 @@ werd. Niets is echter minder waar, in de loop van die tien jaar zijn er heel
 wat wijzigingen geweest. Vandaag gaan we even dieper in op de evoluties die onze
 inventaris de laatste 10 jaar meegemaakt heeft, met een focus op de
 technologische kant.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2019/inventaris-nieuw/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2019/inventaris-nieuw/" rel="alternate"/>
     <summary>Sinds 13 mei
 staat er een gloednieuwe inventaris op https://inventaris.onroerenderfgoed.be.
 Op het eerste zicht ziet ze er vooral heel erg anders uit, maar wie de vorige
@@ -306,13 +328,14 @@ technologische kant.</summary>
     <published>2019-08-14T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2019/inventaris-themas-personen-gebeurtenissen/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2019/inventaris-themas-personen-gebeurtenissen/</id>
     <title>Thema’s, personen en gebeurtenissen</title>
     <updated>2019-09-30T00:00:00+02:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;Op &lt;a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd"&gt;13 mei&lt;/a&gt;
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;Op &lt;a class="reference external" href="https://www.onroerenderfgoed.be/nieuws/inventaris-onroerend-erfgoed-vernieuwd"&gt;13 mei&lt;/a&gt;
 lanceerden we een gloednieuwe &lt;a class="reference external" href="https://inventaris.onroerenderfgoed.be"&gt;Inventaris Onroerend Erfgoed&lt;/a&gt;.
 Wie de nieuwe inventaris al gebruikt heeft, heeft vast wel gemerkt dat er
 sprake is van vijf verschillende datasets: erfgoedobjecten,
@@ -320,8 +343,9 @@ aanduidingsobjecten, personen, thema’s en gebeurtenissen. In het verleden
 (&lt;a class="reference internal" href="../posts/2019/inventaris-erfgoedobjecten-aanduidingsobjecten/#inventaris-erfgoedobjecten-aanduidingsobjecten"&gt;&lt;span class="std std-ref"&gt;Erfgoedobjecten en aanduidingsobjecten&lt;/span&gt;&lt;/a&gt;) hadden we het al over
 de erfgoed- en aanduidingsobjecten als kern van de inventarisdatabank. Deze
 keer gaan we dieper in op de drie andere datasets.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2019/inventaris-themas-personen-gebeurtenissen/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2019/inventaris-themas-personen-gebeurtenissen/" rel="alternate"/>
     <summary>Op 13 mei
 lanceerden we een gloednieuwe Inventaris Onroerend Erfgoed.
 Wie de nieuwe inventaris al gebruikt heeft, heeft vast wel gemerkt dat er
@@ -337,13 +361,14 @@ keer gaan we dieper in op de drie andere datasets.</summary>
     <published>2019-09-30T00:00:00+02:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2019/beeldbank-zoeken/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2019/beeldbank-zoeken/</id>
     <title>Zoeken in de beeldbank</title>
     <updated>2019-10-31T00:00:00+01:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;We hebben het de laatste tijd al vaak gehad over de nieuwe inventaris
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;We hebben het de laatste tijd al vaak gehad over de nieuwe inventaris
 (&lt;a class="reference internal" href="../posts/2019/inventaris-nieuw/#inventaris-nieuw"&gt;&lt;span class="std std-ref"&gt;Tien jaar inventaris&lt;/span&gt;&lt;/a&gt;), maar we hebben in 2019 ook een nieuwe &lt;a class="reference external" href="https://beeldbank.onroerenderfgoed.be"&gt;beeldbank&lt;/a&gt; gelanceerd. Deze vervangt zowel een
 oude module die inherent was aan de inventaris als de beeldbank die ooit voor
 het VIOE ontwikkeld werd. De nieuwe beeldbank bevat ondertussen zo’n 277.000
@@ -351,8 +376,9 @@ afbeeldingen, waarvan een grote meerderheid vrij mag hergebruikt worden zolang
 de &lt;a class="reference external" href="https://beeldbank.onroerenderfgoed.be/hergebruik"&gt;gebruiksvoorwaarden gevolgd worden&lt;/a&gt;.
 Vandaag geven we je wat meer uitleg bij de zoekfuncties van de beeldbank en hoe
 je er het meeste uit kan halen.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2019/beeldbank-zoeken/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2019/beeldbank-zoeken/" rel="alternate"/>
     <summary>We hebben het de laatste tijd al vaak gehad over de nieuwe inventaris
 (inventaris-nieuw), maar we hebben in 2019 ook een nieuwe beeldbank gelanceerd. Deze vervangt zowel een
 oude module die inherent was aan de inventaris als de beeldbank die ooit voor
@@ -367,13 +393,14 @@ je er het meeste uit kan halen.</summary>
     <published>2019-10-31T00:00:00+01:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2019/ilucidare/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2019/ilucidare/</id>
     <title>Welcome to the Ilucidare Playground</title>
     <updated>2019-11-20T00:00:00+01:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;a class="reference external" href="https://www.onroerenderfgoed.be"&gt;Flanders Heritage Agency&lt;/a&gt; is a government
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://www.onroerenderfgoed.be"&gt;Flanders Heritage Agency&lt;/a&gt; is a government
 agency and scientific institution. We are responsible for architectural,
 archaeological, landscape and maritime heritage. Today we are
 present at the &lt;a class="reference external" href="https://ilucidare.eu"&gt;Ilucidare Playground: Cracking the
@@ -384,8 +411,9 @@ mixing new technologies or new paradigms with our care and responsabilities
 for heritage. Today we focus on a few tangible results of this
 innovation driven approach that demonstrate how well heritage, technology and
 digitisation match.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2019/ilucidare/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2019/ilucidare/" rel="alternate"/>
     <summary>Flanders Heritage Agency is a government
 agency and scientific institution. We are responsible for architectural,
 archaeological, landscape and maritime heritage. Today we are
@@ -404,17 +432,19 @@ digitisation match.</summary>
     <published>2019-11-20T00:00:00+01:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2019/geoportaal-architectuur/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2019/geoportaal-architectuur/</id>
     <title>Flanders Heritage Geoportal: All Together Now!</title>
     <updated>2019-11-28T00:00:00+01:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;&lt;a class="reference external" href="https://www.onroerenderfgoed.be"&gt;Flanders Heritage&lt;/a&gt; has had a &lt;a class="reference external" href="https://geo.onroerenderfgoed.be"&gt;geoportal&lt;/a&gt; since 2013. Although it has grown and
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://www.onroerenderfgoed.be"&gt;Flanders Heritage&lt;/a&gt; has had a &lt;a class="reference external" href="https://geo.onroerenderfgoed.be"&gt;geoportal&lt;/a&gt; since 2013. Although it has grown and
 transformed over the years, the basic goals and the architectural design have
 remained largely unchanged.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2019/geoportaal-architectuur/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2019/geoportaal-architectuur/" rel="alternate"/>
     <summary>Flanders Heritage has had a geoportal since 2013. Although it has grown and
 transformed over the years, the basic goals and the architectural design have
 remained largely unchanged.</summary>
@@ -423,13 +453,14 @@ remained largely unchanged.</summary>
     <published>2019-11-28T00:00:00+01:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2019/vioe-hypermedia-api/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2019/vioe-hypermedia-api/</id>
     <title>We are the Hypermedia!</title>
     <updated>2019-12-30T00:00:00+01:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;Within the Flemish Government, there is a central governing body that
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;Within the Flemish Government, there is a central governing body that
 coordinates matters on Information and ICT policies. Under the umbrella of this
 body, several taskforces exist, one of them being the &lt;a class="reference external" href="https://informatievlaanderen.github.io/handreikingOslo/"&gt;OSLO Datastandards&lt;/a&gt; taskforce. This
 taskforce creates standards, semantic models and tooling for Flemish government agencies
@@ -439,8 +470,9 @@ standard, a set of guidelines and building blocks that aim to transform REST
 services into more Hypermedia driven services. This would make them more
 interoperable. The first version of this standard was approved on november 8, 2018
 and contains three building blocks: language, CRUD and pagination.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2019/vioe-hypermedia-api/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2019/vioe-hypermedia-api/" rel="alternate"/>
     <summary>Within the Flemish Government, there is a central governing body that
 coordinates matters on Information and ICT policies. Under the umbrella of this
 body, several taskforces exist, one of them being the OSLO Datastandards taskforce. This
@@ -456,13 +488,14 @@ and contains three building blocks: language, CRUD and pagination.</summary>
     <published>2019-12-30T00:00:00+01:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2020/webpagina-verhuizen/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2020/webpagina-verhuizen/</id>
     <title>Ook een webpagina kan verhuizen</title>
     <updated>2020-01-31T00:00:00+01:00</updated>
     <author>
       <name>Sam Kuylen</name>
     </author>
-    <content type="html">&lt;p&gt;We staan er misschien niet altijd bij stil, maar ook webpagina’s verhuizen.
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;We staan er misschien niet altijd bij stil, maar ook webpagina’s verhuizen.
 Websites, databanken en andere informatiesystemen zijn geen statische gegevens.
 Ze worden gebouwd op een bepaald punt in de tijd, met bepaalde verwachtingen en
 in een bepaalde technologie. In een ideale wereld is een URL (dat ding dat in
@@ -470,8 +503,9 @@ de adresbalk van je browser staat en aangeeft op welke pagina je bent)
 onveranderlijk. &lt;a class="reference external" href="https://www.w3.org/Provider/Style/URI"&gt;Cool URI’s don’t change&lt;/a&gt;, weet u wel. In de echte wereld blijft
 niets ooit helemaal hetzelfde. &lt;cite&gt;Cool URI’s don’t change, real ones do. Deal
 with it.&lt;/cite&gt; (Voor deze blog mag u URI en URL als synoniemen beschouwen.)&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2020/webpagina-verhuizen/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2020/webpagina-verhuizen/" rel="alternate"/>
     <summary>We staan er misschien niet altijd bij stil, maar ook webpagina’s verhuizen.
 Websites, databanken en andere informatiesystemen zijn geen statische gegevens.
 Ze worden gebouwd op een bepaald punt in de tijd, met bepaalde verwachtingen en
@@ -485,20 +519,22 @@ with it. (Voor deze blog mag u URI en URL als synoniemen beschouwen.)</summary>
     <published>2020-01-31T00:00:00+01:00</published>
   </entry>
   <entry>
-    <id>https://onroerenderfgoed.github.io/posts/2020/atramhasis-0.7.0/</id>
+    <id>https://onroerenderfgoed.github.io/en/posts/2020/atramhasis-0.7.0/</id>
     <title>Atramhasis v0.7.0 released</title>
     <updated>2020-11-06T00:00:00+01:00</updated>
     <author>
       <name>Koen van Daele</name>
     </author>
-    <content type="html">&lt;p&gt;A new version (0.7.0) of &lt;a class="reference external" href="https://pypi.org/project/atramhasis/"&gt;Atramhasis&lt;/a&gt; has been released.
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;A new version (0.7.0) of &lt;a class="reference external" href="https://pypi.org/project/atramhasis/"&gt;Atramhasis&lt;/a&gt; has been released.
 Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
 SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis
 comes with an admin interface you can use to add the concepts and collections of
 your vocabularies. To make integrating vocabularies with your other IT systems
 easy, all data in Atramhasis is exposed through a read an write REST webservice.&lt;/p&gt;
+&lt;/div&gt;
 </content>
-    <link href="https://onroerenderfgoed.github.io/posts/2020/atramhasis-0.7.0/" rel="alternate"/>
+    <link href="https://onroerenderfgoed.github.io/en/posts/2020/atramhasis-0.7.0/" rel="alternate"/>
     <summary>A new version (0.7.0) of Atramhasis has been released.
 Atramhasis is an open-source, web-based SKOS editor. You can use it to browse
 SKOS vocabularies, thesauri, authority files, word lists, … Atramhasis

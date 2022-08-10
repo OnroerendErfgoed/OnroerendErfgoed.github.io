@@ -1,16 +1,17 @@
 <!doctype html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ook een webpagina kan verhuizen &#8212; Flanders Heritage - Information and Technology  documentation</title>
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/app.css" />
     <script src="../../../../../../_static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="author" title="About these documents" href="../../../about/" />
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -105,7 +106,7 @@
     <div class="large-9 columns">
       <div class="body panel" role="main">
          <div class="section" id="ook-een-webpagina-kan-verhuizen">
-<h1>Ook een webpagina kan verhuizen<a class="headerlink" href="#ook-een-webpagina-kan-verhuizen" title="Permalink to this headline">¶</a></h1>
+<h1>Ook een webpagina kan verhuizen<a class="headerlink" href="#ook-een-webpagina-kan-verhuizen" title="Permalink to this heading">¶</a></h1>
 <p>We staan er misschien niet altijd bij stil, maar ook webpagina’s verhuizen.
 Websites, databanken en andere informatiesystemen zijn geen statische gegevens.
 Ze worden gebouwd op een bepaald punt in de tijd, met bepaalde verwachtingen en
@@ -140,7 +141,7 @@ bijhouden. Daarom dat we een duidelijk overzicht willen geven van een aantal
 vaak voorkomende oude links. Vandaag focussen we ons op het beschermde erfgoed.
 Later gaan we dieper in op de inventaris.</p>
 <div class="section" id="informatiesystemen-voor-beschermd-erfgoed">
-<h2>Informatiesystemen voor beschermd erfgoed<a class="headerlink" href="#informatiesystemen-voor-beschermd-erfgoed" title="Permalink to this headline">¶</a></h2>
+<h2>Informatiesystemen voor beschermd erfgoed<a class="headerlink" href="#informatiesystemen-voor-beschermd-erfgoed" title="Permalink to this heading">¶</a></h2>
 <p>Lang geleden, nog voor het wereld wijde web echt een ding was, en URI’s nog
 niet bestonden of niet gekend waren, was er een eerste informatiesysteem voor
 beschermd erfgoed. Dat luisterde naar de naam <em>Melanie</em>, wat stond voor
@@ -210,7 +211,7 @@ overeen komt. Daarvoor ga je naar het <a class="reference external" href="https:
 onderaan bij <cite>Ander nummer?</cite> het Melanie of Bredero nummer in.</p>
 </div>
 <div class="section" id="oude-urls">
-<h2>Oude urls<a class="headerlink" href="#oude-urls" title="Permalink to this headline">¶</a></h2>
+<h2>Oude urls<a class="headerlink" href="#oude-urls" title="Permalink to this heading">¶</a></h2>
 <p>Heb je nog ergens oude URL’s in gebruik, dan zal daar steeds een Melanie of
 Bredero nummer in voorkomen. Heb je URl’s die dateren van de periode 2012-2016,
 dan zien ze er waarschijnlijk als volgt uit:
@@ -243,7 +244,7 @@ waarop we onze inventaris hosten misschien ook meewijzigen. De concept URI’s o
 zijn aan onze organisatienaam.</p>
 </div>
 <div class="section" id="zeg-het-met-een-script">
-<h2>Zeg het met een script<a class="headerlink" href="#zeg-het-met-een-script" title="Permalink to this headline">¶</a></h2>
+<h2>Zeg het met een script<a class="headerlink" href="#zeg-het-met-een-script" title="Permalink to this heading">¶</a></h2>
 <p>Als je over veel links naar onze site beschikt, dan is het best wel wat werk om
 die één voor één op te zoeken. Daarom bieden we jullie een kort Python script
 aan waarmee je in één keer van heel veel oude Melanie of Bredero nummers de URI’s
@@ -288,7 +289,7 @@ script lopen.</p>
 
 <span class="n">mapping</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="n">oude_beschermingsnummers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-<span class="n">url_template</span> <span class="o">=</span> <span class="s1">&#39;https://inventaris.onroerenderfgoed.be/aanduidingsobjecten?ander_nummer={oud_beschermingsnummer}&#39;</span>
+<span class="n">url_template</span> <span class="o">=</span> <span class="s1">&#39;https://inventaris.onroerenderfgoed.be/aanduidingsobjecten?ander_nummer=</span><span class="si">{oud_beschermingsnummer}</span><span class="s1">&#39;</span>
 <span class="n">bronbestand</span> <span class="o">=</span> <span class="s1">&#39;oude_beschermingsnummers.csv&#39;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">}</span>
 
@@ -306,9 +307,9 @@ script lopen.</p>
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">():</span>
             <span class="n">mapping</span><span class="p">[</span><span class="n">oud_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;uri&#39;</span><span class="p">])</span>
     <span class="k">except</span> <span class="n">HTTPError</span> <span class="k">as</span> <span class="n">http_err</span><span class="p">:</span>
-        <span class="n">mapping</span><span class="p">[</span><span class="n">oud_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;HTTP fout bij het ophalen van het beschermingsnummer: {msg}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">http_err</span><span class="p">))</span>
+        <span class="n">mapping</span><span class="p">[</span><span class="n">oud_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;HTTP fout bij het ophalen van het beschermingsnummer: </span><span class="si">{msg}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">http_err</span><span class="p">))</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-        <span class="n">mapping</span><span class="p">[</span><span class="n">oud_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Onverwachte fout bij het ophalen van het beschermingsnummer: {msg}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">err</span><span class="p">))</span>
+        <span class="n">mapping</span><span class="p">[</span><span class="n">oud_id</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Onverwachte fout bij het ophalen van het beschermingsnummer: </span><span class="si">{msg}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="n">err</span><span class="p">))</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;mapping_beschermingsnummer_aanduidingsuri.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
     <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
@@ -321,7 +322,8 @@ script lopen.</p>
 </div>
 
 <div class="section">
-     
+    
+
 <div class="section">
   <span style="float: left">
      
@@ -647,7 +649,7 @@ script lopen.</p>
     <div class="footer-bottom-inner inner">
       <p class="copyright">
         &#169; Copyright 2016-2021, Flanders Heritage Agency.
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.
       </p>
       <p class="pull-right">
         <a href="#">Terug naar boven</a>

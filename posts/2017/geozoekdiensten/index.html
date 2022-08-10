@@ -1,16 +1,17 @@
 <!doctype html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geozoekdiensten. Wat ligt er hier? &#8212; Flanders Heritage - Information and Technology  documentation</title>
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/css/app.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/app.css" />
     <script src="../../../../../../_static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <link rel="author" title="About these documents" href="../../../about/" />
     <link rel="index" title="Index" href="../../../genindex/" />
@@ -105,7 +106,7 @@
     <div class="large-9 columns">
       <div class="body panel" role="main">
          <div class="section" id="geozoekdiensten-wat-ligt-er-hier">
-<h1>Geozoekdiensten. Wat ligt er hier?<a class="headerlink" href="#geozoekdiensten-wat-ligt-er-hier" title="Permalink to this headline">¶</a></h1>
+<h1>Geozoekdiensten. Wat ligt er hier?<a class="headerlink" href="#geozoekdiensten-wat-ligt-er-hier" title="Permalink to this heading">¶</a></h1>
 <p>Zoals beloofd (<a class="reference internal" href="../waar-ligt-ons-erfgoed/#waar-ligt-ons-erfgoed"><span class="std std-ref">Waar ligt ons Erfgoed?</span></a>) geven we je graag wat meer informatie over onze
 Geozoekdiensten. Deze zoekdiensten bestaan momenteel uit één enkele webservice
 die uitermate geschikt is om één enkele vraag te beantwoorden: <cite>Wat ligt er in
@@ -123,119 +124,119 @@ Vlaanderen:</p>
 <p>Daarop krijgen we een lijst van resultaten terug. Elke van deze resultaten is
 een <cite>JSON</cite> object met de attributen <cite>id</cite>, <cite>uri</cite>, <cite>categorie</cite>, <cite>type</cite>, <cite>naam</cite> en
 <cite>geometrie</cite>.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="nt">&quot;categorie&quot;</span><span class="p">:</span><span class="s2">&quot;erfgoedobjecten&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;naam&quot;</span><span class="p">:</span><span class="s2">&quot;Slotgracht van het Hof ter Bruggen&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">134454</span><span class="p">,</span>
-  <span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="s2">&quot;https://id.erfgoed.net/erfgoedobjecten/134454&quot;</span><span class="p">,</span>
-  <span class="nt">&quot;type&quot;</span><span class="p">:{</span>
-     <span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="s2">&quot;https://id.erfgoed.net/thesauri/inventaristypes/6&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;landschappelijk erfgoed - tuinen en parken&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;geometrie&quot;</span><span class="p">:{</span>
-     <span class="nt">&quot;crs&quot;</span><span class="p">:{</span>
-        <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;properties&quot;</span><span class="p">:{</span>
-           <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;EPSG:31370&quot;</span>
-        <span class="p">}</span>
-     <span class="p">},</span>
-     <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;MultiPolygon&quot;</span><span class="p">,</span>
-     <span class="nt">&quot;coordinates&quot;</span><span class="p">:[</span>
-        <span class="p">[</span>
-           <span class="p">[</span>
-              <span class="p">[</span>
-                 <span class="mf">178101.002463</span><span class="p">,</span>
-                 <span class="mf">185983.243971</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178053.850911</span><span class="p">,</span>
-                 <span class="mf">185947.437571</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178050.977631</span><span class="p">,</span>
-                 <span class="mf">185950.613059</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178035.261343</span><span class="p">,</span>
-                 <span class="mf">185970.031875</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178017.853727</span><span class="p">,</span>
-                 <span class="mf">185991.540611</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178008.580767</span><span class="p">,</span>
-                 <span class="mf">186002.998147</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">177992.737951</span><span class="p">,</span>
-                 <span class="mf">186022.573379</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">177984.668319</span><span class="p">,</span>
-                 <span class="mf">186032.544067</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">177970.829343</span><span class="p">,</span>
-                 <span class="mf">186049.643395</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">177961.176735</span><span class="p">,</span>
-                 <span class="mf">186061.570115</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178052.426207</span><span class="p">,</span>
-                 <span class="mf">186113.568899</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178095.876383</span><span class="p">,</span>
-                 <span class="mf">186138.329155</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178147.958495</span><span class="p">,</span>
-                 <span class="mf">186168.008323</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178152.049951</span><span class="p">,</span>
-                 <span class="mf">186146.282627</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178157.701727</span><span class="p">,</span>
-                 <span class="mf">186116.271683</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178165.239903</span><span class="p">,</span>
-                 <span class="mf">186076.243843</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178166.692959</span><span class="p">,</span>
-                 <span class="mf">186068.528387</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178171.934879</span><span class="p">,</span>
-                 <span class="mf">186040.693507</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178171.282079</span><span class="p">,</span>
-                 <span class="mf">186039.371203</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178136.999839</span><span class="p">,</span>
-                 <span class="mf">186012.071555</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178103.686367</span><span class="p">,</span>
-                 <span class="mf">185985.543363</span>
-              <span class="p">],</span>
-              <span class="p">[</span>
-                 <span class="mf">178101.002463</span><span class="p">,</span>
-                 <span class="mf">185983.243971</span>
-              <span class="p">]</span>
-           <span class="p">]</span>
-        <span class="p">]</span>
-     <span class="p">]</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;categorie&quot;</span><span class="p">:</span><span class="s2">&quot;erfgoedobjecten&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;naam&quot;</span><span class="p">:</span><span class="s2">&quot;Slotgracht van het Hof ter Bruggen&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">134454</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="s2">&quot;https://id.erfgoed.net/erfgoedobjecten/134454&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:{</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="s2">&quot;https://id.erfgoed.net/thesauri/inventaristypes/6&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;landschappelijk erfgoed - tuinen en parken&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="nt">&quot;geometrie&quot;</span><span class="p">:{</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;crs&quot;</span><span class="p">:{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;name&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;properties&quot;</span><span class="p">:{</span><span class="w"></span>
+<span class="w">           </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;EPSG:31370&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">     </span><span class="p">},</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;MultiPolygon&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">     </span><span class="nt">&quot;coordinates&quot;</span><span class="p">:[</span><span class="w"></span>
+<span class="w">        </span><span class="p">[</span><span class="w"></span>
+<span class="w">           </span><span class="p">[</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178101.002463</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">185983.243971</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178053.850911</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">185947.437571</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178050.977631</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">185950.613059</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178035.261343</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">185970.031875</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178017.853727</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">185991.540611</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178008.580767</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186002.998147</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">177992.737951</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186022.573379</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">177984.668319</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186032.544067</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">177970.829343</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186049.643395</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">177961.176735</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186061.570115</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178052.426207</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186113.568899</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178095.876383</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186138.329155</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178147.958495</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186168.008323</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178152.049951</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186146.282627</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178157.701727</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186116.271683</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178165.239903</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186076.243843</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178166.692959</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186068.528387</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178171.934879</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186040.693507</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178171.282079</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186039.371203</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178136.999839</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">186012.071555</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178103.686367</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">185985.543363</span><span class="w"></span>
+<span class="w">              </span><span class="p">],</span><span class="w"></span>
+<span class="w">              </span><span class="p">[</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">178101.002463</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="mf">185983.243971</span><span class="w"></span>
+<span class="w">              </span><span class="p">]</span><span class="w"></span>
+<span class="w">           </span><span class="p">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">]</span><span class="w"></span>
+<span class="w">     </span><span class="p">]</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Het attribuut <cite>naam</cite> geeft een korte beschrijving van het object. Het <cite>id</cite>
@@ -304,7 +305,8 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
 </div>
 
 <div class="section">
-     
+    
+
 <div class="section">
   <span style="float: left">
      
@@ -630,7 +632,7 @@ via <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoe
     <div class="footer-bottom-inner inner">
       <p class="copyright">
         &#169; Copyright 2016-2021, Flanders Heritage Agency.
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.
       </p>
       <p class="pull-right">
         <a href="#">Terug naar boven</a>
