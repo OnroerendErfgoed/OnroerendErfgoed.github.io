@@ -3,7 +3,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>We are the Hypermedia! &#8212; Flanders Heritage - Information and Technology  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/app.css" />
@@ -105,7 +106,7 @@
     
     <div class="large-9 columns">
       <div class="body panel" role="main">
-         <div class="section" id="we-are-the-hypermedia">
+         <section id="we-are-the-hypermedia">
 <h1>We are the Hypermedia!<a class="headerlink" href="#we-are-the-hypermedia" title="Permalink to this heading">¶</a></h1>
 <p>Within the Flemish Government, there is a central governing body that
 coordinates matters on Information and ICT policies. Under the umbrella of this
@@ -117,7 +118,7 @@ standard, a set of guidelines and building blocks that aim to transform REST
 services into more Hypermedia driven services. This would make them more
 interoperable. The first version of this standard was approved on november 8, 2018
 and contains three building blocks: language, CRUD and pagination.</p>
-<div class="section" id="pagination-web-scale">
+<section id="pagination-web-scale">
 <h2>Pagination. Web scale<a class="headerlink" href="#pagination-web-scale" title="Permalink to this heading">¶</a></h2>
 <p>At Flanders Heritage, we have started aligning our information systems with
 this new standard, especially the <cite>pagination</cite> building block. For the moment
@@ -191,8 +192,8 @@ of different webservices. All the client needs to know is that if there’s a
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ curl -G -i -H Accept:application/json https://bib.onroerenderfgoed.be/werken?titel=knokke\&amp;per_pagina=10\&amp;pagina=2
 </pre></div>
 </div>
-</div>
-<div class="section" id="all-your-data-belongs-to-us">
+</section>
+<section id="all-your-data-belongs-to-us">
 <h2>All your data belongs to us!<a class="headerlink" href="#all-your-data-belongs-to-us" title="Permalink to this heading">¶</a></h2>
 <p>To demonstrate this, we have written a small Python script that queries several
 of our information systems for information and handles all pagination of results
@@ -216,7 +217,7 @@ drops a mass of URI’s at our feet.</p>
 <span class="n">THEMAS</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/themas&#39;</span>
 
 <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Fetch all data from a url until there are no more `next` urls in the Link</span>
 <span class="sd">    header.</span>
 
@@ -259,8 +260,8 @@ drops a mass of URI’s at our feet.</p>
 <p>If we execute this command, we now get a big, long list of URI’s on our screen.
 It works well, but it’s not that satisfying. A URI might be good for a
 machine, but we don’t really know what it represents. So, what can we do?</p>
-</div>
-<div class="section" id="no-context-no-information">
+</section>
+<section id="no-context-no-information">
 <h2>No context, no information<a class="headerlink" href="#no-context-no-information" title="Permalink to this heading">¶</a></h2>
 <p>Another interesting technique in the Linked Data world is called <a class="reference external" href="https://json-ld.org">JSON-LD (JSON
 for Linking Data)</a>. It allows us to turn plain old JSON into linked data and
@@ -268,12 +269,12 @@ make our objects more compatible. The basic idea is that we map our JSON dataset
 to actual RDF objects by defining a <cite>context</cite>. In this context, we map keys in
 our JSON to RDF properties. As an example, here’s a simple context that can be
 used on our image database endpoint:</p>
-<div class="highlight-json-ld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;dct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://purl.org/dc/terms/&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dct:title&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dct:description&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@id&quot;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json-ld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;dct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://purl.org/dc/terms/&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dct:title&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dct:description&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;@id&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>This context defines a namespace shorthand, <cite>dct</cite>, and maps it to the Dublin
@@ -282,11 +283,11 @@ Core Terms namespace <cite>http://purl.org/dc/terms/</cite>. It allows us to wri
 defined <cite>uri</cite> to be an alias for <cite>&#64;id</cite>. <cite>&#64;id</cite> in JSON-ld indicates the
 unique identifier for a certain record or resource. Applying this context to an
 image from our image database gives us the following JSON data:</p>
-<div class="highlight-json-ld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://id.erfgoed.net/afbeeldingen/392715&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;http://purl.org/dc/terms/title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Villa Cools met kinesistenpraktijk&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;http://purl.org/dc/terms/description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json-ld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://id.erfgoed.net/afbeeldingen/392715&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;http://purl.org/dc/terms/title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Villa Cools met kinesistenpraktijk&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;http://purl.org/dc/terms/description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>This tells us there’s a resource with the id <cite>https://id.erfgoed.net/afbeeldingen/392715</cite>
@@ -297,16 +298,16 @@ currently not reflected in our data. Once we add data from the inventory we
 might not be able to tell the difference anymore. In JSON-LD we can add a
 <cite>&#64;type</cite> key to make this explicit. We set it to the URI of a class from an
 RDF vocabulary like this:</p>
-<div class="highlight-json-ld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://id.erfgoed.net/afbeeldingen/392715&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://purl.org/dc/dcmitype/Image&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;http://purl.org/dc/terms/title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Villa Cools met kinesistenpraktijk&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nt">&quot;http://purl.org/dc/terms/description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-json-ld notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nd">&quot;@id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://id.erfgoed.net/afbeeldingen/392715&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nd">&quot;@type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://purl.org/dc/dcmitype/Image&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;http://purl.org/dc/terms/title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Villa Cools met kinesistenpraktijk&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;http://purl.org/dc/terms/description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="once-more-with-feeling">
+</section>
+<section id="once-more-with-feeling">
 <h2>Once More, with Feeling<a class="headerlink" href="#once-more-with-feeling" title="Permalink to this heading">¶</a></h2>
 <p>We’ll use JSON-LD to enhance our script. We want to homogenise our dataset of
 all information about <cite>Knokke-Heist</cite>, so we are left with only records having the
@@ -343,7 +344,7 @@ Finally we print them to the screen.</p>
 <span class="n">THEMAS</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/themas&#39;</span>
 
 <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Fetch all data from a url until there are no more `next` urls in the Link</span>
 <span class="sd">    header.</span>
 
@@ -366,7 +367,7 @@ Finally we print them to the screen.</p>
     <span class="k">return</span> <span class="n">data</span>
 
 <span class="k">def</span> <span class="nf">add_type</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">rtype</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add the resource type to a resource</span>
 
 <span class="sd">    :param list collection: Collection of resources to add a type to</span>
@@ -377,7 +378,7 @@ Finally we print them to the screen.</p>
         <span class="n">c</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;@type&#39;</span><span class="p">:</span> <span class="n">rtype</span><span class="p">})</span>
 
 <span class="k">def</span> <span class="nf">add_locatie_samenvatting</span><span class="p">(</span><span class="n">afbeeldingen</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Summarize the location of an image</span>
 
 <span class="sd">    :param list afbeeldingen: Collection of afbeeldingen to summarize</span>
@@ -492,7 +493,7 @@ script produces or modify the script to generate your own dataset.</p>
 <span class="n">THEMAS</span> <span class="o">=</span> <span class="n">INVENTARIS</span> <span class="o">+</span> <span class="s1">&#39;/themas&#39;</span>
 
 <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">parameters</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Fetch all data from a url until there are no more `next` urls in the Link</span>
 <span class="sd">    header.</span>
 
@@ -515,7 +516,7 @@ script produces or modify the script to generate your own dataset.</p>
     <span class="k">return</span> <span class="n">data</span>
 
 <span class="k">def</span> <span class="nf">add_type</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">rtype</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Add the resource type to a resource</span>
 
 <span class="sd">    :param list collection: Collection of resources to add a type to</span>
@@ -526,7 +527,7 @@ script produces or modify the script to generate your own dataset.</p>
         <span class="n">c</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;@type&#39;</span><span class="p">:</span> <span class="n">rtype</span><span class="p">})</span>
 
 <span class="k">def</span> <span class="nf">add_locatie_samenvatting</span><span class="p">(</span><span class="n">afbeeldingen</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Summarize the location of an image</span>
 
 <span class="sd">    :param list afbeeldingen: Collection of afbeeldingen to summarize</span>
@@ -624,8 +625,8 @@ out there who are more than willing to answer your questions, you’ll find quit
 a few of them on <a class="reference external" href="https://twitter.com/koenedaele/lists/linked-data">Twitter</a>.
 As always, feel free to <a class="reference external" href="mailto:ict&#37;&#52;&#48;onroerenderfgoed&#46;be">contact us</a> with further
 questions.</p>
-</div>
-</div>
+</section>
+</section>
 
 <div class="section">
     
